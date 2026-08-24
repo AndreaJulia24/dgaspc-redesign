@@ -1,0 +1,34 @@
+# 1. Ignore all WordPress Core folders and root files
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/xmlrpc.php
+/license.txt
+/readme.html
+/index.php
+
+# 2. Ignore Configuration, Database and Environment files
+wp-config.php
+wp-config-sample.php
+local-xdebuginfo.php
+*.sql
+*.log
+
+# 3. Ignore uploads, plugins and default themes
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/plugins/
+wp-content/themes/twentytwentythree/
+wp-content/themes/twentytwentyfour/
+wp-content/themes/twentytwentyfive/
+wp-content/themes/index.php
+wp-content/index.php
+
+# 4. Ignore OS and Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 5. KEEP ONLY YOUR CUSTOM THEME
+!wp-content/themes/dgaspc-redesign/**
