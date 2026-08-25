@@ -16,3 +16,14 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+.card-header-tabs .nav-link.custom-tab {
+    color: #6c757d !important;
+    border: none !important;
+    border-bottom: 3px solid transparent !important;
+}
+
+.card-header-tabs .nav-link.custom-tab.active {
+    color: #0d6efd !important;
+    border: none !important;
+    border-bottom: 3px solid #0d6efd !important;
+}

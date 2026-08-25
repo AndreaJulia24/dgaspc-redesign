@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+ * Template Name: Homepage Template
+ */
+get_header(); ?>
 
 <main class="py-5 bg-light">
     <div class="container">
@@ -99,9 +103,9 @@
         </div>
     </section>
 
-    <!-- ANUNTURI SI NOUTATI SECTION -->
-    <section class="my-5">
-       <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+   <!-- ANUNTURI SI NOUTATI SECTION -->
+<section class="my-5">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
         <div>
             <h3 class="fw-bold text-dark mb-1">Anunțuri și Noutăți</h3>
             <p class="text-secondary small mb-0">Ultimele comunicate și informații de interes public.</p>
@@ -110,69 +114,50 @@
             Vezi toate anunțurile &rarr;
         </a>
     </div>
+
     <!-- CARDS GRID FOR ANNOUNCEMENTS -->
     <div class="row g-4">
-        <!-- First Announcement Card -->
-     <div class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100 border rounded-3 bg-white shadow-sm">
-            <div class="card-body d-flex flex-column text-start p-4">
-                <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-light text-secondary border fw-medium px-2 py-1">24 Aug 2023</span>
-                    <span class="badge bg-primary-subtle text-primary border-0 fw-medium px-2 py-1">Comunicat</span>
+        <?php
+        $anunturi_query = new WP_Query(array(
+            'post_type'      => 'post',
+            'posts_per_page' => 3,
+        ));
+
+        if ($anunturi_query->have_posts()) :
+            while($anunturi_query->have_posts()) : $anunturi_query->the_post(); 
+                $categories = get_the_category();
+        ?>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 border rounded-3 bg-white shadow-sm">
+                        <div class="card-body d-flex flex-column text-start p-4">
+                            <div class="d-flex gap-2 mb-3">
+                                <span class="badge bg-light text-secondary border fw-medium px-2 py-1">
+                                    <?php echo get_the_date('d M Y'); ?>
+                                </span>
+                                <?php if (!empty($categories)) : ?>
+                                    <span class="badge bg-primary-subtle text-primary border-0 fw-medium px-2 py-1">
+                                        <?php echo esc_html($categories[0]->name); ?>
+                                    </span>
+                                <?php endif; ?>
+                            </div>
+                            <h5 class="card-title fw-bold text-dark fs-6 mb-2"><?php the_title(); ?></h5>
+                            <p class="card-text text-secondary small mb-4 flex-grow-1">
+                                <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                            </p>
+                            <a href="<?php the_permalink(); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
+                                Citește mai mult &rarr;
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <h5 class="card-title fw-bold text-dark fs-6 mb-2">
-                    Acordarea scutirii de la plata tarifului de rovinietă
-                </h5>
-                <p class="card-text text-secondary small mb-4 flex-grow-1">
-                    Informații detaliate cu privire la modalitatea de acordare a scutirii pentru persoanele cu dizabilități.
-                </p>
-                <a href="#" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                    Citește mai mult &rarr;
-                </a>
+            <?php endwhile;
+            wp_reset_postdata();
+        else : ?>
+            <div class="col-12">
+                <p class="text-secondary small">Nu există anunțuri disponibile în acest moment.</p>
             </div>
-        </div>
+        <?php endif; ?>
     </div>
-    <!-- Second Announcement Card -->
-    <div class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100 border rounded-3 bg-white shadow-sm">
-            <div class="card-body d-flex flex-column text-start p-4">
-                <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-light text-secondary border fw-medium px-2 py-1">27 Dec 2022</span>
-                    <span class="badge bg-success-subtle text-success border-0 fw-medium px-2 py-1">Proiecte</span>
-                </div>
-                <h5 class="card-title fw-bold text-dark fs-6 mb-2">
-                    Semnarea convenției "Pași spre viitor"
-                </h5>
-                <p class="card-text text-secondary small mb-4 flex-grow-1">
-                    Comunicat cu privire la semnarea convenției de finanțare nerambursabilă pentru noul proiect de sprijin comunitar.
-                </p>
-                <a href="#" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                    Citește mai mult &rarr;
-                </a>
-            </div>
-        </div>
-    </div>
-    <!-- Third Announcement Card -->
-    <div class="col-12 col-md-6 col-lg-4"> 
-        <div class="card h-100 border rounded-3 bg-white shadow-sm">
-            <div class="card-body d-flex flex-column text-start p-4">
-                <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-light text-secondary border fw-medium px-2 py-1">26 Mai 2022</span>
-                    <span class="badge bg-warning-subtle text-warning border-0 fw-medium px-2 py-1">Informatii</span>
-                </div>
-                <h5 class="card-title fw-bold text-dark fs-6 mb-2">
-                    Plasamentul familial în județul Mureș
-                </h5>
-                <p class="card-text text-secondary small mb-4 flex-grow-1">
-                    A fost publicat noul pliant informativ detaliind procedurile și cerințele pentru plasamentul familial în județul Mureș.
-                </p>
-                <a href="#" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                    Citește mai mult &rarr;
-                </a>
-            </div>
-        </div>
-    </div>
-</div> 
 </section>
 <!-- FORMULARE SI DOCUMENTE SECTION -->
 <section class="my-5">
