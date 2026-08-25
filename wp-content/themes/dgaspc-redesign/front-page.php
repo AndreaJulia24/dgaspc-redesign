@@ -184,7 +184,7 @@ get_header(); ?>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link custom-tab <?php echo $index === 0 ? 'active' : ''; ?> fw-semibold pb-3 bg-transparent border-0"
                                 id="tab-btn-<?php echo esc_attr($term->term_id); ?>"
-                                data-bs-toggle="#tab-pane-<?php echo esc_attr($term->term_id); ?>"
+                                data-bs-toggle="tab"
                                 data-bs-target="#<?php echo esc_attr($term->slug); ?>-pane"
                                 type="button"
                                 role="tab"

@@ -38,7 +38,7 @@
                                 </p>
                                 
                                 <a href="<?php the_permalink(); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                                    Află mai multe &rarr;
+                                    Citește mai mult &rarr;
                                 </a>
                             </div>
                         </div>
@@ -55,7 +55,6 @@
                     )); 
                     ?>
                 </div>
-
             <?php else : ?>
                 <div class="col-12 text-center">
                     <p class="text-secondary">Nu există anunțuri publicate.</p>
