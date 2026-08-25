@@ -103,19 +103,20 @@ get_header(); ?>
         </div>
     </section>
 
-   <!-- ANUNTURI SI NOUTATI SECTION -->
+  <!-- ANUNTURI SI NOUTATI SECTION -->
 <section class="my-5">
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
         <div>
             <h3 class="fw-bold text-dark mb-1">Anunțuri și Noutăți</h3>
             <p class="text-secondary small mb-0">Ultimele comunicate și informații de interes public.</p>
         </div>
-        <a href="#" class="text-decoration-none text-primary fw-semibold small mt-2 mt-md-0">
+        <!-- Dinamikusan az összes hír oldalára mutató link -->
+        <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="text-decoration-none text-primary fw-semibold small mt-2 mt-md-0">
             Vezi toate anunțurile &rarr;
         </a>
     </div>
 
-    <!-- CARDS GRID FOR ANNOUNCEMENTS -->
+    <!-- Dinamikusan legenerált 3 legfrissebb kártya -->
     <div class="row g-4">
         <?php
         $anunturi_query = new WP_Query(array(
@@ -145,7 +146,7 @@ get_header(); ?>
                                 <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
                             </p>
                             <a href="<?php the_permalink(); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                                Citește mai mult &rarr;
+                                Află mai multe &rarr;
                             </a>
                         </div>
                     </div>
@@ -160,110 +161,110 @@ get_header(); ?>
     </div>
 </section>
 <!-- FORMULARE SI DOCUMENTE SECTION -->
+ <!-- DINAMICALLY GENERATED DOCUMENTS AND FORMS SECTION -->
 <section class="my-5">
     <div class="text-center mb-4">
         <h3 class="fw-bold text-dark mb-1">Formulare și Documente Utile</h3>
     </div>
-    <!-- navigation bar for the documents -->
-     <div class="card border rounded-3 bg-white shadow-sm p-4">
-        <div class="card-header bg-white border-bottom pt-3 px-4">
-            <ul class="nav nav-tabs card-header-tabs border-0 gap-3" id="documentsTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link custom-tab active fw-semibold pb-3 bg-transparent border-0"
-                    id= "copii-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#copii"
-                    type="button"
-                    role="tab"
-                    aria-controls="copii"
-                    aria-selected="true">
-                    Încadrare Handicap Copii
-                </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link custom-tab fw-semibold pb-3 bg-transparent border-0"
-                    id= "adulti-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#adulti-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="adulti-pane"
-                    aria-selected="false">
-                    Adulți
-                </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link custom-tab  fw-semibold pb-3 bg-transparent border-0"
-                    id= "raportare-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#acreditari-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="acreditari-pane"
-                    aria-selected="false">
-                    Acreditări
-                </button>   
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link custom-tab fw-semibold pb-3 bg-transparent border-0"
-                    id= "gdpr-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#gdpr-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="gdpr-pane"
-                    aria-selected="false">
-                    GDPR
-                </button>
-                </li>
-            </ul>
-        </div>
-        <div class="card-body p-4">
-            <div class="tab-content" id="documentsTabContent">
-                <!-- TAB PANE 1: ÎNCADRARE HANDICAP COPII -->
-                <div class="tab-pane fade show active" id="copii" role="tabpanel" aria-labelledby="copii-tab">
-        <h3 class="fw-medium text-dark mb-1">Serviciul de Evaluare Complexă a Copilului</h3>
-        <p class="text-secondary mb-4 lh-base">Documentele necesare pentru încadrarea în grad de handicap a copilului cu dizabilități</p>
-        <!--1. dokument list item -->
-        <div class="d-flex align-items-start gap-3 mb-3">
-            <div class="icon-box d-inline-flex align-items-center justify-content-center rounded-3 mt-1" style="width: 32px; height: 32px; background-color: #e0f2fe; color: #0284c7;">
-                <i class="bi bi-file-earmark-text fs-5"></i>
+    
+    <div class="card border rounded-3 bg-white shadow-sm p-4">
+        
+        <?php 
+        $document_terms = get_terms(array(
+            'taxonomy'   => 'document_category',
+            'hide_empty' => false, 
+        ));
+        
+        if (!empty($document_terms) && !is_wp_error($document_terms)) : ?>
+        
+            <!-- CATEGORY TABS -->
+            <div class="card-header bg-white border-bottom pt-3 px-4">
+                <ul class="nav nav-tabs card-header-tabs border-0 gap-3" id="documentsTab" role="tablist">
+                    <?php foreach ($document_terms as $index => $term) : ?>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link custom-tab <?php echo $index === 0 ? 'active' : ''; ?> fw-semibold pb-3 bg-transparent border-0"
+                                id="tab-btn-<?php echo esc_attr($term->term_id); ?>"
+                                data-bs-toggle="#tab-pane-<?php echo esc_attr($term->term_id); ?>"
+                                data-bs-target="#<?php echo esc_attr($term->slug); ?>-pane"
+                                type="button"
+                                role="tab"
+                                aria-controls="<?php echo esc_attr($term->slug); ?>-pane"
+                                aria-selected="<?php echo $index === 0 ? 'true' : 'false'; ?>">
+                                <?php echo esc_html($term->name); ?>
+                            </button>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
-            <div class="flex-grow-1">
-                <h6 class="fw-semibold text-dark mb-1">Acte necesare pentru încadrarea în grad de handicap</h6>
-                <p class="text-secondary small mb-0">Formularul oficial pentru solicitarea evaluării copilului.</p>
-                <a href="#" class="text-decoration-none fw-semibold small text-primary">
-                    Descarcă PDF &rarr;
-                </a>
+
+            <!-- CATEGORY CONTENT -->
+            <div class="card-body p-4">
+                <div class="tab-content" id="documentsTabContent">
+                    <?php foreach ($document_terms as $index => $term) : ?>
+                        <div class="tab-pane fade <?php echo $index === 0 ? 'show active' : ''; ?>" 
+                             id="<?php echo esc_attr($term->slug); ?>-pane" 
+                             role="tabpanel" 
+                             aria-labelledby="<?php echo esc_attr($term->slug); ?>-tab">
+                            
+                            <h4 class="fw-bold text-dark mb-1"><?php echo esc_html($term->name); ?></h4>
+                            <p class="text-secondary small mb-4">
+                                <?php echo !empty($term->description) ? esc_html($term->description) : 'Documentele necesare pentru această secțiune.'; ?>
+                            </p>
+
+                            <?php
+                            $docs_query = new WP_Query(array(
+                                'post_type'      => 'document',
+                                'posts_per_page' => -1,
+                                'tax_query'      => array(
+                                    array(
+                                        'taxonomy' => 'document_category',
+                                        'field'    => 'slug',
+                                        'terms'    => $term->slug,
+                                    ),
+                                ),
+                            ));
+
+                            if ($docs_query->have_posts()) :
+                                while ($docs_query->have_posts()) : $docs_query->the_post(); 
+                                    // Get the file URL from the custom field
+                                    $file_url = get_post_meta(get_the_ID(), 'document_file', true);
+                                    if (empty($file_url)) {
+                                        $file_url = '#'; // Fallback if no file is provided
+                                    }
+                                ?>
+                                    
+                                    <!-- DOCUMENT ITEM DOWNLOAD -->
+                                    <div class="d-flex align-items-center justify-content-between py-3 border-bottom border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="text-danger fs-4">
+                                                <i class="bi bi-file-earmark-pdf"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="fw-bold text-dark mb-0"><?php the_title(); ?></h6>
+                                                <small class="text-secondary">PDF &bull; Actualizat <?php echo get_the_date('Y'); ?></small>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- DOWNLOAD BUTTON -->
+                                        <a href="<?php echo esc_url($file_url); ?>" download class="text-dark fs-5 p-2" title="Descarcă document">
+                                            <i class="bi bi-download"></i>
+                                        </a>
+                                    </div>
+
+                                <?php endwhile;
+                                wp_reset_postdata();
+                            else : ?>
+                                <p class="text-secondary small mb-0">Nu există documente disponibile în această categorie.</p>
+                            <?php endif; ?>
+
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
-        </div>
-        <!--2. dokument list item -->
-        <div class="d-flex align-items-start gap-3">
-            <div class="icon-box d-inline-flex align-items-center justify-content-center rounded-3 mt-1" style="width: 32px; height: 32px; background-color: #e0f2fe; color: #0284c7;">
-                <i class="bi bi-file-earmark-text fs-5"></i>
-            </div>
-            <div class="flex-grow-1">
-                <h6 class="fw-semibold text-dark mb-1">Cerere si consimțământul de evaluare</h6>
-                <p class="text-secondary small mb-0">Formularul oficial pentru solicitarea evaluării copilului.</p>
-                <a href="#" class="text-decoration-none fw-semibold small text-primary">
-                    Descarcă PDF &rarr;
-                </a>
-            </div>
-        </div>
-        <!--3. dokument list item -->
-        <div class="d-flex align-items-start gap-3 mt-3">
-            <div class="icon-box d-inline-flex align-items-center justify-content-center rounded-3 mt-1" style="width: 32px; height: 32px; background-color: #e0f2fe; color: #0284c7;">
-                <i class="bi bi-file-earmark-text fs-5"></i>
-            </div>
-            <div class="flex-grow-1">
-                <h6 class="fw-semibold text-dark mb-1">Fișa medicală sintetică </h6>
-                <p class="text-secondary small mb-0">Formularul utilizat de specialiști pentru evaluarea copilului.</p>
-                <a href="#" class="text-decoration-none fw-semibold small text-primary">
-                    Descarcă PDF &rarr;
-                </a>
-            </div>
-        </div>
-    </div>'
+            
+        <?php endif; ?>
+        
+    </div>
 </section>
 <!-- CAMPANII SI PROIECTE SECTION -->
 <section class="my-5">
