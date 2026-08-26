@@ -74,23 +74,30 @@
             <div class="d-flex align-items-center gap-4">
             <!-- MENUPOINTS -->
             <ul class="navbar-nav mb-0 gap-4 align-items-center">
+               <!-- DINAMICALLY NAVBAR -->
+                <!-- HOME -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-medium" href="#">Acasă</a>
+                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(home_url('/')); ?>">Acasă</a>
                 </li>
+                <!-- ORGANIGRAMA -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-medium" href="#">Organigramă</a>
+                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(home_url('/organigrama')); ?>">Organigramă</a>
                 </li>
+                <!-- PROTECȚIA COPILULUI -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-medium" href="#">Protecția Copilului</a>
+                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(home_url('/protecatia-copilului')); ?>">Protecția Copilului</a>
                 </li>
+                <!-- ADULȚI ȘI DIZABILITĂȚI -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-medium" href="#">Adulți & Dizabilități</a>
+                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(home_url('/adulti-dizabilitati')); ?>">Adulți & Dizabilități</a>
                 </li>
+                <!-- TRANSPARENȚĂ -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-medium" href="#">Transparență</a>
+                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(home_url('/transparenca')); ?>">Transparență</a>
                 </li>
+                <!-- PROIECTE -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-medium" href="#">Proiecte</a>
+                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(home_url('/proiecte')); ?>">Proiecte</a>
                 </li>
             </ul>
 
