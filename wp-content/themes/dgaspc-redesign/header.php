@@ -81,23 +81,23 @@
                 </li>
                 <!-- ORGANIGRAMA -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(home_url('/organigrama')); ?>">Organigramă</a>
+                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(get_permalink(get_page_by_path('organigrama'))); ?>">Organigramă</a>
                 </li>
                 <!-- PROTECȚIA COPILULUI -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(home_url('/protecatia-copilului')); ?>">Protecția Copilului</a>
+                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(get_permalink(get_page_by_path('protectia-copilului'))); ?>">Protecția Copilului</a>
                 </li>
                 <!-- ADULȚI ȘI DIZABILITĂȚI -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(home_url('/adulti-dizabilitati')); ?>">Adulți & Dizabilități</a>
+                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(get_permalink(get_page_by_path('adulti-dizabilitati'))); ?>">Adulți & Dizabilități</a>
                 </li>
                 <!-- TRANSPARENȚĂ -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(home_url('/transparenca')); ?>">Transparență</a>
+                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(get_permalink(get_page_by_path('transparenta'))); ?>">Transparență</a>
                 </li>
                 <!-- PROIECTE -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(home_url('/proiecte')); ?>">Proiecte</a>
+                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(get_permalink(get_page_by_path('proiecte'))); ?>">Proiecte</a>
                 </li>
             </ul>
 
