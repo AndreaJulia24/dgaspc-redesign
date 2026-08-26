@@ -79,6 +79,97 @@ function generatePDF(contentId, title) {
     }, 100);
 }
 </script>
+<!-- FLOATING DRAGGABLE EMERGENCY WIDGET -->
+<aside id="floating-emergency-widget" class="floating-emergency-widget shadow-lg rounded-4 overflow-hidden position-fixed end-0 bottom-0 m-3 m-md-4 text-white" 
+     style="z-index: 1050; width: 220px; background-color: #dc2626;" aria-label="Urgențe 24/7">
+    
+    <div class="p-3 text-center">
+        <div class="fs-4 lh-1 mb-1">
+            <i class="bi bi-asterisk"></i>
+        </div>
+        <h6 class="fw-bold mb-1 text-uppercase letter-spacing-1">Urgențe 24/7</h6>
+        <p class="small text-white-50 mb-0" style="font-size: 0.75rem;">Apelați cu încredere</p>
+    </div>
+
+    <!-- TELEFONUL COPILULUI-->
+    <div class="py-2 px-3 text-center border-top border-bottom border-white-50 bg-black bg-opacity-10">
+        <div class="d-flex align-items-center justify-content-center gap-2">
+            <i class="bi bi-telephone-fill small"></i>
+            <span class="fw-semibold small">Telefonul Copilului</span>
+        </div>
+    </div>
+
+    <!-- BUTTON EMERGENCY NUMBER 119 -->
+    <div class="p-2 text-center bg-black bg-opacity-20">
+        <a href="tel:119" class="btn btn-light w-100 fw-bold py-2 rounded-3 text-danger shadow-sm d-flex align-items-center justify-content-center gap-1">
+            <span>Sună Acum (119)</span>
+        </a>
+    </div>
+</aside>
 <?php wp_footer(); ?>
 </body>
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const widget = document.getElementById('draggableEmergencyWidget');
+    const handle = widget.querySelector('.emergency-drag-handle');
+
+    if (!widget || !handle) return;
+
+    let isDragging = false;
+    let startX = 0, startY = 0;
+    let initialLeft = 0, initialTop = 0;
+
+    handle.addEventListener('pointerdown', (e) => {
+        isDragging = true;
+        
+        // Eredeti pozíció kiszámítása (eltávolítjuk a Bootstrap end-0, bottom-0 fix kötéseit)
+        const rect = widget.getBoundingClientRect();
+        initialLeft = rect.left;
+        initialTop = rect.top;
+
+        startX = e.clientX;
+        startY = e.clientY;
+
+        widget.style.right = 'auto';
+        widget.style.bottom = 'auto';
+        widget.style.left = `${initialLeft}px`;
+        widget.style.top = `${initialTop}px`;
+        widget.style.margin = '0';
+
+        handle.setPointerCapture(e.pointerId);
+    });
+
+    handle.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+
+        let newX = initialLeft + dx;
+        let newY = initialTop + dy;
+
+        // Képernyőn belül tartás (Boundaries)
+        const maxX = window.innerWidth - widget.offsetWidth - 10;
+        const maxY = window.innerHeight - widget.offsetHeight - 10;
+
+        newX = Math.max(10, Math.min(newX, maxX));
+        newY = Math.max(10, Math.min(newY, maxY));
+
+        widget.style.left = `${newX}px`;
+        widget.style.top = `${newY}px`;
+    });
+
+    const stopDragging = (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        try {
+            handle.releasePointerCapture(e.pointerId);
+        } catch (err) {}
+    };
+
+    handle.addEventListener('pointerup', stopDragging);
+    handle.addEventListener('pointercancel', stopDragging);
+});
+</script>

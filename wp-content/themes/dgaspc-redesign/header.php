@@ -101,14 +101,31 @@
                 </li>
             </ul>
 
-        <!-- SEARCH ICON BUTTON --> 
-         <div class="d-flex align-items-center gap-5">
-                <button class="btn btn-light rounded-circle text-muted p-2" type="button" aria-label="Search">
-                    <i class="bi bi-search fs-6"></i>
-                </button>
-            </div>
+        <!-- SEARCH TRIGGER BUTTON --> 
+         <div class="d-flex align-items-center">
+            <button class="btn btn-light rounded-circle text-muted p-2 shadow-sm"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#headerSearchCollapse"
+            aria-expanded="false"
+            aria-controls="headerSearchCollapse"
+            aria-label="Caută în site">
+                <i class="bi bi-search"></i>
+            </button>
         </div>
 
+        </div>
     </div>
 </nav>
 
+
+                <!-- SEARCH COLLAPSE -->
+                <div class="collapse bg-white border-bottom shadow-sm" id="headerSearchCollapse">
+                <div class="container py-3">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-8 col-lg-6">
+                            <?php get_search_form(); ?> <!-- this will call the searchform.php template -->
+                        </div>
+                    </div>
+                </div>
+            </div>

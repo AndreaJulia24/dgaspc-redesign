@@ -24,7 +24,7 @@ get_header(); ?>
                             <p class="card-text text-secondary small mb-4 flex-grow-1">
                                 Informații despre adopție, plasament și servicii de sprijin pentru copii.
                             </p>
-                            <a href="#" class="card-link text-decoration-none fw-semibold small text-primary m-0">
+                            <a href="<?php echo esc_url( home_url( '/protectia-copilului/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
                                 Află mai multe &rarr;
                             </a>
                         </div>
@@ -41,7 +41,7 @@ get_header(); ?>
                             <p class="card-text text-secondary small mb-4 flex-grow-1">
                                 Informații despre servicii de sprijin pentru adulți și persoane cu dizabilități.
                             </p>
-                            <a href="#" class="card-link text-decoration-none fw-semibold small text-primary m-0">
+                            <a href="<?php echo esc_url( home_url( '/adulti-dizabilitati/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
                                 Află mai multe &rarr;
                             </a>
                         </div>
@@ -58,7 +58,7 @@ get_header(); ?>
                             <p class="card-text text-secondary small mb-4 flex-grow-1">
                                 Dacă suspectezi un caz de abuz sau neglijare a unui copil sau adult, raportează-l imediat.
                             </p>
-                            <a href="#" class="card-link text-decoration-none fw-semibold small text-primary m-0">
+                            <a href="<?php echo esc_url( home_url( '/raporteaza-abuz/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
                                 Află mai multe &rarr;
                             </a>
                         </div>
@@ -75,7 +75,7 @@ get_header(); ?>
                             <p class="card-text text-secondary small mb-4 flex-grow-1">
                                 Obține informații despre serviciile de asistență maternă disponibile.
                             </p>
-                            <a href="#" class="card-link text-decoration-none fw-semibold small text-primary m-0">
+                            <a href="<?php echo esc_url( home_url( '/asistenta-materna/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
                                 Află mai multe &rarr;
                             </a>
                         </div>

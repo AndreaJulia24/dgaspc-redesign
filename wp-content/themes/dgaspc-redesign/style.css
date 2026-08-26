@@ -52,3 +52,42 @@ Use it to make something cool, have fun, and share what you've learned with othe
 [id^="pdf-content-"] .text-danger {
     color: #dc3545 !important;
 }
+
+/* floating emergency widget styles */
+
+.floating-emergency-widget {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.floating-emergency-widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom styles for the emergency widget on mobile devices */
+
+@media (max-width: 767.98px) {
+    .floating-emergency-widget {
+        width: 180px !important;
+        margin: 0.75rem !important;
+    }
+
+    .floating-emergency-widget h6{
+        font-size: 0.9rem !important;
+    }
+}
+
+.floating-emergency-widget .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+.emergency-drag-handle {
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+}
+
+.emergency-drag-handle:active{
+    cursor: grabbing;
+}
