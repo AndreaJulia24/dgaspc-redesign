@@ -110,13 +110,13 @@ get_header(); ?>
             <h3 class="fw-bold text-dark mb-1">Anunțuri și Noutăți</h3>
             <p class="text-secondary small mb-0">Ultimele comunicate și informații de interes public.</p>
         </div>
-        <!-- Dinamikusan az összes hír oldalára mutató link -->
+        <!-- DINAMIKUSAN FOR ALL PAGES POSTS -->
         <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="text-decoration-none text-primary fw-semibold small mt-2 mt-md-0">
             Vezi toate anunțurile &rarr;
         </a>
     </div>
 
-    <!-- Dinamikusan legenerált 3 legfrissebb kártya -->
+    <!-- DINAMIKUS GENERALT CARDS -->
     <div class="row g-4">
         <?php
         $anunturi_query = new WP_Query(array(
@@ -163,162 +163,178 @@ get_header(); ?>
 <!-- FORMULARE SI DOCUMENTE SECTION -->
  <!-- DINAMICALLY GENERATED DOCUMENTS AND FORMS SECTION -->
 <section class="my-5">
-    <div class="text-center mb-4">
-        <h3 class="fw-bold text-dark mb-1">Formulare și Documente Utile</h3>
-    </div>
-    
-    <div class="card border rounded-3 bg-white shadow-sm p-4">
-        
-        <?php 
-        $document_terms = get_terms(array(
-            'taxonomy'   => 'document_category',
-            'hide_empty' => false, 
-        ));
-        
-        if (!empty($document_terms) && !is_wp_error($document_terms)) : ?>
-        
-            <!-- CATEGORY TABS -->
-            <div class="card-header bg-white border-bottom pt-3 px-4">
-                <ul class="nav nav-tabs card-header-tabs border-0 gap-3" id="documentsTab" role="tablist">
-                    <?php foreach ($document_terms as $index => $term) : ?>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link custom-tab <?php echo $index === 0 ? 'active' : ''; ?> fw-semibold pb-3 bg-transparent border-0"
-                                id="tab-btn-<?php echo esc_attr($term->term_id); ?>"
-                                data-bs-toggle="tab"
-                                data-bs-target="#<?php echo esc_attr($term->slug); ?>-pane"
-                                type="button"
-                                role="tab"
-                                aria-controls="<?php echo esc_attr($term->slug); ?>-pane"
-                                aria-selected="<?php echo $index === 0 ? 'true' : 'false'; ?>">
-                                <?php echo esc_html($term->name); ?>
-                            </button>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-
-            <!-- CATEGORY CONTENT -->
-            <div class="card-body p-4">
-                <div class="tab-content" id="documentsTabContent">
-                    <?php foreach ($document_terms as $index => $term) : ?>
-                        <div class="tab-pane fade <?php echo $index === 0 ? 'show active' : ''; ?>" 
-                             id="<?php echo esc_attr($term->slug); ?>-pane" 
-                             role="tabpanel" 
-                             aria-labelledby="<?php echo esc_attr($term->slug); ?>-tab">
-                            
-                            <h4 class="fw-bold text-dark mb-1"><?php echo esc_html($term->name); ?></h4>
-                            <p class="text-secondary small mb-4">
-                                <?php echo !empty($term->description) ? esc_html($term->description) : 'Documentele necesare pentru această secțiune.'; ?>
-                            </p>
-
-                            <?php
-                            $docs_query = new WP_Query(array(
-                                'post_type'      => 'document',
-                                'posts_per_page' => -1,
-                                'tax_query'      => array(
-                                    array(
-                                        'taxonomy' => 'document_category',
-                                        'field'    => 'slug',
-                                        'terms'    => $term->slug,
-                                    ),
-                                ),
-                            ));
-
-                            if ($docs_query->have_posts()) :
-                                while ($docs_query->have_posts()) : $docs_query->the_post(); 
-                                    // Get the file URL from the custom field
-                                    $file_url = get_post_meta(get_the_ID(), 'document_file', true);
-                                    if (empty($file_url)) {
-                                        $file_url = '#'; // Fallback if no file is provided
-                                    }
-                                ?>
-                                    
-                                    <!-- DOCUMENT ITEM DOWNLOAD -->
-                                    <div class="d-flex align-items-center justify-content-between py-3 border-bottom border-light">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <div class="text-danger fs-4">
-                                                <i class="bi bi-file-earmark-pdf"></i>
-                                            </div>
-                                            <div>
-                                                <h6 class="fw-bold text-dark mb-0"><?php the_title(); ?></h6>
-                                                <small class="text-secondary">PDF &bull; Actualizat <?php echo get_the_date('Y'); ?></small>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- DOWNLOAD BUTTON -->
-                                        <a href="<?php echo esc_url($file_url); ?>" download class="text-dark fs-5 p-2" title="Descarcă document">
-                                            <i class="bi bi-download"></i>
-                                        </a>
-                                    </div>
-
-                                <?php endwhile;
-                                wp_reset_postdata();
-                            else : ?>
-                                <p class="text-secondary small mb-0">Nu există documente disponibile în această categorie.</p>
-                            <?php endif; ?>
-
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+            <div class="text-center mb-4">
+                <h3 class="fw-bold text-dark mb-1">Formulare și Documente Utile</h3>
             </div>
             
-        <?php endif; ?>
-        
-    </div>
-</section>
+            <div class="card border rounded-3 bg-white shadow-sm p-4">
+                <?php 
+                $document_terms = get_terms(array(
+                    'taxonomy'   => 'document_category',
+                    'hide_empty' => false, 
+                ));
+                
+                if (!empty($document_terms) && !is_wp_error($document_terms)) : ?>
+                
+                    <!-- CATEGORY TABS -->
+                    <div class="card-header bg-white border-bottom pt-3 px-4">
+                        <ul class="nav nav-tabs card-header-tabs border-0 gap-3" id="documentsTab" role="tablist">
+                            <?php foreach ($document_terms as $index => $term) : ?>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link custom-tab <?php echo $index === 0 ? 'active' : ''; ?> fw-semibold pb-3 bg-transparent border-0"
+                                        id="tab-btn-<?php echo esc_attr($term->term_id); ?>"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#tab-pane-<?php echo esc_attr($term->term_id); ?>"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="tab-pane-<?php echo esc_attr($term->term_id); ?>"
+                                        aria-selected="<?php echo $index === 0 ? 'true' : 'false'; ?>">
+                                        <?php echo esc_html($term->name); ?>
+                                    </button>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+
+                    <!-- CATEGORY CONTENT -->
+                    <div class="card-body p-4">
+                        <div class="tab-content" id="documentsTabContent">
+                            <?php foreach ($document_terms as $index => $term) : ?>
+                                <div class="tab-pane fade <?php echo $index === 0 ? 'show active' : ''; ?>" 
+                                     id="tab-pane-<?php echo esc_attr($term->term_id); ?>" 
+                                     role="tabpanel" 
+                                     aria-labelledby="tab-btn-<?php echo esc_attr($term->term_id); ?>">
+                                    
+                                    <h4 class="fw-bold text-dark mb-1"><?php echo esc_html($term->name); ?></h4>
+                                    <p class="text-secondary small mb-4">
+                                        <?php echo !empty($term->description) ? esc_html($term->description) : 'Documentele necesare pentru această secțiune.'; ?>
+                                    </p>
+                                    <?php
+                                    $docs_query = new WP_Query(array(
+                                        'post_type'      => 'document',
+                                        'posts_per_page' => -1,
+                                        'tax_query'      => array(
+                                            array(
+                                                'taxonomy' => 'document_category',
+                                                'field'    => 'term_id',
+                                                'terms'    => $term->term_id,
+                                            ),
+                                        ),
+                                    ));
+
+                                    if ($docs_query->have_posts()) :
+                                        while ($docs_query->have_posts()) : $docs_query->the_post(); 
+                                        ?>
+                                            <!-- One Document Row -->
+                                            <div class="d-flex align-items-center justify-content-between py-3 border-bottom border-light">
+                                                
+                                                <!-- LEFT: TEXT  -->
+                                                <div class="d-flex align-items-start gap-3 flex-grow-1 pe-3">
+                                                    <div class="text-danger fs-4 mt-1 flex-shrink-0">
+                                                        <i class="bi bi-file-earmark-pdf"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="fw-bold text-dark mb-1"><?php the_title(); ?></h6>
+                                                        <p class="text-secondary small mb-1">
+                                                            <?php echo wp_trim_words(get_the_excerpt(), 25, '...'); ?>
+                                                        </p>
+                                                        <small class="text-muted d-block">Actualizat: <?php echo get_the_date('Y'); ?></small>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- HIDDEN BLOCK WITH FULL CONTENT FOR PDF GENERATION -->
+                                                <div id="pdf-content-<?php the_ID(); ?>" class="d-none">
+                                                    <h6 class="pdf-title"><?php the_title(); ?></h6>
+                                                    <div class="pdf-body">
+                                                        <?php the_content(); ?>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- RIGHT: DOWNLOAD BUTTON -->
+                                                <button type="button" class="btn btn-link text-dark fs-5 p-2 flex-shrink-0" title="Descarcă PDF" 
+                                                        onclick="generatePDF('pdf-content-<?php the_ID(); ?>', '<?php echo esc_js(get_the_title()); ?>')">
+                                                    <i class="bi bi-download"></i>
+                                                </button>
+
+                                            </div>
+
+                                        <?php endwhile;
+                                        wp_reset_postdata();
+                                    else : ?>
+                                        <p class="text-secondary small mb-0">Nu există documente disponibile în această categorie.</p>
+                                    <?php endif; ?>
+
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </section>
 <!-- CAMPANII SI PROIECTE SECTION -->
+ <!-- DYNAMICALLY GENERATED CAMPAIGNS AND PROJECTS SECTION -->
 <section class="my-5">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
     <div class="mb-4">
         <h3 class="fw-bold text-dark mb-1">Campanii și Proiecte</h3>
         <p class="text-secondary small mb-0">Inițiativele noastre pentru sprijinirea comunității și promovarea incluziunii sociale.</p>
     </div>
+    <div class="mb-4">
+         <a href="<?php echo esc_url( get_post_type_archive_link('campanie') ); ?>" class="text-decoration-none text-primary fw-semibold small mt-2 mt-md-0">
+            Vezi toate campaniile &rarr;
+        </a>
+    </div>
+    </div>
     <div class="row g-4">
-        <!-- 1 CAMPAIGN CARD -->
-        <div class="col-12 col-md-6 col-lg-6">
-            <div class="card h-100 border rounded-3 bg-white shadow-sm">
-                <div class="row align-items-center">
-                    <div class="col-4 text-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/campanie1.png" alt="Campania 1" class="img-fluid rounded-start-3" style="height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="col-8 text-center">
-                        <div class="card-body d-flex flex-column text-start p-4">
-                            <h5 class="card-title fw-bold text-dark mb-2">Campania "Vocea Copiilor"</h5>
-                            <p class="card-text text-secondary small mb-4 flex-grow-1">
-                                O inițiativă dedicată sprijinirii copiilor aflați în dificultate și promovării drepturilor lor.
-                            </p>
-                            <a href="#" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                                Află detaliile &rarr;
-                            </a>
+        <?php
+        $campanii_query = new WP_Query(array(
+            'post_type'      => 'campanie',
+            'posts_per_page' => 2,
+        ));
+        if ($campanii_query->have_posts()) :
+            while ($campanii_query->have_posts()) : $campanii_query->the_post(); 
+                $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');
+                if (!$thumbnail_url) {
+                    //If no featured image is set, use a default placeholder image
+                    $thumbnail_url = get_template_directory_uri() . '/assets/images/campanie1.png';
+                }
+        ?>
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="card h-100 border rounded-3 bg-white shadow-sm  overflow-hidden">
+                        <div class="row g-0 h-100 align-items-center">
+                            
+                            <!-- LEFT SIDE: IMAGE (col-4) -->
+                            <div class="col-4 text-center">
+                                <img src="<?php echo esc_url($thumbnail_url); ?>" 
+                                     alt="<?php echo esc_attr(get_the_title()); ?>" 
+                                     class="img-fluid rounded-2 shadow-sm" 
+                                     style="max-height: 240px; width: 100%; object-fit: contain;">
+                            </div>
+                            
+                            <!-- RIGHT SIDE: TEXT AND BUTTON (col-8) -->
+                            <div class="col-8">
+                                <div class="card-body d-flex flex-column justify-content-center text-start py-2 px-3">
+                                    <h5 class="card-title fw-bold text-dark mb-2 fs-5"><?php the_title(); ?></h5>
+                                    <p class="card-text text-secondary small mb-4 lh-sm">
+                                        <?php echo wp_trim_words(get_the_excerpt(), 18, '...'); ?>
+                                    </p>
+                                    <a href="<?php the_permalink(); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
+                                        Află detaliile &rarr;
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            <?php endwhile;
+            wp_reset_postdata();
+        else : ?>
+            <div class="col-12">
+                <p class="text-secondary small">Nu există campanii sau proiecte disponibile în acest moment.</p>
             </div>
-        </div>
-
-        <!-- 2 CAMPAIGN CARD -->
-        <div class="col-12 col-md-6 col-lg-6">
-            <div class="card h-100 border rounded-3 bg-white shadow-sm">
-                <div class="row align-items-center">
-                    <div class="col-4 text-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/campanie2.png" alt="Campania 2" class="img-fluid rounded-start-3" style="height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="col-8 text-center">
-                        <div class="card-body d-flex flex-column text-start p-4">
-                            <h5 class="card-title fw-bold text-dark mb-2">Proiectul "VENUS"</h5>
-                            <p class="card-text text-secondary small mb-4 flex-grow-1">
-                                Impreuna pentru o viata in siguranta!Suport si gazduire pentru victimele violenței domestice și a traficului de persoane.
-                            </p>
-                            <a href="#" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                                Află detaliile &rarr;
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php endif; ?>
     </div>
 </section>
+    </div>
 </main>
 <?php get_footer(); ?>
-</body>
-</html>

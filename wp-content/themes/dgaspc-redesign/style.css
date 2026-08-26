@@ -27,3 +27,28 @@ Use it to make something cool, have fun, and share what you've learned with othe
     border: none !important;
     border-bottom: 3px solid #0d6efd !important;
 }
+
+/* PDF CONTENT STYLES */
+
+[id^="pdf-content-"] {
+    background-color: #ffffff !important;
+    color: #212529 !important;
+}
+
+[id^="pdf-content-"] .pdf-title {
+    color: #212529 !important;
+}
+
+[id^="pdf-content-"] .pdf-body {
+    color: #495057 !important;
+}
+
+[id^="pdf-content-"] * {
+    color: inherit;
+    background-color: transparent;
+}
+
+[id^="pdf-content-"] .bi,
+[id^="pdf-content-"] .text-danger {
+    color: #dc3545 !important;
+}

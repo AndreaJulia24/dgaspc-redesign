@@ -49,7 +49,36 @@
 
 <!-- BOOTSTRAP 5 JAVASCRIPT for the category tabs -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- HTML to PDF generator -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+function generatePDF(contentId, title) {
+    window.scrollTo(0, 0); // Scroll to the top of the page before generating the PDF
+    setTimeout(() => {
+        const element = document.getElementById(contentId);
 
+        if (!element) {
+            console.error('Element not found:', contentId);
+            return;
+        }
+        
+        const opt = {
+            margin: 0.5,
+            filename: title + '.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { 
+                scale: 2,
+                scrollY: -window.scrollY,
+                scrollX: 0,
+                windowWidth: document.documentElement.scrollWidth,
+                windowHeight: document.documentElement.scrollHeight
+            },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save();
+    }, 100);
+}
+</script>
 <?php wp_footer(); ?>
 </body>
 </html>

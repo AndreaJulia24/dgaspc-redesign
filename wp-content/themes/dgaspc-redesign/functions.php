@@ -29,3 +29,41 @@ function register_documente_custom_post_type() {
     ));
 }
 add_action('init', 'register_documente_custom_post_type');
+
+
+// 1. image support for the theme
+function dgaspc_theme_setup() {
+    add_theme_support('post-thumbnails'); // "Featured Image" 
+}
+add_action('after_setup_theme', 'dgaspc_theme_setup');
+
+
+// CAMPAIGNS & PROJECTS CPT 
+function register_campanii_custom_post_type() {
+    register_taxonomy('campanie_category', 'campanie', array(
+        'labels' => array(
+            'name'          => 'Campaign and Project',
+            'singular_name' => 'Campaign',
+            'add_new_item'  => 'Add New Campaign or Project',
+        ),
+        'hierarchical'      => true,
+        'show_ui'           => true,
+        'show_in_rest'      => true,
+    ));
+
+    register_post_type('campanie', array(
+        'labels' => array(
+            'name'          => 'Campaigns and Projects',
+            'singular_name' => 'Campaign',
+            'add_new_item'  => 'Add New Campaign',
+        ),
+        'public'        => true,
+        'has_archive'   => true,
+        'menu_icon'     => 'dashicons-megaphone',
+        // 'thumbnail' for the image :
+        'supports'      => array('title', 'editor', 'excerpt', 'thumbnail', 'custom-fields'),
+        'show_in_rest'  => true,
+        'taxonomies'    => array('campanie_category'),
+    ));
+}
+add_action('init', 'register_campanii_custom_post_type');
