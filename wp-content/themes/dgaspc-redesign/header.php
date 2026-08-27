@@ -30,7 +30,7 @@
         <span class="text-secondary">|</span>
 
         <!-- Magas kontraszt mod -->
-        <div class="accessibility-contrast" role="button">
+        <div class="accessibility-contrast"  id="toggleContrast" role="button" style="cursor: pointer;">
             <i class="bi bi-circle-half me-1"></i>
             <span>Contrast Ridicat</span>
         </div>

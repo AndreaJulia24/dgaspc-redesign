@@ -13,8 +13,8 @@
                         
                         <!-- BACK TO THE FRONT PAGE -->
                         <div class="mb-4">
-                           <a href="<?php echo esc_url( get_post_type_archive_link('campanie') ); ?>" class="text-decoration-none text-secondary small fw-semibold d-inline-flex align-items-center gap-1">
-                                &larr; Înapoi la toate campaniile și proiectele
+                           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-decoration-none text-secondary small fw-semibold d-inline-flex align-items-center gap-1">
+                                &larr; Înapoi la pagina principală
                             </a>
                         </div>
 

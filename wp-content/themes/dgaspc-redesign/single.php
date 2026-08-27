@@ -13,8 +13,9 @@
                         
                         <!-- BACK TO THE FRONT PAGE -->
                         <!--IF NEWS GO BACK TO THE NEWS SECTION , ELSE GO TO THE FRONT PAGE -->
-                        <a href="<?php echo is_singular('campanie') ? esc_url(home_url('/')) : esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="text-decoration-none text-secondary small fw-semibold d-inline-flex align-items-center gap-1">
-                            &larr; <?php echo is_singular('campanie') ? 'Înapoi la pagina principală' : 'Înapoi la toate anunțurile'; ?>
+                        <!-- BACK TO THE FRONT PAGE -->
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-decoration-none text-secondary small fw-semibold d-inline-flex align-items-center gap-1 mb-3">
+                            &larr; Înapoi la pagina principală
                         </a>
                         <!-- BADGE AND DATE -->
                        <div class="d-flex align-items-center gap-2 mb-3">

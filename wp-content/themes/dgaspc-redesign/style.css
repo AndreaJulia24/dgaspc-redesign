@@ -53,41 +53,141 @@ Use it to make something cool, have fun, and share what you've learned with othe
     color: #dc3545 !important;
 }
 
-/* floating emergency widget styles */
+
+/* --------------FLOATING EMERGENCY WIDGET ------------------- */
 
 .floating-emergency-widget {
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    height: auto !important;
+    max-height: max-content !important;
+    user-select: none;
 }
 
-.floating-emergency-widget:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* DRAGGABLE CARD  */
+.emergency-drag-handle {
+    cursor: grab;
+    user-select: none;
+    touch-action: none; 
 }
 
-/* Custom styles for the emergency widget on mobile devices */
+.emergency-drag-handle:active {
+    cursor: grabbing;
+}
 
+/* MOBIL VIEW */
 @media (max-width: 767.98px) {
     .floating-emergency-widget {
         width: 180px !important;
         margin: 0.75rem !important;
     }
 
-    .floating-emergency-widget h6{
+    .floating-emergency-widget h6 {
         font-size: 0.9rem !important;
     }
 }
 
-.floating-emergency-widget .btn {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+/* --------------HIGH CONTRAST MODE ------------------- */
+
+/*BASIC BACKGROUND AND TEXT COLORS */
+body.high-contrast {
+    background-color: #0a0e14 !important;
+    color: #0d1117 !important;
 }
 
-.emergency-drag-handle {
-    cursor: grab;
-    user-select: none;
-    touch-action: none;
+/* WHITE AND GREY BACKGROUND ITEMS AND DARKER CARDS */
+
+body.high-contrast .bg-white,
+body.high-contrast .bg-light,
+body.high-contrast .card,
+body.high-contrast .top-bar,
+body.high-contrast nav,
+body.high-contrast footer {
+    background-color:#161b22 !important;
+    border-color:#30363d !important;
+    color: #f0f6fc !important;
+}
+/* Footer and Header Backgrounds */
+body.high-contrast footer{
+    background-color: #1c2128 !important;
+    border-top:1px solid #30363d !important;
+    color: #8b949e !important; 
+
+}
+/* TEXT , TITLES AND SUBTITLES */
+
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast h4,
+body.high-contrast h5,
+body.high-contrast h6,
+body.high-contrast p,
+body.high-contrast span,
+body.high-contrast .text-dark,
+body.high-contrast .text-secondary,
+body.high-contrast .text-muted{
+    color: #9394a0 !important;
 }
 
-.emergency-drag-handle:active{
-    cursor: grabbing;
+/* LINKS */
+body.high-contrast a,
+body.high-contrast .nav-link,
+body.high-contrast .card-link{
+    color: #58a6ff !important;
+    text-decoration: none !important;
+}
+
+body.high-contrast a:hover,
+body.high-contrast .nav-link:hover {
+    color: #79c0ff !important;
+    text-decoration: underline !important;
+}
+
+/*SEARCH PANEL*/
+body.high-contrast .btn-light {
+    background-color: #21262d !important;
+    border-color: #30363d !important;
+    color: #58a6ff !important;
+}
+
+body.high-contrast #headerSearchCollapse {
+    background-color: #161b22 !important;
+    border-color: #30363d !important;
+}
+
+body.high-contrast #headerSearchCollapse input[type="search"],
+body.high-contrast #headerSearchCollapse .form-control {
+    background-color: #0a0e14 !important;
+    border: 1px solid #30363d !important;
+    color: #f0f6fc !important;
+}
+
+body.high-contrast #headerSearchCollapse input[type="search"]::placeholder {
+    color: #8b949e !important;
+}
+
+/* BUTTONS */
+body.high-contrast .btn-primary,
+body.high-contrast .btn-info {
+    background-color: #1f6feb !important;
+    border-color: #1f6feb !important;
+    color: #ffffff !important;
+}
+
+/*for the category cards */
+body.high-contrast .badge,
+body.high-contrast .card-header {
+    background-color: #162a46 !important;
+    color: #93c5fd !important;
+    border: 1px solid #1f6feb !important;
+}
+/* for the emergency widget */
+body.high-contrast #draggableEmergencyWidget .btn-light {
+    background-color: #ffffff !important;
+    color: #dc2626 !important; 
+    border: none !important;
+}
+
+body.high-contrast #draggableEmergencyWidget .btn-light span {
+    color: #dc2626 !important;
+    font-weight: 700;
 }

@@ -67,3 +67,19 @@ function register_campanii_custom_post_type() {
     ));
 }
 add_action('init', 'register_campanii_custom_post_type');
+
+//FOR THE SCRIPTS
+function dgaspc_enqueue_scripts() {
+    //for the stylesheet 
+    wp_enqueue_style( 'dgaspc-style', get_stylesheet_uri() );
+
+    //for the main.js script
+    wp_enqueue_script(
+        'dgaspc-main-script',
+        get_template_directory_uri() . '/main.js',
+        array(),
+        '1.0',
+        true
+    );
+}
+add_action( 'wp_enqueue_scripts', 'dgaspc_enqueue_scripts' );
