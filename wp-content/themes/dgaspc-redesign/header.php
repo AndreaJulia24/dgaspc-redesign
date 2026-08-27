@@ -16,14 +16,25 @@
 </head>
 <body <?php body_class(); ?>>
 
+<!-- FONT SIZE INDICATOR -->
+<div id="fontSizeIndicator" class="font-size-toast d-none" aria-live="polite">
+    <div class="alert alert-primary m-0 p-2 rounded-0 text-center" role="alert">
+        <span id="fontSizeValue">100%</span>
+    </div>
+</div>
+
 <!-- 1.TOP BAR -->
 <div class="top-bar bg-light border-bottom py-1 text-muted small">
     <div class="container d-flex justify-content-end align-items-center gap-3">
         
-        <!-- Betumeret noveles / csokkentes -->
+        <!-- Betumeret noveles / csokkentes /visszaallitas-->
         <div class="accessibility-font">
-            <span role="button" class="me-1 fw-bold">A+</span> / 
-            <span role="button" class="ms-1 fw-bold">A-</span>
+            <span role="button" id="fontIncrease" class="me-1 fw-bold">A+</span> 
+            <span class="text-secondary">|</span>
+            <span role="button" id="fontDecrease" class="ms-1 fw-bold">A-</span>
+            <span role="button" id="fontReset" class="ms-1 text-muted small" style="cursor: pointer;" title="Reset">
+            <i class="bi bi-arrow-counterclockwise"></i>
+            </span>
         </div>
 
         <!-- Elvalaszto vonal -->
@@ -36,19 +47,52 @@
         </div>
 
         <!-- Elvalaszto vonal -->
-        <span class="text-secondary">|</span>
+        <span class="text-secondary"> | </span>
 
-        <!-- Nyelv valaszto -->
-        <div class="language-switcher fw-bold">
-            <a href="#" class="text-decoration-none text-dark active me-1">RO</a>
-            <span class="text-secondary">/</span>
-            <a href="#" class="text-decoration-none text-muted ms-1">HU</a>
+        <!-- Nyelv valaszto dinamikusan Polylangbol -->
+        <div class="language-switcher fw-bold user-select-none">
+            <?php if ( function_exists( 'pll_the_languages' ) ) : ?>
+                <?php 
+                    $languages = pll_the_languages( array(
+                        'raw'          => 1,
+                        'hide_current' => 0,
+                    ) );
+
+                    $output = array();
+                    if ( ! empty( $languages ) ) {
+                        foreach ( $languages as $lang ) {
+                            $is_current      = $lang['current_lang'];
+                            $has_translation = ! $lang['no_translation'];
+
+                            if ( $is_current ) {
+                                $class = 'text-dark fw-bold active-lang';
+                                $url   = esc_url( $lang['url'] );
+                                $title = esc_attr( $lang['name'] );
+                            } elseif ( $has_translation ) {
+                                $class = 'text-muted text-decoration-none';
+                                $url   = esc_url( $lang['url'] );
+                                $title = esc_attr( $lang['name'] );
+                            } else {
+                                $class = 'text-muted opacity-50 pe-none';
+                                $url   = 'javascript:void(0);';
+                                $title = 'Traducerea nu este disponibilă încă (În curând)';
+                            }
+
+                            $output[] = '<a href="' . $url . '" class="' . esc_attr( $class ) . '" title="' . $title . '">' . esc_html( strtoupper( $lang['slug'] ) ) . '</a>';
+                        }
+                        echo implode( ' <span class="text-secondary">/</span> ', $output );
+                    }
+                ?>
+            <?php else : ?>
+                <a href="#" class="text-decoration-none text-dark active me-1">RO</a>
+                <span class="text-secondary">/</span>
+                <a href="#" class="text-decoration-none text-muted ms-1">HU</a>
+            <?php endif; ?>
         </div>
-
     </div>
 </div>
 
-<!-- 2.) NAVIGATION BAR -->
+<!-- 2.  NAVIGATION BAR -->
 
 <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3">
     <div class="container d-flex justify-content-between align-items-center">

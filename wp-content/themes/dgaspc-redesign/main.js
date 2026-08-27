@@ -121,3 +121,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// ------------------FONT SIZE TOGGLE LOGIC-------------------
+
+document.addEventListener('DOMContentLoaded', () => {
+    const fontIncreaseBtn = document.getElementById('fontIncrease');
+    const fontDecreaseBtn = document.getElementById('fontDecrease');
+    const fontResetBtn = document.getElementById('fontReset');
+    const rootElement = document.documentElement;
+
+    const MIN_FONT_SIZE = 25; // Minimum font size in pixels
+    const MAX_FONT_SIZE = 500; // Maximum font size in pixels
+    const step=10;
+
+    // 1. BACK TO THE PREVIOUS STATE
+    let currentFontSize= parseInt(localStorage.getItem('dgaspc_font_size')) || 100;
+    
+    function applyFontSize(size) {
+        rootElement.style.fontSize = size + '%';
+        localStorage.setItem('dgaspc_font_size', size);
+    }
+
+    applyFontSize(currentFontSize);
+
+    // 2. INCREASE FONT SIZE
+    fontIncreaseBtn.addEventListener('click', () => {
+        if (currentFontSize < MAX_FONT_SIZE) {
+            currentFontSize += step;
+            applyFontSize(currentFontSize);
+        }
+    });
+
+    // 3. DECREASE FONT SIZE
+    fontDecreaseBtn.addEventListener('click', () => {
+        if (currentFontSize > MIN_FONT_SIZE) {
+            currentFontSize -= step;
+            applyFontSize(currentFontSize);
+        }
+    });
+
+    // 4. RESET FONT SIZE
+    fontResetBtn.addEventListener('click', () => {
+        currentFontSize = 100;
+        applyFontSize(currentFontSize);
+    });
+}
+);

@@ -125,7 +125,7 @@ body.high-contrast span,
 body.high-contrast .text-dark,
 body.high-contrast .text-secondary,
 body.high-contrast .text-muted{
-    color: #9394a0 !important;
+    color: #dfe0e8 !important;
 }
 
 /* LINKS */
@@ -190,4 +190,100 @@ body.high-contrast #draggableEmergencyWidget .btn-light {
 body.high-contrast #draggableEmergencyWidget .btn-light span {
     color: #dc2626 !important;
     font-weight: 700;
+}
+
+/* delete the border from the card header -card header tabs */
+
+.card-header-tabs,
+.card-header,
+.body.high-contrast .card-header-tabs
+.body.high-contrast .card-header {
+    border: none !important;
+    background-color: transparent !important;
+    border-bottom: 1px solid #30363d !important; 
+}
+
+/*INATIVE TABS */
+
+.card-header-tabs .nav-link.custom-tab,
+body.high-contrast .card-header-tabs .nav-link.custom-tab {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 3px solid transparent !important;
+    color: #8b949e !important;
+    border-radius: 0 !important;
+    padding-bottom: 0.75rem !important;
+}
+
+/*ACTIVE TABS */
+.card-header-tabs .nav-link.custom-tab.active,
+body.high-contrast .card-header-tabs .nav-link.custom-tab.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 3px solid #58a6ff !important; /* Kék alsó vonal */
+    color: #58a6ff !important;
+    font-weight: 600 !important;
+}
+
+body.high-contrast .card-header-tabs .nav-link.custom-tab:hover {
+    color: #f0f6fc !important;
+}
+
+/*FONT SIZE INDICATOR */
+/* ==========================================================================
+   FONT SIZE INDICATOR TOAST
+   ========================================================================== */
+
+.font-size-toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    border: 1px solid #334155;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+}
+
+.font-size-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/*FONT SIZE FOR THE DARK MODE */
+body.high-contrast .font-size-toast {
+    background-color: #161b22;
+    border-color: #58a6ff;
+    color: #58a6ff;
+}
+
+/*LANGUAGE SWITCHER FOR THE DARK MODE AND LIGHT MODE */
+
+.language-switcher a {
+    transition: color 0.2s ease;
+}
+
+.language-switcher a:hover {
+    color: #0d6efd !important;
+}
+
+/* FARK MODE LANGUAGE SWITCHER */
+body.high-contrast .language-switcher a.active-lang { /* Active language link */
+    color: #58a6ff !important; 
+}
+
+body.high-contrast .language-switcher a.text-muted { /* Inactive language link */
+    color: #8b949e !important; 
+}
+
+body.high-contrast .language-switcher a.text-muted:hover { /* Inactive language link on hover */
+    color: #f0f6fc !important;
 }
