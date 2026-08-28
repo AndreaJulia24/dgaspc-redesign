@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+    xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+    <title>DGASPC Mures Redesign</title>
+    <link>http://dgaspcmures-redesign.local</link>
+    <description>DGASPC Homepage Import</description>
+    <pubDate>Fri, 28 Aug 2026 10:00:00 +0000</pubDate>
+    <language>ro-RO</language>
+    <wp:wxr_version>1.2</wp:wxr_version>
+
+    <wp:term>
+        <wp:term_id>301</wp:term_id>
+        <wp:term_taxonomy>document_category</wp:term_taxonomy>
+        <wp:term_slug>acreditari</wp:term_slug>
+        <wp:term_name><![CDATA[Acreditări]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>302</wp:term_id>
+        <wp:term_taxonomy>document_category</wp:term_taxonomy>
+        <wp:term_slug>akkreditaciok</wp:term_slug>
+        <wp:term_name><![CDATA[Akkreditációk]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>303</wp:term_id>
+        <wp:term_taxonomy>document_category</wp:term_taxonomy>
+        <wp:term_slug>incadrare-handicap-copii</wp:term_slug>
+        <wp:term_name><![CDATA[Încadrare Handicap Copii]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>304</wp:term_id>
+        <wp:term_taxonomy>document_category</wp:term_taxonomy>
+        <wp:term_slug>gyermek-fogyatekossagi-besorolas</wp:term_slug>
+        <wp:term_name><![CDATA[Gyermek Fogyatékossági Besorolás]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>305</wp:term_id>
+        <wp:term_taxonomy>document_category</wp:term_taxonomy>
+        <wp:term_slug>tehnologii-asistive</wp:term_slug>
+        <wp:term_name><![CDATA[Tehnologii Asistive]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>306</wp:term_id>
+        <wp:term_taxonomy>document_category</wp:term_taxonomy>
+        <wp:term_slug>segitotechnologiak-voucherek</wp:term_slug>
+        <wp:term_name><![CDATA[Segítő Technológiák és Voucherek]]></wp:term_name>
+    </wp:term>
+
+    <item>
+        <title>Comunicat de presă: Acordarea scutirii de la plata tarifului de rovinietă</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Persoanele cu dizabilități și reprezentanții legali ai acestora pot solicita scutirea de la plata tarifului de utilizare a rețelei de drumuri naționale (rovinietă) prin depunerea documentației la sediul DGASPC Mureș sau electronic.]]></content:encoded>
+        <wp:post_name><![CDATA[scutire-plata-rovinieta]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[post]]></wp:post_type>
+    </item>
+    <item>
+        <title>Sajtóközlemény: Útdíjmentesség (rovinieta) fogyatékkal élő személyek számára</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[A fogyatékkal élő személyek és törvényes képviselőik kérvényezhetik az országos úthálózati díj (rovinieta) alóli mentességet a szükséges igazoló okiratok benyújtásával a DGASPC Maros székhelyén vagy elektronikus úton.]]></content:encoded>
+        <wp:post_name><![CDATA[utdijmentesseg-fogyatekkal-eloknek]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[post]]></wp:post_type>
+    </item>
+
+    <item>
+        <title>Comunicat: Semnarea convenției de finanțare nerambursabilă pentru proiectul „Pași spre viitor”</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[DGASPC Mureș a semnat convenția de finanțare nerambursabilă pentru implementarea proiectului „Pași spre viitor”, dedicat dezvoltării serviciilor comunitare și reintegrării sociale.]]></content:encoded>
+        <wp:post_name><![CDATA[comunicat-proiect-pasi-spre-viitor]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[post]]></wp:post_type>
+    </item>
+    <item>
+        <title>Közlemény: Visszanemfizetendő támogatási szerződés a „Lépések a jövő felé” projekthez</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[A DGASPC Maros aláírta a vissza nem térítendő támogatási szerződést a „Lépések a jövő felé” projekt megvalósítására, amely a közösségi ellátások és a társadalmi integráció bővítését célozza.]]></content:encoded>
+        <wp:post_name><![CDATA[kozlemeny-lepesek-a-jovo-fele-projekt]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[post]]></wp:post_type>
+    </item>
+
+    <item>
+        <title>Comunicat: 3 Decembrie – Ziua Internațională a Persoanelor cu Dizabilități</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Cu prilejul Zilei Internaționale a Persoanelor cu Dizabilități, DGASPC Mureș reafirmă angajamentul pentru promovarea accesibilității, a drepturilor fundamentale și a incluziunii depline în comunitate.]]></content:encoded>
+        <wp:post_name><![CDATA[ziua-internationala-persoane-dizabilitati]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[post]]></wp:post_type>
+    </item>
+    <item>
+        <title>Közlemény: December 3. – A Fogyatékkal Élő Személyek Nemzetközi Napja</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[A Fogyatékkal Élő Személyek Nemzetközi Napja alkalmából a DGASPC Maros megerősíti elkötelezettségét az akadálymentesítés, az alapvető jogok érvényesítése és a közösségi befogadás mellett.]]></content:encoded>
+        <wp:post_name><![CDATA[fogyatekkal-elok-nemzetkozi-napja]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[post]]></wp:post_type>
+    </item>
+
+    <item>
+        <title>Lista cu furnizori acreditați și servicii sociale licențiate</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Evidența oficială actualizată a furnizorilor de servicii sociale acreditați și a centrelor licențiate din județul Mureș.]]></content:encoded>
+        <wp:post_name><![CDATA[lista-furnizori-acreditati-servicii-sociale]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[document]]></wp:post_type>
+        <category domain="document_category" nicename="acreditari"><![CDATA[Acreditări]]></category>
+    </item>
+    <item>
+        <title>Akkreditált szolgáltatók és engedélyezett szociális szolgáltatások jegyzéke</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[A Maros megyében működő akkreditált szociális szolgáltatók és működési engedéllyel rendelkező központok hivatalos nyilvántartása.]]></content:encoded>
+        <wp:post_name><![CDATA[akkreditalt-szolgaltatok-jegyzeke]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[document]]></wp:post_type>
+        <category domain="document_category" nicename="akkreditaciok"><![CDATA[Akkreditációk]]></category>
+    </item>
+
+    <item>
+        <title>Acte necesare pentru încadrarea în grad de handicap a copilului cu dizabilități</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Lista completă a documentelor medicale, psihologice și sociale obligatorii pentru evaluarea complexă a copilului la Serviciul SEC.]]></content:encoded>
+        <wp:post_name><![CDATA[acte-necesare-handicap-copil]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[document]]></wp:post_type>
+        <category domain="document_category" nicename="incadrare-handicap-copii"><![CDATA[Încadrare Handicap Copii]]></category>
+    </item>
+    <item>
+        <title>A gyermek fogyatékossági fokozatba sorolásához szükséges iratok listája</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[A Gyermekek Komplex Felmérő Szolgálatához (SEC) benyújtandó kötelező orvosi, pszichológiai és szociális dokumentáció tételes listája.]]></content:encoded>
+        <wp:post_name><![CDATA[szukseges-iratok-gyermek-fogyatekossagi-besorolashoz]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[document]]></wp:post_type>
+        <category domain="document_category" nicename="gyermek-fogyatekossagi-besorolas"><![CDATA[Gyermek Fogyatékossági Besorolás]]></category>
+    </item>
+
+    <item>
+        <title>Cerere și consimțământ pentru evaluarea complexă a copilului</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Formular tipizat și acordul parental obligatoriu pentru deschiderea dosarului de evaluare și orientare școlară/profesională.]]></content:encoded>
+        <wp:post_name><![CDATA[cerere-si-consimtamant-copil]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[document]]></wp:post_type>
+        <category domain="document_category" nicename="incadrare-handicap-copii"><![CDATA[Încadrare Handicap Copii]]></category>
+    </item>
+    <item>
+        <title>Típuskérelem és beleegyező nyilatkozat a gyermek komplex felméréséhez</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Hivatalos formanyomtatvány és szülői beleegyezés a felmérési és iskolai/szakmai orientációs eljárás megindításához.]]></content:encoded>
+        <wp:post_name><![CDATA[tipuskerelem-beleegyezes-gyermek-felmeresehez]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[document]]></wp:post_type>
+        <category domain="document_category" nicename="gyermek-fogyatekossagi-besorolas"><![CDATA[Gyermek Fogyatékossági Besorolás]]></category>
+    </item>
+
+    <item>
+        <title>Fișă medicală sintetică pentru evaluarea copilului</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Formular medical completat de către medicul de familie și medicii specialiști pentru dosarul de încadrare în grad de handicap.]]></content:encoded>
+        <wp:post_name><![CDATA[fisa-medicala-sintetica-copil]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[document]]></wp:post_type>
+        <category domain="document_category" nicename="incadrare-handicap-copii"><![CDATA[Încadrare Handicap Copii]]></category>
+    </item>
+    <item>
+        <title>Összesítő orvosi adatlap gyermek felméréséhez</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[A háziorvos és a szakorvosok által kitöltendő hivatalos orvosi adatlap a fogyatékossági besorolási dossziéhoz.]]></content:encoded>
+        <wp:post_name><![CDATA[osszesito-orvosi-adatlap-gyermeknek]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[document]]></wp:post_type>
+        <category domain="document_category" nicename="gyermek-fogyatekossagi-besorolas"><![CDATA[Gyermek Fogyatékossági Besorolás]]></category>
+    </item>
+
+    <item>
+        <title>Cerere pentru acordarea voucherului de tehnologii asistive</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Formular tipizat de înscriere în programul național de acordare a voucherelor pentru achiziția de tehnologii și dispozitive asistive.]]></content:encoded>
+        <wp:post_name><![CDATA[cerere-voucher-tehnologii-asistive]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[document]]></wp:post_type>
+        <category domain="document_category" nicename="tehnologii-asistive"><![CDATA[Tehnologii Asistive]]></category>
+    </item>
+    <item>
+        <title>Igénylőlap segítő technológiák vásárlására jogosító voucherhez</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Hivatalos kérvény a felnőtt és gyermek fogyatékkal élőknek járó, segédeszközök és technológiák beszerzését támogató voucher igényléséhez.]]></content:encoded>
+        <wp:post_name><![CDATA[igenylolap-segitotechnologiai-voucherhez]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[document]]></wp:post_type>
+        <category domain="document_category" nicename="segitotechnologiak-voucherek"><![CDATA[Segítő Technológiák és Voucherek]]></category>
+    </item>
+
+    <item>
+        <title>Nu ești singură! – Împreună împotriva violenței domestice</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Ești într-o situație de violență domestică? Nu ești singură! Ai dreptul să primești sprijin, consiliere juridică, asistență psihologică și adăpost în regim de urgență prin serviciile specializate ale DGASPC Mureș.]]></content:encoded>
+        <wp:post_name><![CDATA[campanie-nu-esti-singura]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[campanie]]></wp:post_type>
+    </item>
+    <item>
+        <title>Nem vagy egyedül! – Kampány a családon belüli erőszak ellen</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Családon belüli erőszak áldozata vagy? Nem vagy egyedül! Jogod van a segítséghez, ingyenes jogi tanácsadáshoz, pszichológiai támogatáshoz és védett szálláshoz a DGASPC Maros szakosított központjaiban.]]></content:encoded>
+        <wp:post_name><![CDATA[nem-vagy-egyedul-kampany]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[campanie]]></wp:post_type>
+    </item>
+
+    <item>
+        <title>Plasament familial – Fii asistent maternal profesionist!</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Oferă o șansă la o viață într-un mediu familial securizant unui copil separat temporar sau definitiv de părinți. Informează-te despre pașii de atestare și angajare în rețeaua județeană de asistență maternală.]]></content:encoded>
+        <wp:post_name><![CDATA[campanie-plasament-familial]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[campanie]]></wp:post_type>
+    </item>
+    <item>
+        <title>Családi elhelyezés – Légy hivatásos nevelőszülő!</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Biztosíts biztonságos, meleg családi környezetet egy szüleitől elválasztott gyermek számára. Ismerd meg a nevelőszülői hálózatba való jelentkezés, képesítés és alkalmazás feltételeit.]]></content:encoded>
+        <wp:post_name><![CDATA[csaladi-elhelyezes-neveloszuloi-program]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[campanie]]></wp:post_type>
+    </item>
+
+    <item>
+        <title>Campania Județeană „Vocea Copiilor”</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Inițiativă dedicată conștientizării și respectării drepturilor fundamentale ale copilului, prevenirii abandonului și susținerii participării active a copiilor în deciziile care îi privesc.]]></content:encoded>
+        <wp:post_name><![CDATA[campania-vocea-copiilor]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[campanie]]></wp:post_type>
+    </item>
+    <item>
+        <title>„A Gyermekek Hangja” Megyei Kampány</title>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <content:encoded><![CDATA[Megyei kezdeményezés a gyermekek alapvető jogainak védelméért, a gyermekelhagyás megelőzéséért, valamint a gyermekek véleményének meghallgatásáért és tiszteletben tartásáért.]]></content:encoded>
+        <wp:post_name><![CDATA[a-gyermekek-hangja-kampany]]></wp:post_name>
+        <wp:status><![CDATA[publish]]></wp:status>
+        <wp:post_type><![CDATA[campanie]]></wp:post_type>
+    </item>
+
+</channel>
+</rss>

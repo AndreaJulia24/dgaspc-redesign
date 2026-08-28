@@ -3,12 +3,22 @@
  * Template Name: Homepage Template
  */
 get_header(); ?>
+<?php 
+$current_lang = function_exists('pll_current_language') ? pll_current_language() : 'ro';
+$is_hu = ($current_lang === 'hu');
+?>
 
 <main class="py-5 bg-light">
     <div class="container">
         <section class="text-center mb-5">
-            <h2 class="fw-bold text-dark mb-3">Servicii de Asistență Socială pentru Cetățeni</h2>
-            <p class="text-secondary mx-auto" style="max-width: 700px;">DGASPC Mureș oferă suport, protecție și servicii specializate pentru copii, adulți, familii aflate în dificultate și persoane cu dizabilități.</p>
+            <h2 class="fw-bold text-dark mb-3">
+                <?php echo $is_hu ? 'Szociális Szolgáltatások az Állampolgároknak' : 'Servicii de Asistență Socială pentru Cetățeni'; ?>
+            </h2>
+            <p class="text-secondary mx-auto" style="max-width: 700px;">
+                <?php echo $is_hu 
+                    ? 'A DGASPC Maros támogatást, védelmet és szakszerű szolgáltatásokat nyújt gyermekeknek, felnőtteknek, nehéz helyzetben lévő családoknak és fogyatékkal élőknek.' 
+                    : 'DGASPC Mureș oferă suport, protecție și servicii specializate pentru copii, adulți, familii aflate în dificultate și persoane cu dizabilități.'; ?>
+            </p>
         </section>
         <!-- CARDS GRID FOR THE SERVICES -->
          <!-- COMMON ROW -->
@@ -20,12 +30,14 @@ get_header(); ?>
                             <div class="icon-box d-inline-flex align-items-center justify-content-center rounded-3 mb-3" style="width: 48px; height: 48px; background-color: #a5f3fc; color: #0891b2;">
                                 <i class="bi bi-emoji-smile fs-4"></i>
                             </div>
-                            <h5 class="card-title fw-bold text-dark mb-2">Protecția Copilului</h5>
+                            <h5 class="card-title fw-bold text-dark mb-2">
+                                <?php echo $is_hu ? 'Gyermekvédelem' : 'Protecția Copilului'; ?>
+                            </h5>
                             <p class="card-text text-secondary small mb-4 flex-grow-1">
-                                Informații despre adopție, plasament și servicii de sprijin pentru copii.
+                            <?php echo $is_hu ? 'Információk az örökbefogadásról, a gyermekek elhelyezéséről és a támogató szolgáltatásokról.' : 'Informații despre adopție, plasament și servicii de sprijin pentru copii.'; ?>
                             </p>
                             <a href="<?php echo esc_url( home_url( '/protectia-copilului/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                                Află mai multe &rarr;
+                                <?php echo $is_hu ? 'Tudj meg többet &rarr;' : 'Află mai multe &rarr;'; ?>
                             </a>
                         </div>
                     </div>
@@ -37,12 +49,14 @@ get_header(); ?>
                             <div class="icon-box d-inline-flex align-items-center justify-content-center rounded-3 mb-3" style="width: 48px;  height: 48px; background-color: #a5f3fc; color: #0891b2;">
                                 <i class="bi bi-person-wheelchair fs-4"></i>
                             </div>
-                            <h5 class="card-title fw-bold text-dark mb-2">Adulți & Dizabilități</h5>
+                            <h5 class="card-title fw-bold text-dark mb-2">
+                                <?php echo $is_hu ? 'Felnőtt és Fogyatékosok' : 'Adulți & Dizabilități'; ?>
+                            </h5>
                             <p class="card-text text-secondary small mb-4 flex-grow-1">
-                                Informații despre servicii de sprijin pentru adulți și persoane cu dizabilități.
+                                <?php echo $is_hu ? 'Információk a felnőttek és a fogyatékkal élők támogatásáról.' : 'Informații despre servicii de sprijin pentru adulți și persoane cu dizabilități.'; ?>
                             </p>
                             <a href="<?php echo esc_url( home_url( '/adulti-dizabilitati/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                                Află mai multe &rarr;
+                                <?php echo $is_hu ? 'Tudj meg többet &rarr;' : 'Află mai multe &rarr;'; ?>
                             </a>
                         </div>
                     </div>
@@ -54,12 +68,14 @@ get_header(); ?>
                            <div class="icon-box d-inline-flex align-items-center justify-content-center rounded-3 mb-3 fw-bold" style="width: 48px; height: 48px; background-color: #fee2e2; color: #dc2626;">
                             SOS
                         </div>
-                            <h5 class="card-title fw-bold text-dark mb-2">Raportează un abuz</h5>
+                            <h5 class="card-title fw-bold text-dark mb-2">
+                                <?php echo $is_hu ? 'Jelentés az elkövetett bántalmazásról' : 'Raportează un abuz'; ?>
+                            </h5>
                             <p class="card-text text-secondary small mb-4 flex-grow-1">
-                                Dacă suspectezi un caz de abuz sau neglijare a unui copil sau adult, raportează-l imediat.
+                                <?php echo $is_hu ? 'Ha bármilyen gyanúd van egy gyermek vagy felnőtt bántalmazásáról, jelentsd azonnal.' : 'Dacă suspectezi un caz de abuz sau neglijare a unui copil sau adult, raportează-l imediat.'; ?>
                             </p>
                             <a href="<?php echo esc_url( home_url( '/raporteaza-abuz/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                                Află mai multe &rarr;
+                                <?php echo $is_hu ? 'Tudj meg többet &rarr;' : 'Află mai multe &rarr;'; ?>
                             </a>
                         </div>
                     </div>
@@ -71,12 +87,14 @@ get_header(); ?>
                             <div class="icon-box d-inline-flex align-items-center justify-content-center rounded-3 mb-3" style="width: 48px; height: 48px; background-color: #a5f3fc; color: #0891b2;">
                                 <i class="bi bi-heart-pulse fs-4"></i>
                             </div>
-                            <h5 class="card-title fw-bold text-dark mb-2">Asistență Maternală</h5>
+                            <h5 class="card-title fw-bold text-dark mb-2">
+                                <?php echo $is_hu ? 'Hivatásos Nevelőszülői Hálózat' : 'Asistență Maternală'; ?>
+                            </h5>
                             <p class="card-text text-secondary small mb-4 flex-grow-1">
-                                Obține informații despre serviciile de asistență maternă disponibile.
+                                <?php echo $is_hu ? 'Szerezd be a születési támogatásokkal kapcsolatos információkat.' : 'Obține informații despre serviciile de asistență maternă disponibile.'; ?>
                             </p>
                             <a href="<?php echo esc_url( home_url( '/asistenta-materna/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                                Află mai multe &rarr;
+                                <?php echo $is_hu ? 'Tudj meg többet &rarr;' : 'Află mai multe &rarr;'; ?>
                             </a>
                         </div>
                     </div>
@@ -89,10 +107,16 @@ get_header(); ?>
               <div class="row align-items-center">
                 <!-- LEFT COLUMN: MAP -->
                 <div class="col-12 col-lg-6 text-start">
-                    <h3 class="fw-bold text-dark mb-3">Harta Serviciilor Sociale din Județul Mureș</h3>
-                    <p class="text-secondary mb-4 lh-base">Descoperiți rețeaua noastră de centre rezidențiale, centre de zi și servicii de sprijin distribuite la nivelul județului pentru a asigura proximitatea față de beneficiari.</p>
+                    <h3 class="fw-bold text-dark mb-3">
+                        <?php echo $is_hu ? 'A Szociális Szolgáltatások Térképe a Mureș Megyében' : 'Harta Serviciilor Sociale din Județul Mureș'; ?>
+                    </h3>
+                    <p class="text-secondary mb-4 lh-base">
+                        <?php echo $is_hu 
+                            ? 'Fedezze fel a mi csapatunkat, ahol az otthonos szolgáltatások, a napi közösségi szolgáltatások és az ellátási szolgáltatások elérhetők a megye egészén keresztül, hogy biztosítsuk a közeliséget a kedvezményezettek számára.' 
+                            : 'Descoperiți rețeaua noastră de centre rezidențiale, centre de zi și servicii de sprijin distribuite la nivelul județului pentru a asigura proximitatea față de beneficiari.'; ?>
+                    </p>
                     <a href="#" class="btn text-white fw-medium px-4 py-2 rounded-pill shadow-sm" style="background-color: #0b2545;">
-                    Explorează Harta Interactivă
+                    <?php echo $is_hu ? 'Fedezd fel az interaktív térképet' : 'Explorează harta interactivă'; ?>
                 </a>
                 </div>
                 <!-- RIGHT COLUMN: MAP IMAGE -->
@@ -107,12 +131,14 @@ get_header(); ?>
 <section class="my-5">
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
         <div>
-            <h3 class="fw-bold text-dark mb-1">Anunțuri și Noutăți</h3>
+            <h3 class="fw-bold text-dark mb-1">
+                <?php echo $is_hu ? 'Hírek és Frissítések' : 'Anunțuri și Noutăți'; ?>
+            </h3>
             <p class="text-secondary small mb-0">Ultimele comunicate și informații de interes public.</p>
         </div>
         <!-- DINAMIKUSAN FOR ALL PAGES POSTS -->
         <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="text-decoration-none text-primary fw-semibold small mt-2 mt-md-0">
-            Vezi toate anunțurile &rarr;
+            <?php echo $is_hu ? 'Nézd meg az összes hírt &rarr;' : 'Vezi toate anunțurile &rarr;'; ?>
         </a>
     </div>
 
@@ -146,7 +172,7 @@ get_header(); ?>
                                 <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
                             </p>
                             <a href="<?php the_permalink(); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                                Află mai multe &rarr;
+                                <?php echo $is_hu ? 'Tudj meg többet &rarr;' : 'Află mai multe &rarr;'; ?>
                             </a>
                         </div>
                     </div>
@@ -155,7 +181,7 @@ get_header(); ?>
             wp_reset_postdata();
         else : ?>
             <div class="col-12">
-                <p class="text-secondary small">Nu există anunțuri disponibile în acest moment.</p>
+                <?php echo $is_hu ? 'Jelenleg nincs elérhető hír.' : 'Nu există anunțuri disponibile în acest moment.'; ?>
             </div>
         <?php endif; ?>
     </div>
@@ -164,7 +190,9 @@ get_header(); ?>
  <!-- DINAMICALLY GENERATED DOCUMENTS AND FORMS SECTION -->
 <section class="my-5">
             <div class="text-center mb-4">
-                <h3 class="fw-bold text-dark mb-1">Formulare și Documente Utile</h3>
+                <h3 class="fw-bold text-dark mb-1">
+                    <?php echo $is_hu ? 'Hasznos űrlapok és dokumentumok' : 'Formulare și Documente Utile'; ?>
+                </h3>
             </div>
             
             <div class="card border rounded-3 bg-white shadow-sm p-4">
@@ -172,6 +200,7 @@ get_header(); ?>
                 $document_terms = get_terms(array(
                     'taxonomy'   => 'document_category',
                     'hide_empty' => false, 
+                    'lang'       => $current_lang,
                 ));
                 
                 if (!empty($document_terms) && !is_wp_error($document_terms)) : ?>
@@ -261,7 +290,7 @@ get_header(); ?>
                                         <?php endwhile;
                                         wp_reset_postdata();
                                     else : ?>
-                                        <p class="text-secondary small mb-0">Nu există documente disponibile în această categorie.</p>
+                                        <p class="text-secondary small mb-0"> <?php echo $is_hu ? 'Nincs elérhető dokumentum ebben a kategóriában.' : 'Nu există documente disponibile în această categorie.'; ?></p>
                                     <?php endif; ?>
 
                                 </div>
@@ -276,12 +305,16 @@ get_header(); ?>
 <section class="my-5">
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
     <div class="mb-4">
-        <h3 class="fw-bold text-dark mb-1">Campanii și Proiecte</h3>
-        <p class="text-secondary small mb-0">Inițiativele noastre pentru sprijinirea comunității și promovarea incluziunii sociale.</p>
+        <h3 class="fw-bold text-dark mb-1">
+            <?php echo $is_hu ? 'Kampányok és Projektek' : 'Campanii și Proiecte'; ?>
+        </h3>
+        <p class="text-secondary small mb-0">Inițiativele noastre pentru sprijinirea comunității și promovarea incluziunii sociale.
+            <?php echo $is_hu ? 'Közösségünk támogatására és a társadalmi befogadás előmozdítására irányuló kezdeményezéseink.' : ''; ?>
+        </p>
     </div>
     <div class="mb-4">
          <a href="<?php echo esc_url( get_post_type_archive_link('campanie') ); ?>" class="text-decoration-none text-primary fw-semibold small mt-2 mt-md-0">
-            Vezi toate campaniile &rarr;
+            <?php echo $is_hu ? 'Minden kampány megtekintése &rarr;' : 'Vezi toate campaniile &rarr;'; ?>
         </a>
     </div>
     </div>
@@ -319,7 +352,7 @@ get_header(); ?>
                                         <?php echo wp_trim_words(get_the_excerpt(), 18, '...'); ?>
                                     </p>
                                     <a href="<?php the_permalink(); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
-                                        Află detaliile &rarr;
+                                        <?php echo $is_hu ? 'Részletek &rarr;' : 'Află detaliile &rarr;'; ?>
                                     </a>
                                 </div>
                             </div>
@@ -330,7 +363,9 @@ get_header(); ?>
             wp_reset_postdata();
         else : ?>
             <div class="col-12">
-                <p class="text-secondary small">Nu există campanii sau proiecte disponibile în acest moment.</p>
+                <p class="text-secondary small">
+                    <?php echo $is_hu ? 'Nincs elérhető kampány vagy projekt.' : 'Nu există campanii sau proiecte disponibile în acest moment.'; ?>
+                </p>
             </div>
         <?php endif; ?>
     </div>

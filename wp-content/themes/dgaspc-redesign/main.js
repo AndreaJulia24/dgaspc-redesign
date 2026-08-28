@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rootElement = document.documentElement;
 
     const MIN_FONT_SIZE = 25; // Minimum font size in pixels
-    const MAX_FONT_SIZE = 500; // Maximum font size in pixels
+    const MAX_FONT_SIZE = 200; // Maximum font size in pixels
     const step=10;
 
     // 1. BACK TO THE PREVIOUS STATE
