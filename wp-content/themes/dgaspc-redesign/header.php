@@ -23,6 +23,10 @@
     </div>
 </div>
 
+$current_lang = function_exists('pll_current_language') ? pll_current_language() : 'ro';
+$is_hu = ($current_lang === 'hu');
+    
+
 <!-- 1.TOP BAR -->
 <div class="top-bar bg-light border-bottom py-1 text-muted small">
     <div class="container d-flex justify-content-end align-items-center gap-3">
@@ -129,8 +133,9 @@
                 </li>
                 <!-- PROTECȚIA COPILULUI -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(get_permalink(get_page_by_path('protectia-copilului'))); ?>">Protecția Copilului</a>
-                </li>
+                    <a class="nav-link" href="<?php echo esc_url( home_url( $is_hu ? '/gyermekvedelem/' : '/protectia-copilului/' ) ); ?>">
+                        <?php echo $is_hu ? 'Gyermekvédelem' : 'Protecția Copilului'; ?>
+                    </a>
                 <!-- ADULȚI ȘI DIZABILITĂȚI -->
                 <li class="nav-item">
                     <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(get_permalink(get_page_by_path('adulti-dizabilitati'))); ?>">Adulți & Dizabilități</a>
@@ -161,9 +166,7 @@
         </div>
     </div>
 </nav>
-
-
-                <!-- SEARCH COLLAPSE -->
+ <!-- SEARCH COLLAPSE -->
                 <div class="collapse bg-white border-bottom shadow-sm" id="headerSearchCollapse">
                 <div class="container py-3">
                     <div class="row justify-content-center">

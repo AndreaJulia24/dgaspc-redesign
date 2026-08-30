@@ -22,7 +22,7 @@ $is_hu = ($current_lang === 'hu');
         </section>
         <!-- CARDS GRID FOR THE SERVICES -->
          <!-- COMMON ROW -->
-        <div class="row row g-4">
+        <div class="row g-4">
             <!-- 1. CARD COLUMN: Protecția Copilului -->
             <div class="col-12 col-md-6 col-lg-3">
                     <div class="card h-100 border rounded-3 bg-white shadow-sm">
@@ -137,8 +137,8 @@ $is_hu = ($current_lang === 'hu');
             <p class="text-secondary small mb-0">Ultimele comunicate și informații de interes public.</p>
         </div>
         <!-- DINAMIKUSAN FOR ALL PAGES POSTS -->
-        <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="text-decoration-none text-primary fw-semibold small mt-2 mt-md-0">
-            <?php echo $is_hu ? 'Nézd meg az összes hírt &rarr;' : 'Vezi toate anunțurile &rarr;'; ?>
+        <a href="<?php echo esc_url( home_url( $is_hu ? '/hirek/' : '/noutati/' ) ); ?>" class="text-decoration-none text-primary fw-semibold small mt-2 mt-md-0">
+        <?php echo $is_hu ? 'Nézd meg az összes hírt &rarr;' : 'Vezi toate anunțurile &rarr;'; ?>
         </a>
     </div>
 
@@ -148,6 +148,7 @@ $is_hu = ($current_lang === 'hu');
         $anunturi_query = new WP_Query(array(
             'post_type'      => 'post',
             'posts_per_page' => 3,
+            'lang'           => $current_lang,
         ));
 
         if ($anunturi_query->have_posts()) :
@@ -279,12 +280,16 @@ $is_hu = ($current_lang === 'hu');
                                                     </div>
                                                 </div>
                                                 
-                                                <!-- RIGHT: DOWNLOAD BUTTON -->
-                                                <button type="button" class="btn btn-link text-dark fs-5 p-2 flex-shrink-0" title="Descarcă PDF" 
-                                                        onclick="generatePDF('pdf-content-<?php the_ID(); ?>', '<?php echo esc_js(get_the_title()); ?>')">
-                                                    <i class="bi bi-download"></i>
-                                                </button>
+                                                <?php
+                                                $post_content = get_the_content();
+                                                preg_match('/href=["\']([^"\']+)["\']/', $post_content, $matches);
+                                                $direct_download_url = !empty($matches[1]) ? esc_url($matches[1]) : get_permalink();
+                                                ?>
 
+                                                <!-- RIGHT: DOWNLOAD BUTTON  -->
+                                                <a href="<?php echo $direct_download_url; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-link text-primary fs-5 p-2 flex-shrink-0" title="<?php echo $is_hu ? 'Dokumentum letöltése' : 'Descarcă documentul'; ?>">
+                                                    <i class="bi bi-download"></i>
+                                                </a>
                                             </div>
 
                                         <?php endwhile;
@@ -323,6 +328,7 @@ $is_hu = ($current_lang === 'hu');
         $campanii_query = new WP_Query(array(
             'post_type'      => 'campanie',
             'posts_per_page' => 2,
+            'lang'           => $current_lang,
         ));
         if ($campanii_query->have_posts()) :
             while ($campanii_query->have_posts()) : $campanii_query->the_post(); 
@@ -336,12 +342,20 @@ $is_hu = ($current_lang === 'hu');
                     <div class="card h-100 border rounded-3 bg-white shadow-sm  overflow-hidden">
                         <div class="row g-0 h-100 align-items-center">
                             
-                            <!-- LEFT SIDE: IMAGE (col-4) -->
-                            <div class="col-4 text-center">
-                                <img src="<?php echo esc_url($thumbnail_url); ?>" 
-                                     alt="<?php echo esc_attr(get_the_title()); ?>" 
-                                     class="img-fluid rounded-2 shadow-sm" 
-                                     style="max-height: 240px; width: 100%; object-fit: contain;">
+                            <!-- LEFT SIDE: IMAGE / PLACEHOLDER (col-4) -->
+                            <div class="col-4 text-center d-flex align-items-center justify-content-center bg-light rounded-start h-100" style="min-height: 180px;">
+                                <?php if ( has_post_thumbnail() ) : ?>
+                                    <?php the_post_thumbnail('medium', [
+                                        'class' => 'img-fluid rounded-2 shadow-sm',
+                                        'style' => 'max-height: 200px; width: 100%; object-fit: contain;'
+                                    ]); ?>
+                                <?php else : ?>
+                                    <!-- IF THERE IS NO IMAGE -->
+                                    <div class="text-secondary opacity-50 d-flex flex-column align-items-center justify-content-center p-3">
+                                        <i class="bi bi-image fs-1 mb-1"></i>
+                                        <span class="badge bg-secondary-subtle text-secondary small fw-normal"><?php echo $is_hu ? 'Nincs kép' : 'Fără imagine'; ?></span>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                             
                             <!-- RIGHT SIDE: TEXT AND BUTTON (col-8) -->

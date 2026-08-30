@@ -1,5 +1,7 @@
 <?php 
-
+/*
+ * Template Name: Anunturi Template
+ */
 get_header(); 
 
 $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'ro';

@@ -76,8 +76,8 @@
 
     <!-- BUTTON EMERGENCY NUMBER 119 -->
     <div class="p-2 text-center bg-black bg-opacity-20">
-        <a href="tel:119" class="btn btn-light w-100 fw-bold py-2 rounded-3 text-danger shadow-sm d-flex align-items-center justify-content-center gap-1">
-            <span>Sună Acum (119)</span>
+        <a href="https://dgaspcmures.ro/corai/en" target="_blank" rel="noopener noreferrer" class="btn btn-light text-danger fw-bold w-100 py-2 rounded-pill shadow-sm">
+            Sună Acum (119)
         </a>
     </div>
 </aside>
