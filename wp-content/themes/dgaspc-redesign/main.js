@@ -184,3 +184,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ------------------DECLARATII DE AVERE FILTER & SEARCH-------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('searchDeclaratii');
+    const filterBtns = document.querySelectorAll('.filter-year');
+    const items = document.querySelectorAll('.dec-item');
+    const noResults = document.getElementById('noResults');
+
+    if (!items.length) return;
+
+    let currentYear = 'all';
+    let currentSearch = '';
+
+    function applyFilters() {
+        let visibleCount = 0;
+
+        items.forEach(item => {
+            const name = item.getAttribute('data-name') || '';
+            const year = item.getAttribute('data-year') || '';
+
+            const matchesSearch = name.includes(currentSearch);
+            const matchesYear = (currentYear === 'all' || year === currentYear);
+
+            if (matchesSearch && matchesYear) {
+                item.classList.remove('d-none');
+                visibleCount++;
+            } else {
+                item.classList.add('d-none');
+            }
+        });
+
+        if (noResults) {
+            noResults.classList.toggle('d-none', visibleCount > 0);
+        }
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            currentSearch = e.target.value.toLowerCase().trim();
+            applyFilters();
+        });
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentYear = btn.getAttribute('data-year');
+            applyFilters();
+        });
+    });
+});

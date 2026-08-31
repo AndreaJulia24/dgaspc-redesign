@@ -136,7 +136,6 @@ $is_hu = ($current_lang === 'hu');
         <div class="collapse navbar-collapse" id="mainNavbar">
             <div class="d-flex align-items-center gap-4">
             <!-- MENUPOINTS -->
-            <ul class="navbar-nav mb-0 gap-4 align-items-center">
                <!-- DINAMICALLY NAVBAR -->
                <ul class="navbar-nav mb-0 gap-4 align-items-center">
                     <!-- HOME -->
@@ -176,7 +175,7 @@ $is_hu = ($current_lang === 'hu');
 
                     <!-- PROIECTE -->
                     <li class="nav-item">
-                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( get_post_type_archive_link('campanie') ); ?>">
+                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( home_url( $is_hu ? '/hu/projektek/' : '/proiecte/' ) ); ?>">
                             <?php echo $is_hu ? 'Projektek' : 'Proiecte'; ?>
                         </a>
                     </li>

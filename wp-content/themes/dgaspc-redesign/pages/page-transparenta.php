@@ -125,50 +125,74 @@ $is_hu = ($current_lang === 'hu');
                 </div>
             </div>
         </div>
-        <!-- 3. SECTION: TRANSPARENȚĂ DECIZIONALĂ & LEGEA 544/2001 -->
+        <!-- 3. SECTION: DECLARAȚII DE AVERE ȘI INTERESE -->
         <div class="card border rounded-4 bg-white shadow-sm overflow-hidden mb-5">
             <div class="card-header bg-dark-blue p-4" style="background-color: #0b2545;">
                 <div class="d-flex align-items-center gap-2 text-white">
-                    <i class="bi bi-file-earmark-ruled fs-4 text-success"></i>
+                    <i class="bi bi-file-earmark-person-fill fs-4 text-info"></i>
                     <div>
                         <h4 class="fw-bold text-white mb-0">
-                            <?php echo $is_hu ? 'Döntéshozatali Átláthatóság és Közérdekű Adatok' : 'Transparență Decizională (Legea 52/2003) & Legea 544/2001'; ?>
+                            <?php echo $is_hu ? 'Vagyonnyilatkozatok' : 'Declarații de Avere și Interese'; ?>
                         </h4>
                         <p class="small mb-0 text-white-50">
-                            <?php echo $is_hu ? 'Éves átláthatósági jelentések, jogszabályi kötelezettségek és igénylőlapok.' : 'Rapoarte anuale de aplicare a legilor transparenței și formulare pentru solicitarea informațiilor.'; ?>
+                            <?php echo $is_hu ? 'A DGASPC Maros alkalmazottainak hivatalos vagyon- és érdeknyilatkozatai.' : 'Evidența declarațiilor de avere ale personalului DGASPC Mureș.'; ?>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="card-body p-4">
-                <div class="row g-3">
-                    <?php
-                    $transp_docs = array(
-                        array('Raport de aplicare a Legii nr. 52/2003 privind transparența decizională – 2025', 'https://www.dgaspcmures.ro/docs/2026/Raport_L52_2025.pdf', 'Legea 52/2003'),
-                        array('Raport de aplicare a Legii nr. 544/2001 privind liberul acces la informații – 2025', 'https://www.dgaspcmures.ro/docs/2026/Raport_L544_2025.pdf', 'Legea 544/2001'),
-                        array('Model Cerere Solicitare Informații de Interes Public (Legea 544/2001)', 'https://www.dgaspcmures.ro/docs/Formular_Cerere_L544.pdf', 'Formular Cerere'),
-                        array('Model Reclamație Administrativă (Refuz / Lipsă răspuns Legea 544/2001)', 'https://www.dgaspcmures.ro/docs/Formular_Reclamatie_L544.pdf', 'Formular Reclamație'),
-                    );
 
-                    foreach ($transp_docs as $tdoc) :
-                        list($title, $url, $badge) = $tdoc;
-                    ?>
-                    <div class="col-12 col-md-6">
-                        <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 border h-100 d-flex align-items-center justify-content-between hover-card">
-                                <div class="d-flex align-items-center gap-3">
-                                    <i class="bi bi-file-earmark-check-fill text-success fs-3 flex-shrink-0"></i>
-                                    <div>
-                                        <h6 class="fw-bold text-dark mb-1 small"><?php echo esc_html($title); ?></h6>
-                                        <span class="badge bg-success-subtle text-success fw-normal"><?php echo esc_html($badge); ?></span>
-                                    </div>
-                                </div>
-                                <i class="bi bi-download text-success fs-5 ms-2"></i>
-                            </div>
-                        </a>
+            <div class="card-body p-4">
+                
+                <!-- SEARCH AND FILTER BAR -->
+                <div class="row g-2 mb-4 align-items-center">
+                    <div class="col-12 col-md-8">
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark border-end-0"><i class="bi bi-search text-muted"></i></span>
+                            <input type="text" id="searchDeclaratii" class="form-control border-start-0" placeholder="<?php echo $is_hu ? 'Keresés név szerint...' : 'Caută după nume...'; ?>">
+                        </div>
                     </div>
-                    <?php endforeach; ?>
+                    <div class="col-12 col-md-4 d-flex justify-content-md-end gap-1">
+                        <button type="button" class="btn btn-outline-primary btn-sm filter-year active" data-year="all"><?php echo $is_hu ? 'Mind' : 'Toate'; ?></button>
+                        <button type="button" class="btn btn-outline-primary btn-sm filter-year" data-year="2025">2025</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm filter-year" data-year="2024">2024</button>
+                    </div>
                 </div>
+ 
+                <div class="card-body p-4 overflow-auto" style="max-height: 480px;" id="declaratiiContainer">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3" id="declaratiiList">
+                        <?php
+                        $dec_path = get_template_directory() . '/assets/data/declaratii_avere.json';
+                        
+                        if (file_exists($dec_path)) {
+                            $dec_data = json_decode(file_get_contents($dec_path), true);
+                            $declarations = $dec_data['documents'] ?? array();
+
+                            foreach ($declarations as $item) :
+                                $name = $item['name'];
+                                $year = $item['year'];
+                                $url  = $item['url'];
+                        ?>
+                        <div class="col dec-item" data-name="<?php echo esc_attr(strtolower($name)); ?>" data-year="<?php echo esc_attr($year); ?>">
+                            <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                                <div class="p-2 px-3 bg-light rounded-2 border h-100 d-flex justify-content-between align-items-center hover-card">
+                                    <div class="d-flex align-items-center gap-2 text-truncate me-2">
+                                        <i class="bi bi-file-earmark-pdf text-danger fs-5 flex-shrink-0"></i>
+                                        <span class="text-dark small fw-semibold text-truncate"><?php echo esc_html($name); ?></span>
+                                    </div>
+                                    <span class="badge bg-secondary-subtle text-secondary small fw-normal flex-shrink-0"><?php echo esc_html($year); ?></span>
+                                </div>
+                            </a>
+                        </div>
+                        <?php 
+                            endforeach;
+                        } 
+                        ?>
+                    </div>
+                    <div id="noResults" class="text-center py-4 text-muted d-none small">
+                        <?php echo $is_hu ? 'Nem található ilyen nevű személy a listában.' : 'Nu a fost găsit niciun rezultat conform căutării.'; ?>
+                    </div>
+                </div>
+
             </div>
         </div>
 

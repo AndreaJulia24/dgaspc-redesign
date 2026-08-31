@@ -411,3 +411,64 @@ html.high-contrast .card-header:has(h4) {
     background-color: #21262d !important;
     border-bottom: 1px solid #30363d !important;
 }
+
+/*
+   DECLARATII DE AVERE SEARCH  LIGHT AND DARK MODE*/
+
+/* 1. LIGHT MODE - BASE  */
+.input-group-text {
+    background-color: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-right: none !important;
+}
+
+.input-group-text i {
+    color: #0d6efd !important; /* Bootstrap blue icon */
+}
+
+#searchDeclaratii {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-left: none !important;
+    color: #0f172a !important;
+}
+
+#searchDeclaratii:focus {
+    background-color: #ffffff !important;
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15) !important;
+    color: #0f172a !important;
+}
+
+#searchDeclaratii::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* 2. SÖTÉT MÓD (High Contrast) */
+html.high-contrast .input-group-text {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    border-right: none !important;
+}
+
+html.high-contrast .input-group-text i {
+    color: #58a6ff !important;  /* dark mode */
+}
+
+html.high-contrast #searchDeclaratii {
+    background-color: #0a0e14 !important;
+    border: 1px solid #30363d !important;
+    border-left: none !important;
+    color: #f0f6fc !important;
+}
+
+html.high-contrast #searchDeclaratii:focus {
+    background-color: #161b22 !important;
+    border-color: #58a6ff !important;
+    box-shadow: 0 0 0 0.2rem rgba(88, 166, 255, 0.25) !important;
+    color: #ffffff !important;
+}
+
+html.high-contrast #searchDeclaratii::placeholder {
+    color: #8b949e !important;
+}
