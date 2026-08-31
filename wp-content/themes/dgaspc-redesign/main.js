@@ -35,9 +35,10 @@ function generatePDF(contentId, title) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const widget = document.getElementById('draggableEmergencyWidget');
+    if (!widget) return;
+    
     const handle = widget.querySelector('.emergency-drag-handle');
-
-    if (!widget || !handle) return;
+    if (!handle) return;
 
     let isDragging = false;
     let startX = 0, startY = 0;
@@ -73,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let newX = initialLeft + dx;
         let newY = initialTop + dy;
 
-        // Képernyőn belül tartás (Boundaries)
+        // On the screen boundaries 
         const maxX = window.innerWidth - widget.offsetWidth - 10;
         const maxY = window.innerHeight - widget.offsetHeight - 10;
 
@@ -97,28 +98,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ------------------CONTRAST TOGGLE LOGIC-------------------
-
 document.addEventListener('DOMContentLoaded', () => {
     const contrastBtn = document.getElementById('toggleContrast');
-    const body = document.body;
-
-    // 1. BACK TO THE PREVIOUS STATE
-    if (localStorage.getItem('dgaspc_contrast') === 'enabled') {
-        body.classList.add('high-contrast');
-    }
-
     if (!contrastBtn) return;
 
-    // 2. TOGGLE CONTRAST MODE
-    contrastBtn.addEventListener('click', () => {
-        body.classList.toggle('high-contrast');
+    contrastBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Egyszerre váltjuk a html-en és a body-n
+        const isDark = document.documentElement.classList.toggle('high-contrast');
+        document.body.classList.toggle('high-contrast', isDark);
 
-        // 3. STORE THE CURRENT STATE IN LOCAL STORAGE
-        if (body.classList.contains('high-contrast')) {
-            localStorage.setItem('dgaspc_contrast', 'enabled');
-        } else {
-            localStorage.setItem('dgaspc_contrast', 'disabled');
-        }
+        // Mentés LocalStorage-ba
+        localStorage.setItem('dgaspc_contrast', isDark ? 'enabled' : 'disabled');
     });
 });
 
@@ -128,42 +120,67 @@ document.addEventListener('DOMContentLoaded', () => {
     const fontIncreaseBtn = document.getElementById('fontIncrease');
     const fontDecreaseBtn = document.getElementById('fontDecrease');
     const fontResetBtn = document.getElementById('fontReset');
+    const fontIndicator = document.getElementById('fontSizeIndicator');
+    const fontValueSpan = document.getElementById('fontSizeValue');
     const rootElement = document.documentElement;
 
-    const MIN_FONT_SIZE = 25; // Minimum font size in pixels
-    const MAX_FONT_SIZE = 200; // Maximum font size in pixels
-    const step=10;
+    const MIN_FONT_SIZE = 70; // Minimum betűméret %
+    const MAX_FONT_SIZE = 150; // Maximum betűméret %
+    const step = 10;
+    let toastTimeout;
 
     // 1. BACK TO THE PREVIOUS STATE
-    let currentFontSize= parseInt(localStorage.getItem('dgaspc_font_size')) || 100;
+    let currentFontSize = parseInt(localStorage.getItem('dgaspc_font_size')) || 100;
     
-    function applyFontSize(size) {
-        rootElement.style.fontSize = size + '%';
-        localStorage.setItem('dgaspc_font_size', size);
+    function showToast(size) {
+        if (fontIndicator && fontValueSpan) {
+            fontValueSpan.textContent = size + '%';
+            fontIndicator.classList.remove('d-none');
+            fontIndicator.classList.add('show');
+
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                fontIndicator.classList.remove('show');
+                setTimeout(() => fontIndicator.classList.add('d-none'), 300);
+            }, 1200);
+        }
     }
 
-    applyFontSize(currentFontSize);
+    function applyFontSize(size, showFeedback = false) {
+        rootElement.style.fontSize = size + '%';
+        localStorage.setItem('dgaspc_font_size', size);
+        if (showFeedback) {
+            showToast(size);
+        }
+    }
+
+    applyFontSize(currentFontSize, false);
 
     // 2. INCREASE FONT SIZE
-    fontIncreaseBtn.addEventListener('click', () => {
-        if (currentFontSize < MAX_FONT_SIZE) {
-            currentFontSize += step;
-            applyFontSize(currentFontSize);
-        }
-    });
+    if (fontIncreaseBtn) {
+        fontIncreaseBtn.addEventListener('click', () => {
+            if (currentFontSize < MAX_FONT_SIZE) {
+                currentFontSize += step;
+                applyFontSize(currentFontSize, true);
+            }
+        });
+    }
 
     // 3. DECREASE FONT SIZE
-    fontDecreaseBtn.addEventListener('click', () => {
-        if (currentFontSize > MIN_FONT_SIZE) {
-            currentFontSize -= step;
-            applyFontSize(currentFontSize);
-        }
-    });
+    if (fontDecreaseBtn) {
+        fontDecreaseBtn.addEventListener('click', () => {
+            if (currentFontSize > MIN_FONT_SIZE) {
+                currentFontSize -= step;
+                applyFontSize(currentFontSize, true);
+            }
+        });
+    }
 
     // 4. RESET FONT SIZE
-    fontResetBtn.addEventListener('click', () => {
-        currentFontSize = 100;
-        applyFontSize(currentFontSize);
-    });
-}
-);
+    if (fontResetBtn) {
+        fontResetBtn.addEventListener('click', () => {
+            currentFontSize = 100;
+            applyFontSize(currentFontSize, true);
+        });
+    }
+});

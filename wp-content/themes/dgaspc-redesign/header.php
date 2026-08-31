@@ -4,7 +4,20 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php bloginfo('name'); ?></title>
-    
+
+    <!-- JavaScript for saving and restoring user preferences -->
+    <script>
+        (function() {
+            if (localStorage.getItem('dgaspc_contrast') === 'enabled') {
+                document.documentElement.classList.add('high-contrast');
+            }
+            var savedFontSize = localStorage.getItem('dgaspc_font_size');
+            if (savedFontSize) {
+                document.documentElement.style.fontSize = savedFontSize + '%';
+            }
+        })();
+    </script>
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons (az ikonokhoz: kontraszt, betumeret) -->
@@ -23,9 +36,11 @@
     </div>
 </div>
 
+<?php 
 $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'ro';
 $is_hu = ($current_lang === 'hu');
-    
+
+?>
 
 <!-- 1.TOP BAR -->
 <div class="top-bar bg-light border-bottom py-1 text-muted small">
@@ -44,10 +59,10 @@ $is_hu = ($current_lang === 'hu');
         <!-- Elvalaszto vonal -->
         <span class="text-secondary">|</span>
 
-        <!-- Magas kontraszt mod -->
+        <!-- DARK mod -->
         <div class="accessibility-contrast"  id="toggleContrast" role="button" style="cursor: pointer;">
             <i class="bi bi-circle-half me-1"></i>
-            <span>Contrast Ridicat</span>
+            <span><?php echo $is_hu ? 'Sötét Mód' : 'Mod Întunecat'; ?></span>
         </div>
 
         <!-- Elvalaszto vonal -->
@@ -79,7 +94,7 @@ $is_hu = ($current_lang === 'hu');
                             } else {
                                 $class = 'text-muted opacity-50 pe-none';
                                 $url   = 'javascript:void(0);';
-                                $title = 'Traducerea nu este disponibilă încă (În curând)';
+                                $title = esc_attr( $lang['name'] );
                             }
 
                             $output[] = '<a href="' . $url . '" class="' . esc_attr( $class ) . '" title="' . $title . '">' . esc_html( strtoupper( $lang['slug'] ) ) . '</a>';
@@ -123,32 +138,49 @@ $is_hu = ($current_lang === 'hu');
             <!-- MENUPOINTS -->
             <ul class="navbar-nav mb-0 gap-4 align-items-center">
                <!-- DINAMICALLY NAVBAR -->
-                <!-- HOME -->
-                <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(home_url('/')); ?>">Acasă</a>
-                </li>
-                <!-- ORGANIGRAMA -->
-                <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(get_permalink(get_page_by_path('organigrama'))); ?>">Organigramă</a>
-                </li>
-                <!-- PROTECȚIA COPILULUI -->
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo esc_url( home_url( $is_hu ? '/gyermekvedelem/' : '/protectia-copilului/' ) ); ?>">
-                        <?php echo $is_hu ? 'Gyermekvédelem' : 'Protecția Copilului'; ?>
-                    </a>
-                <!-- ADULȚI ȘI DIZABILITĂȚI -->
-                <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(get_permalink(get_page_by_path('adulti-dizabilitati'))); ?>">Adulți & Dizabilități</a>
-                </li>
-                <!-- TRANSPARENȚĂ -->
-                <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(get_permalink(get_page_by_path('transparenta'))); ?>">Transparență</a>
-                </li>
-                <!-- PROIECTE -->
-                <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url(get_permalink(get_page_by_path('proiecte'))); ?>">Proiecte</a>
-                </li>
-            </ul>
+               <ul class="navbar-nav mb-0 gap-4 align-items-center">
+                    <!-- HOME -->
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( home_url( $is_hu ? '/hu/' : '/' ) ); ?>">
+                            <?php echo $is_hu ? 'Kezdőlap' : 'Acasă'; ?>
+                        </a>
+                    </li>
+
+                    <!-- ORGANIGRAMA -->
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( home_url( $is_hu ? '/hu/szervezeti-felepites/' : '/organigrama/' ) ); ?>">
+                            <?php echo $is_hu ? 'Szervezeti Felépítés' : 'Organigramă'; ?>
+                        </a>
+                    </li>
+
+                    <!-- PROTECȚIA COPILULUI -->
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( home_url( $is_hu ? '/hu/gyermekvedelem/' : '/protectia-copilului/' ) ); ?>">
+                            <?php echo $is_hu ? 'Gyermekvédelem' : 'Protecția Copilului'; ?>
+                        </a>
+                    </li>
+
+                    <!-- ADULȚI ȘI DIZABILITĂȚI -->
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( home_url( $is_hu ? '/hu/felnottek-es-fogyatekkal-elok/' : '/adulti-dizabilitati/' ) ); ?>">
+                            <?php echo $is_hu ? 'Felnőttek & Fogyatékkal Élők' : 'Adulți & Dizabilități'; ?>
+                        </a>
+                    </li>
+
+                    <!-- TRANSPARENȚĂ -->
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( home_url( $is_hu ? '/hu/atlathatosag/' : '/transparenta/' ) ); ?>">
+                            <?php echo $is_hu ? 'Átláthatóság' : 'Transparență'; ?>
+                        </a>
+                    </li>
+
+                    <!-- PROIECTE -->
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( get_post_type_archive_link('campanie') ); ?>">
+                            <?php echo $is_hu ? 'Projektek' : 'Proiecte'; ?>
+                        </a>
+                    </li>
+                </ul>
 
         <!-- SEARCH TRIGGER BUTTON --> 
          <div class="d-flex align-items-center">

@@ -36,7 +36,7 @@ $is_hu = ($current_lang === 'hu');
                             <p class="card-text text-secondary small mb-4 flex-grow-1">
                             <?php echo $is_hu ? 'Információk az örökbefogadásról, a gyermekek elhelyezéséről és a támogató szolgáltatásokról.' : 'Informații despre adopție, plasament și servicii de sprijin pentru copii.'; ?>
                             </p>
-                            <a href="<?php echo esc_url( home_url( '/protectia-copilului/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
+                            <a href="<?php echo esc_url( home_url( $is_hu ? '/hu/gyermekvedelem/' : '/protectia-copilului/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
                                 <?php echo $is_hu ? 'Tudj meg többet &rarr;' : 'Află mai multe &rarr;'; ?>
                             </a>
                         </div>

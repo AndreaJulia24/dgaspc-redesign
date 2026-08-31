@@ -14,7 +14,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         
         <!-- BACK BUTTON -->
         <div class="mb-4">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-outline-primary">
+            <a href="<?php echo esc_url( function_exists('pll_home_url') ? pll_home_url() : home_url('/') ); ?>" class="btn btn-outline-primary">
                 <i class="bi bi-arrow-left"></i> 
                 <?php echo $is_hu ? 'Vissza a kezdőlapra' : 'Înapoi la pagina principală'; ?>
             </a>

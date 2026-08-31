@@ -3,18 +3,15 @@ Theme Name: DGASPC MURES
 Theme URI: 
 Author: the WordPress team
 Author URI: https://wordpress.org/
-Description: Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors.
-Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Description: Theme for DGASPC Mures Redesign.
 Version: 1.3
-Requires at least: 5.0
-Tested up to: 5.4
-Requires PHP: 7.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: dgaspcmures
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+License: GNU General Public License v2 or later
 */
+
+/* --------------------------------------------------------------------------
+   1. ALAP TÁBLÁZAT ÉS KÁRTYA STÍLUSOK (VILÁGOS MÓD)
+   -------------------------------------------------------------------------- */
 
 .card-header-tabs .nav-link.custom-tab {
     color: #6c757d !important;
@@ -29,7 +26,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 /* PDF CONTENT STYLES */
-
 [id^="pdf-content-"] {
     background-color: #ffffff !important;
     color: #212529 !important;
@@ -53,16 +49,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
     color: #dc3545 !important;
 }
 
-
-/* --------------FLOATING EMERGENCY WIDGET ------------------- */
-
+/* FLOATING EMERGENCY WIDGET */
 .floating-emergency-widget {
     height: auto !important;
     max-height: max-content !important;
     user-select: none;
 }
 
-/* DRAGGABLE CARD  */
 .emergency-drag-handle {
     cursor: grab;
     user-select: none;
@@ -73,7 +66,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
     cursor: grabbing;
 }
 
-/* MOBIL VIEW */
 @media (max-width: 767.98px) {
     .floating-emergency-widget {
         width: 180px !important;
@@ -85,155 +77,120 @@ Use it to make something cool, have fun, and share what you've learned with othe
     }
 }
 
-/* --------------HIGH CONTRAST MODE ------------------- */
-
-/*BASIC BACKGROUND AND TEXT COLORS */
-body.high-contrast {
-    background-color: #0a0e14 !important;
-    color: #0d1117 !important;
-}
-
-/* WHITE AND GREY BACKGROUND ITEMS AND DARKER CARDS */
-
-body.high-contrast .bg-white,
-body.high-contrast .bg-light,
-body.high-contrast .card,
-body.high-contrast .top-bar,
-body.high-contrast nav,
-body.high-contrast footer {
-    background-color:#161b22 !important;
-    border-color:#30363d !important;
-    color: #f0f6fc !important;
-}
-/* Footer and Header Backgrounds */
-body.high-contrast footer{
-    background-color: #1c2128 !important;
-    border-top:1px solid #30363d !important;
-    color: #8b949e !important; 
-
-}
-/* TEXT , TITLES AND SUBTITLES */
-
-body.high-contrast h1,
-body.high-contrast h2,
-body.high-contrast h3,
-body.high-contrast h4,
-body.high-contrast h5,
-body.high-contrast h6,
-body.high-contrast p,
-body.high-contrast span,
-body.high-contrast .text-dark,
-body.high-contrast .text-secondary,
-body.high-contrast .text-muted{
-    color: #dfe0e8 !important;
-}
-
-/* LINKS */
-body.high-contrast a,
-body.high-contrast .nav-link,
-body.high-contrast .card-link{
-    color: #58a6ff !important;
-    text-decoration: none !important;
-}
-
-body.high-contrast a:hover,
-body.high-contrast .nav-link:hover {
-    color: #79c0ff !important;
-    text-decoration: underline !important;
-}
-
-/*SEARCH PANEL*/
-body.high-contrast .btn-light {
-    background-color: #21262d !important;
-    border-color: #30363d !important;
-    color: #58a6ff !important;
-}
-
-body.high-contrast #headerSearchCollapse {
-    background-color: #161b22 !important;
-    border-color: #30363d !important;
-}
-
-body.high-contrast #headerSearchCollapse input[type="search"],
-body.high-contrast #headerSearchCollapse .form-control {
-    background-color: #0a0e14 !important;
-    border: 1px solid #30363d !important;
-    color: #f0f6fc !important;
-}
-
-body.high-contrast #headerSearchCollapse input[type="search"]::placeholder {
-    color: #8b949e !important;
-}
-
-/* BUTTONS */
-body.high-contrast .btn-primary,
-body.high-contrast .btn-info {
-    background-color: #1f6feb !important;
-    border-color: #1f6feb !important;
+/* TÁBLÁZATOK ÉS JELVÉNYEK (VILÁGOS MÓD) */
+.card-header.bg-dark-blue,
+.card-header:has(h4) {
+    background-color: #0b2545 !important;
     color: #ffffff !important;
 }
 
-/*for the category cards */
-body.high-contrast .badge,
-body.high-contrast .card-header {
-    background-color: #162a46 !important;
-    color: #93c5fd !important;
-    border: 1px solid #1f6feb !important;
-}
-/* for the emergency widget */
-body.high-contrast #draggableEmergencyWidget .btn-light {
-    background-color: #ffffff !important;
-    color: #dc2626 !important; 
-    border: none !important;
-}
-
-body.high-contrast #draggableEmergencyWidget .btn-light span {
-    color: #dc2626 !important;
+.card-header h4 {
+    color: #ffffff !important;
     font-weight: 700;
 }
 
-/* delete the border from the card header -card header tabs */
-
-.card-header-tabs,
-.card-header,
-.body.high-contrast .card-header-tabs
-.body.high-contrast .card-header {
-    border: none !important;
-    background-color: transparent !important;
-    border-bottom: 1px solid #30363d !important; 
+.card-header p {
+    color: #cbd5e1 !important;
 }
 
-/*INATIVE TABS */
-
-.card-header-tabs .nav-link.custom-tab,
-body.high-contrast .card-header-tabs .nav-link.custom-tab {
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 3px solid transparent !important;
-    color: #8b949e !important;
-    border-radius: 0 !important;
-    padding-bottom: 0.75rem !important;
+.table thead th {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    border: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
 }
 
-/*ACTIVE TABS */
-.card-header-tabs .nav-link.custom-tab.active,
-body.high-contrast .card-header-tabs .nav-link.custom-tab.active {
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 3px solid #58a6ff !important; /* Kék alsó vonal */
-    color: #58a6ff !important;
-    font-weight: 600 !important;
+.table tbody td {
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+    padding: 14px 12px;
 }
 
-body.high-contrast .card-header-tabs .nav-link.custom-tab:hover {
-    color: #f0f6fc !important;
+.table tbody td.fw-semibold {
+    color: #0f172a;
+    font-weight: 700 !important;
 }
 
-/*FONT SIZE INDICATOR */
-/* ==========================================================================
-   FONT SIZE INDICATOR TOAST
-   ========================================================================== */
+.table tbody td:nth-child(3) {
+    color: #334155;
+}
 
+.table tbody td a.text-muted,
+.table tbody td .text-muted,
+.table tbody td a {
+    color: #0369a1 !important;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.table tbody td a:hover {
+    text-decoration: underline;
+    color: #0284c7 !important;
+}
+
+.table tbody td .bi-telephone,
+.table tbody td .bi-envelope {
+    color: #0284c7 !important;
+    font-weight: bold;
+}
+
+.table tbody td.text-secondary,
+.table tbody td:last-child {
+    color: #1e293b;
+    font-weight: 700 !important;
+}
+
+.badge.bg-primary-subtle,
+.badge.bg-info-subtle {
+    background-color: #0369a1 !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.badge.bg-success-subtle {
+    background-color: #15803d !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.badge.bg-warning-subtle {
+    background-color: #b45309 !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.badge.bg-danger-subtle {
+    background-color: #b91c1c !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.card .text-secondary {
+    color: #334155;
+}
+
+.card .bg-light {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+}
+
+/* FONT SIZE TOAST */
 .font-size-toast {
     position: fixed;
     top: 20px;
@@ -258,15 +215,6 @@ body.high-contrast .card-header-tabs .nav-link.custom-tab:hover {
     transform: translateX(-50%) translateY(0);
 }
 
-/*FONT SIZE FOR THE DARK MODE */
-body.high-contrast .font-size-toast {
-    background-color: #161b22;
-    border-color: #58a6ff;
-    color: #58a6ff;
-}
-
-/*LANGUAGE SWITCHER FOR THE DARK MODE AND LIGHT MODE */
-
 .language-switcher a {
     transition: color 0.2s ease;
 }
@@ -275,15 +223,191 @@ body.high-contrast .font-size-toast {
     color: #0d6efd !important;
 }
 
-/* FARK MODE LANGUAGE SWITCHER */
-body.high-contrast .language-switcher a.active-lang { /* Active language link */
-    color: #58a6ff !important; 
+/* --------------------------------------------------------------------------
+   2. HIGH CONTRAST / SÖTÉT MÓD DEFINÍCIÓK
+   -------------------------------------------------------------------------- */
+
+/* Alap háttér a teljes dokumentumnak */
+html.high-contrast,
+html.high-contrast body {
+    background-color: #0a0e14 !important;
+    color: #f0f6fc !important;
 }
 
-body.high-contrast .language-switcher a.text-muted { /* Inactive language link */
+/* Kártyák, panelek, felső sáv és menü */
+html.high-contrast .bg-white,
+html.high-contrast .bg-light,
+html.high-contrast .card,
+html.high-contrast .top-bar,
+html.high-contrast nav,
+html.high-contrast footer {
+    background-color: #161b22 !important;
+    border-color: #30363d !important;
+    color: #f0f6fc !important;
+}
+
+html.high-contrast footer {
+    background-color: #1c2128 !important;
+    border-top: 1px solid #30363d !important;
     color: #8b949e !important; 
 }
 
-body.high-contrast .language-switcher a.text-muted:hover { /* Inactive language link on hover */
+/* Szövegek és címek */
+html.high-contrast h1,
+html.high-contrast h2,
+html.high-contrast h3,
+html.high-contrast h4,
+html.high-contrast h5,
+html.high-contrast h6,
+html.high-contrast p,
+html.high-contrast span,
+html.high-contrast .text-dark,
+html.high-contrast .text-secondary,
+html.high-contrast .text-muted {
+    color: #dfe0e8 !important;
+}
+
+/* Linkek */
+html.high-contrast a,
+html.high-contrast .nav-link,
+html.high-contrast .card-link {
+    color: #58a6ff !important;
+    text-decoration: none !important;
+}
+
+html.high-contrast a:hover,
+html.high-contrast .nav-link:hover {
+    color: #79c0ff !important;
+    text-decoration: underline !important;
+}
+
+/* Kereső panel */
+html.high-contrast .btn-light {
+    background-color: #21262d !important;
+    border-color: #30363d !important;
+    color: #58a6ff !important;
+}
+
+html.high-contrast #headerSearchCollapse {
+    background-color: #161b22 !important;
+    border-color: #30363d !important;
+}
+
+html.high-contrast #headerSearchCollapse input[type="search"],
+html.high-contrast #headerSearchCollapse .form-control {
+    background-color: #0a0e14 !important;
+    border: 1px solid #30363d !important;
     color: #f0f6fc !important;
+}
+
+html.high-contrast #headerSearchCollapse input[type="search"]::placeholder {
+    color: #8b949e !important;
+}
+
+/* Gombok és jelvények */
+html.high-contrast .btn-primary,
+html.high-contrast .btn-info {
+    background-color: #1f6feb !important;
+    border-color: #1f6feb !important;
+    color: #ffffff !important;
+}
+
+html.high-contrast .badge,
+html.high-contrast .card-header {
+    background-color: #162a46 !important;
+    color: #93c5fd !important;
+    border: 1px solid #1f6feb !important;
+}
+
+html.high-contrast #draggableEmergencyWidget .btn-light {
+    background-color: #ffffff !important;
+    color: #dc2626 !important; 
+    border: none !important;
+}
+
+html.high-contrast #draggableEmergencyWidget .btn-light span {
+    color: #dc2626 !important;
+    font-weight: 700;
+}
+
+/* Fülek (Tabs) */
+html.high-contrast .card-header-tabs,
+html.high-contrast .card-header {
+    border: none !important;
+    background-color: transparent !important;
+    border-bottom: 1px solid #30363d !important; 
+}
+
+html.high-contrast .card-header-tabs .nav-link.custom-tab {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 3px solid transparent !important;
+    color: #8b949e !important;
+    border-radius: 0 !important;
+    padding-bottom: 0.75rem !important;
+}
+
+html.high-contrast .card-header-tabs .nav-link.custom-tab.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 3px solid #58a6ff !important;
+    color: #58a6ff !important;
+    font-weight: 600 !important;
+}
+
+html.high-contrast .card-header-tabs .nav-link.custom-tab:hover {
+    color: #f0f6fc !important;
+}
+
+html.high-contrast .font-size-toast {
+    background-color: #161b22;
+    border-color: #58a6ff;
+    color: #58a6ff;
+}
+
+html.high-contrast .language-switcher a.active-lang {
+    color: #58a6ff !important; 
+}
+
+html.high-contrast .language-switcher a.text-muted {
+    color: #8b949e !important; 
+}
+
+html.high-contrast .language-switcher a.text-muted:hover {
+    color: #f0f6fc !important;
+}
+
+/* Táblázatok sötét módban */
+html.high-contrast .table {
+    background-color: #161b22 !important;
+    color: #f0f6fc !important;
+}
+
+html.high-contrast .table thead th {
+    background-color: #21262d !important;
+    color: #58a6ff !important;
+    border-bottom: 1px solid #30363d !important;
+}
+
+html.high-contrast .table tbody td {
+    background-color: #161b22 !important;
+    color: #f0f6fc !important;
+    border-bottom: 1px solid #30363d !important;
+}
+
+html.high-contrast .table tbody td.fw-semibold,
+html.high-contrast .table tbody td:nth-child(3),
+html.high-contrast .table tbody td.text-secondary,
+html.high-contrast .table tbody td:last-child {
+    color: #f0f6fc !important;
+}
+
+html.high-contrast .table-hover tbody tr:hover td {
+    background-color: #21262d !important;
+}
+
+html.high-contrast .card-header.bg-dark-blue,
+html.high-contrast .card-header:has(h4) {
+    background-color: #21262d !important;
+    border-bottom: 1px solid #30363d !important;
 }

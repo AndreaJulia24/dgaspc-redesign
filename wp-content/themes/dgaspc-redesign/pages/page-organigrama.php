@@ -13,8 +13,9 @@ $is_hu = ($current_lang === 'hu');
         
         <!-- BACK TO HOME -->
         <div class="mb-4">
-            <a href="<?php echo esc_url( home_url('/') ); ?>" class="text-decoration-none text-secondary small fw-semibold d-inline-flex align-items-center gap-1">
-                &larr; <?php echo $is_hu ? 'Vissza a kezdőlapra' : 'Înapoi la pagina principală'; ?>
+            <a href="<?php echo esc_url( function_exists('pll_home_url') ? pll_home_url() : home_url('/') ); ?>" class="btn btn-outline-primary">
+                <i class="bi bi-arrow-left"></i> 
+                <?php echo $is_hu ? 'Vissza a kezdőlapra' : 'Înapoi la pagina principală'; ?>
             </a>
         </div>
 
