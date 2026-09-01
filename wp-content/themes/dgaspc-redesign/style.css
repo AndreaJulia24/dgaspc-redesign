@@ -472,3 +472,21 @@ html.high-contrast #searchDeclaratii:focus {
 html.high-contrast #searchDeclaratii::placeholder {
     color: #8b949e !important;
 }
+
+/* LOGOS */
+.navbar-brand img,
+img[alt="Stema Județului Mureș"],
+.navbar img {
+    background-color: transparent !important;
+    mix-blend-mode: normal !important; /* Nem keveri a pixeleket */
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* DARK MODE */
+html.high-contrast .navbar-brand img,
+html.high-contrast img[alt="Stema Județului Mureș"] {
+    background-color: transparent !important;
+    mix-blend-mode: normal !important;
+    filter: none !important;
+}

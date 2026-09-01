@@ -113,17 +113,27 @@ $is_hu = ($current_lang === 'hu');
 
 <!-- 2.  NAVIGATION BAR -->
 
-<nav class="navbar navbar-expand-lg bg-white shadow-sm py-3">
-    <div class="container d-flex justify-content-between align-items-center">
+<nav class="navbar navbar-expand-xl bg-white shadow-sm py-2">
+    <div class="container d-flex align-items-center justify-content-between">
         
-        <!-- Brand Logo & Name Section -->
-        <a class="navbar-brand d-flex align-items-center text-decoration-none text-dark" href="<?php echo esc_url(home_url('/')); ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="DGASPC Mures Logo" class="me-2" style="height: 45px; width: auto;">
-            <div class="brand-text d-flex flex-column lh-1">
-                <span class="fw-bold fs-5 text-primary">DGASPC</span>
-                <span class="fw-bold fs-6 text-dark">Mureș</span>
-            </div>
-        </a>
+        <!-- with gap-3 all distances is equal -->
+<a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none text-dark m-0 p-0" href="<?php echo esc_url(home_url('/')); ?>">
+    <!-- 1.  LEFT SIDE -DGASPC LOGO BEAR -->
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dgaspc_mures_bear.png" alt="DGASPC Mures Logo" style="height: 60px; width: auto;">
+    
+    <!-- 2. DGASPC MURES TITLE -->
+    <div class="brand-text d-flex flex-column lh-sm">
+        <span class="fw-bold fs-5 text-primary">DGASPC Mureș</span>
+        <span class="fw-medium text-dark" style="font-size: 0.62rem; max-width: 350px; line-height: 1.15; letter-spacing: -0.2px;">
+            <?php echo $is_hu 
+                ? 'MAROS MEGYEI SZOCIÁLIS ÉS GYERMEKVÉDELMI IGAZGATÓSÁG' 
+                : 'DIRECȚIA GENERALĂ DE ASISTENȚĂ SOCIALĂ ȘI PROTECȚIA COPILULUI MUREȘ'; ?>
+        </span>
+    </div>
+
+    <!-- 3. RIGHT SIDE - MURES COUNTY LOGO -->
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mures_county.png" alt="Stema Județului Mureș" class="d-none d-md-block" style="height: 54px; width: auto;">
+</a>
 
         <!-- MENUPOINTS AND SEARCH ICONS BUTTON -->
 
@@ -134,48 +144,48 @@ $is_hu = ($current_lang === 'hu');
 
         <!-- MENUPOINTS + SEARCH DESKTOP -->
         <div class="collapse navbar-collapse" id="mainNavbar">
-            <div class="d-flex align-items-center gap-4">
+            <div class="d-flex align-items-center gap-3 ms-auto">
             <!-- MENUPOINTS -->
                <!-- DINAMICALLY NAVBAR -->
-               <ul class="navbar-nav mb-0 gap-4 align-items-center">
+               <ul class="navbar-nav mb-0 gap-3 align-items-center flex-nowrap">
                     <!-- HOME -->
                     <li class="nav-item">
-                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( home_url( $is_hu ? '/hu/' : '/' ) ); ?>">
+                        <a class="nav-link text-dark fw-semibold text-nowrap" href="<?php echo esc_url( home_url( $is_hu ? '/hu/' : '/' ) ); ?>">
                             <?php echo $is_hu ? 'Kezdőlap' : 'Acasă'; ?>
                         </a>
                     </li>
 
                     <!-- ORGANIGRAMA -->
                     <li class="nav-item">
-                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( home_url( $is_hu ? '/hu/szervezeti-felepites/' : '/organigrama/' ) ); ?>">
+                        <a class="nav-link text-dark fw-semibold text-nowrap" href="<?php echo esc_url( home_url( $is_hu ? '/hu/szervezeti-felepites/' : '/organigrama/' ) ); ?>">
                             <?php echo $is_hu ? 'Szervezeti Felépítés' : 'Organigramă'; ?>
                         </a>
                     </li>
 
                     <!-- PROTECȚIA COPILULUI -->
                     <li class="nav-item">
-                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( home_url( $is_hu ? '/hu/gyermekvedelem/' : '/protectia-copilului/' ) ); ?>">
+                        <a class="nav-link text-dark fw-semibold text-nowrap" href="<?php echo esc_url( home_url( $is_hu ? '/hu/gyermekvedelem/' : '/protectia-copilului/' ) ); ?>">
                             <?php echo $is_hu ? 'Gyermekvédelem' : 'Protecția Copilului'; ?>
                         </a>
                     </li>
 
                     <!-- ADULȚI ȘI DIZABILITĂȚI -->
                     <li class="nav-item">
-                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( home_url( $is_hu ? '/hu/felnottek-es-fogyatekkal-elok/' : '/adulti-dizabilitati/' ) ); ?>">
+                        <a class="nav-link text-dark fw-semibold text-nowrap" href="<?php echo esc_url( home_url( $is_hu ? '/hu/felnottek-es-fogyatekkal-elok/' : '/adulti-dizabilitati/' ) ); ?>">
                             <?php echo $is_hu ? 'Felnőttek & Fogyatékkal Élők' : 'Adulți & Dizabilități'; ?>
                         </a>
                     </li>
 
                     <!-- TRANSPARENȚĂ -->
                     <li class="nav-item">
-                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( home_url( $is_hu ? '/hu/atlathatosag/' : '/transparenta/' ) ); ?>">
+                        <a class="nav-link text-dark fw-semibold text-nowrap" href="<?php echo esc_url( home_url( $is_hu ? '/hu/atlathatosag/' : '/transparenta/' ) ); ?>">
                             <?php echo $is_hu ? 'Átláthatóság' : 'Transparență'; ?>
                         </a>
                     </li>
 
                     <!-- PROIECTE -->
                     <li class="nav-item">
-                        <a class="nav-link text-dark fw-semibold" href="<?php echo esc_url( home_url( $is_hu ? '/hu/projektek/' : '/proiecte/' ) ); ?>">
+                        <a class="nav-link text-dark fw-semibold text-nowrap" href="<?php echo esc_url( home_url( $is_hu ? '/hu/projektek/' : '/proiecte/' ) ); ?>">
                             <?php echo $is_hu ? 'Projektek' : 'Proiecte'; ?>
                         </a>
                     </li>

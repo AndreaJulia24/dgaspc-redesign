@@ -102,15 +102,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const contrastBtn = document.getElementById('toggleContrast');
     if (!contrastBtn) return;
 
+    const contrastSpan = contrastBtn.querySelector('span');
+
+    function updateContrastText(isDark) {
+        if (!contrastSpan) return;
+
+        if (isDark) {
+            //if active dark mode (enabled) -> the button text will be "Light Mode"
+            contrastSpan.textContent = contrastSpan.textContent.includes('Sötét') || contrastSpan.textContent.includes('Világos') 
+                ? 'Világos Mód' 
+                : 'Mod Luminos';
+        } else {
+            //if inactive dark mode (disabled) -> the button text will be "Dark Mode"
+            contrastSpan.textContent = contrastSpan.textContent.includes('Világos') || contrastSpan.textContent.includes('Sötét') 
+                ? 'Sötét Mód' 
+                : 'Mod Întunecat';
+        }
+    }
+
+    // 1. BACK TO THE PREVIOUS STATE
+    const initialIsDark = document.documentElement.classList.contains('high-contrast');
+    updateContrastText(initialIsDark);
+
+    // 2. TOGGLE CONTRAST
     contrastBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        
-        // Egyszerre váltjuk a html-en és a body-n
+
         const isDark = document.documentElement.classList.toggle('high-contrast');
         document.body.classList.toggle('high-contrast', isDark);
 
-        // Mentés LocalStorage-ba
+        // Save the state in localStorage
         localStorage.setItem('dgaspc_contrast', isDark ? 'enabled' : 'disabled');
+
+        // Update the button text based on the new state
+        updateContrastText(isDark);
     });
 });
 

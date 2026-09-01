@@ -74,7 +74,7 @@ $is_hu = ($current_lang === 'hu');
                             <p class="card-text text-secondary small mb-4 flex-grow-1">
                                 <?php echo $is_hu ? 'Ha bármilyen gyanúd van egy gyermek vagy felnőtt bántalmazásáról, jelentsd azonnal.' : 'Dacă suspectezi un caz de abuz sau neglijare a unui copil sau adult, raportează-l imediat.'; ?>
                             </p>
-                            <a href="<?php echo esc_url( home_url( '/raporteaza-abuz/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
+                            <a href="<?php echo esc_url( home_url( $is_hu ? '/hu/bantalmazas-bejelentese/' : '/raporteaza-abuz/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
                                 <?php echo $is_hu ? 'Tudj meg többet &rarr;' : 'Află mai multe &rarr;'; ?>
                             </a>
                         </div>
@@ -93,7 +93,7 @@ $is_hu = ($current_lang === 'hu');
                             <p class="card-text text-secondary small mb-4 flex-grow-1">
                                 <?php echo $is_hu ? 'Szerezd be a születési támogatásokkal kapcsolatos információkat.' : 'Obține informații despre serviciile de asistență maternă disponibile.'; ?>
                             </p>
-                            <a href="<?php echo esc_url( home_url( '/asistenta-materna/' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
+                            <a href="<?php echo esc_url( home_url( $is_hu ? '/hu/gyermekvedelem/#institutii-tabla' : '/protectia-copilului/#institutii-tabla' ) ); ?>" class="card-link text-decoration-none fw-semibold small text-primary m-0">
                                 <?php echo $is_hu ? 'Tudj meg többet &rarr;' : 'Află mai multe &rarr;'; ?>
                             </a>
                         </div>

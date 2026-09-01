@@ -76,7 +76,7 @@ $is_hu = ($current_lang === 'hu');
         </div>
 
         <!-- INSTITUTIONS TABLE - REAL, COMPLETE DATA (41 entries from ip_copilului.html) -->
-        <div class="card border rounded-4 bg-white shadow-sm overflow-hidden mb-5">
+        <div class="card border rounded-4 bg-white shadow-sm overflow-hidden mb-5" id="instutii-tabel">
             <div class="card-header bg-white border-bottom p-4">
                 <h4 class="fw-bold text-dark mb-1">
                     <?php echo $is_hu ? 'Gyermekvédelmi Központok és Szolgáltató Egységek (Maros Megye)' : 'Servicii Sociale pentru Copii – DGASPC Mureș'; ?>
