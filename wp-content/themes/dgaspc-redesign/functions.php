@@ -71,7 +71,7 @@
 //FOR THE SCRIPTS
     function dgaspc_enqueue_scripts() {
         // Ensure this path matches where your style.css file physically lives
-        wp_enqueue_style( 'dgaspc-style', get_template_directory_uri() . '/assets/design/style.css' );
+        wp_enqueue_style( 'dgaspc-style', get_stylesheet_uri() );
 
         //for the main.js script
         wp_enqueue_script(
@@ -85,29 +85,28 @@
     add_action( 'wp_enqueue_scripts', 'dgaspc_enqueue_scripts' );
 
 
-    //FOR THE GOOGLE MAPS API SCRIPT
-    function dgaspc_enqueue_google_maps_scripts() {
+  function dgaspc_enqueue_google_maps_scripts() {
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'ro';
 
-        // 2. Google Maps JS API 
+        // 1. Google Maps JS API 
         wp_enqueue_script(
             'google-maps-api',
-            'https://maps.googleapis.com/maps/api/js?key=AIzaSyCB5m0WNmTC3ubmZ9ybCvU4uBt_EsadT0k&libraries=marker&callback=initMap&language=' . $current_lang,
+            'https://maps.googleapis.com/maps/api/js?key=AIzaSyDil8kPfXQzEZAHD4DExD-EP-saARa5IUw&libraries=marker&callback=initMap&language=' . $current_lang,
             array(),
             null,
             true
         );
 
-        // 3. Custom JS for the map
+        // 2. Custom JS for the map 
         wp_enqueue_script(
             'dgaspc-map-script',
             get_template_directory_uri() . '/map.js',
-            array('google-maps-api'),
-            '1.0.0',
+            array('google-maps-api', 'jquery'),
+            '1.0.2',
             true
         );
 
-        // 4. data and labels passed to the JS
+        // 3. Localize the script to pass data from PHP to JS
         wp_localize_script('dgaspc-map-script', 'MapConfig', array(
             'jsonUrl'     => get_template_directory_uri() . '/assets/data/map_locations.json',
             'currentLang' => $current_lang,
@@ -121,12 +120,11 @@
     }
     add_action( 'wp_enqueue_scripts', 'dgaspc_enqueue_google_maps_scripts' );
 
-    // Async and Defer filter implementation
+    // Async / Defer 
     function dgaspc_add_async_defer_to_maps( $tag, $handle, $src ) {
         if ( 'google-maps-api' === $handle ) {
             return '<script src="' . esc_url( $src ) . '" async defer></script>';
         }
         return $tag;
     }
-    // This line applies the filter function to WordPress script tags
     add_filter( 'script_loader_tag', 'dgaspc_add_async_defer_to_maps', 10, 3 );

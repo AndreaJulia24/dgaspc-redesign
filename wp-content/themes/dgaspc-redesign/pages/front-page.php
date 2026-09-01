@@ -6,6 +6,11 @@ get_header(); ?>
 <?php 
 $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'ro';
 $is_hu = ($current_lang === 'hu');
+
+$title = $is_hu ? 'Szociális Szolgáltatások Térképe' : 'Harta Serviciilor Sociale';
+$desc  = $is_hu ? 'Kattintson a képre az interaktív térkép megnyitásához' : 'Faceți clic pe imagine pentru a deschide harta interactivă';
+$img   = $is_hu ? 'harta-hu.png' : 'harta-ro.png';
+$map_url = $is_hu ? home_url('/hu/interaktiv-terkep/') : home_url('/harta-interactiva/');
 ?>
 
 <main class="py-5 bg-light">
@@ -121,7 +126,9 @@ $is_hu = ($current_lang === 'hu');
                 </div>
                 <!-- RIGHT COLUMN: MAP IMAGE -->
                 <div class="col-12 col-lg-6 text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/interactiveMap.png" alt="Harta Serviciilor Sociale Mureș" class="img-fluid rounded-3 shadow-sm" style="max-height: 400px; width: 100%; object-fit: contain;">
+                    <a href="<?php echo esc_url( $map_url ); ?>" title="<?php echo $desc; ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $img; ?>" alt="Harta Serviciilor Sociale Mureș" class="img-fluid rounded-3 shadow-sm" style="max-height: 400px; width: 100%; object-fit: contain;">
+                    </a>
                 </div>
             </div>
         </div>

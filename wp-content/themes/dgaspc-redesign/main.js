@@ -262,3 +262,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const tabs = document.querySelectorAll(".document-category-tab, .category-tab-selector"); 
+    tabs.forEach(tab => {
+        tab.addEventListener("click", function(e) {
+            // Handle tab switching logic here
+            tabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+        });
+    });
+});

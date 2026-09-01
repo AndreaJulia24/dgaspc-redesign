@@ -523,3 +523,72 @@ html.high-contrast .custom-scroll-container::-webkit-scrollbar-thumb {
 html.high-contrast .custom-scroll-container::-webkit-scrollbar-thumb:hover {
     background: #58a6ff;
 }
+
+/* --------------------------------------------------------------------------
+   3. INTERACTIBE MAP PAGE STYLES
+   -------------------------------------------------------------------------- */
+
+/* 3. INTERACTIVE MAP PAGE STYLES */
+.map-page-container {
+    background-color: #0b0f19;
+    color: #f3f4f6;
+    padding-bottom: 40px;
+}
+
+.map-page-container h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #220707;
+    letter-spacing: -0.025em;
+}
+
+.map-page-container p {
+    color: #9ca3af;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.map-page-container .btn-outline-primary {
+    color: #60a5fa;
+    border-color: #3b82f6;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.map-page-container .btn-outline-primary:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+/* Responsive Map Wrapper */
+#map {
+    width: 100%;
+    height: 600px;
+    max-height: 70vh;
+    border-radius: 12px;
+    border: 1px solid #1f2937;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .map-page-container h1 {
+        font-size: 1.75rem;
+    }
+    #map {
+        height: 450px;
+    }
+}
+
+/* FORCE DARK TEXT INSIDE GOOGLE MAPS POPUPS */
+.gm-style .gm-style-iw,
+.gm-style .gm-style-iw-c,
+.gm-style .gm-style-iw-d,
+.gm-style .gm-style-iw-d * {
+    color: #111827 !important;
+}
+
+.gm-style .gm-style-iw h4 {
+    color: #000000 !important;
+    font-weight: 700 !important;
+}

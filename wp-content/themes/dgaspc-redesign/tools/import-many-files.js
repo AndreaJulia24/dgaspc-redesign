@@ -25,8 +25,9 @@ const link = document.createElement("a");
 link.href = URL.createObjectURL(blob);
 link.download = "declaratii_avere.json";
 link.click();
-
+//---------------------------------------------------------------
 // DGASPC MURES -- TISZTÍTOTT TÉRKÉP ADAT KINYERŐ (F12 Console)
+//---------------------------------------------------------------
 (function() {
     const rawRows = document.querySelectorAll('table tr');
     const seen = new Set();
@@ -48,7 +49,10 @@ link.click();
         if (!name || name.length < 5) return;
         if (name.includes('Denumirea') || name.includes('Home') || nr.includes('DGASPC')) return;
         if (seen.has(name + '|' + address)) return;
-
+        if (address.includes('Adresa') || address.includes('Home')) return;
+        if (phone.includes('Telefon') || phone.includes('Home')) return;
+        if (fax.includes('Fax') || fax.includes('Home')) return;
+        if (beneficiaries.includes('Beneficiari') || beneficiaries.includes('Home')) return;    
         seen.add(name + '|' + address);
 
         // Kategória meghatározása
