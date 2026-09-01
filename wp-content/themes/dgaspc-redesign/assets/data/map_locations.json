@@ -8,7 +8,9 @@
     "contact_person": "prof. Hănescu Emilian",
     "phone": "0265-771.908",
     "fax": "0265-771.099",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.232757,
+    "lng": 24.8163654
   },
   {
     "id": 2,
@@ -19,7 +21,9 @@
     "contact_person": "prof. Hănescu Emilian",
     "phone": "0265-771.908",
     "fax": "0265-771.099",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.232757,
+    "lng": 24.8163654
   },
   {
     "id": 3,
@@ -30,7 +34,9 @@
     "contact_person": "prof. Hănescu Emilian",
     "phone": "0265-771.908",
     "fax": "0265-771.099",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.232757,
+    "lng": 24.8163654
   },
   {
     "id": 4,
@@ -41,7 +47,9 @@
     "contact_person": "Dr. Kalakatroni Maria",
     "phone": "0265-217.212",
     "fax": "0265-217.212",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.5480036,
+    "lng": 24.5729052
   },
   {
     "id": 5,
@@ -52,7 +60,9 @@
     "contact_person": "Dr. Kalakatroni Maria",
     "phone": "0265-265.668",
     "fax": "",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.5344716,
+    "lng": 24.5572023
   },
   {
     "id": 6,
@@ -63,7 +73,9 @@
     "contact_person": "Dr. Kalakatroni Maria",
     "phone": "0265-269.242",
     "fax": "",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.5341946,
+    "lng": 24.5572975
   },
   {
     "id": 7,
@@ -74,7 +86,9 @@
     "contact_person": "Dr. Kalakatroni Maria",
     "phone": "0265-235.979",
     "fax": "0265-235.979",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.527713,
+    "lng": 24.5503704
   },
   {
     "id": 8,
@@ -85,7 +99,9 @@
     "contact_person": "Dr. Kalakatroni Maria",
     "phone": "0265-269.788",
     "fax": "",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.5403429,
+    "lng": 24.5620895
   },
   {
     "id": 9,
@@ -96,7 +112,9 @@
     "contact_person": "Dr. Kalakatroni Maria",
     "phone": "0265-217.212",
     "fax": "0265-217.212",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.5480036,
+    "lng": 24.5729052
   },
   {
     "id": 10,
@@ -107,7 +125,9 @@
     "contact_person": "Dr. Kalakatroni Maria",
     "phone": "0265-324.390",
     "fax": "",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.551806,
+    "lng": 24.6438875
   },
   {
     "id": 11,
@@ -118,7 +138,9 @@
     "contact_person": "Dr. Kalakatroni Maria",
     "phone": "0265-324.035",
     "fax": "",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.6439654,
+    "lng": 24.5112403
   },
   {
     "id": 12,
@@ -129,7 +151,9 @@
     "contact_person": "Dr. Kalakatroni Maria",
     "phone": "0265-324.391",
     "fax": "",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.7121253,
+    "lng": 24.4979748
   },
   {
     "id": 13,
@@ -140,7 +164,9 @@
     "contact_person": "Dr. Kalakatroni Maria",
     "phone": "0265-324.042",
     "fax": "",
-    "beneficiaries": "copii cu handicap sever"
+    "beneficiaries": "copii cu handicap sever",
+    "lat": 46.64040749999999,
+    "lng": 24.5145836
   },
   {
     "id": 14,
@@ -151,7 +177,9 @@
     "contact_person": "Grama Mihaela",
     "phone": "0265-486.032",
     "fax": "0265-486.033",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.6101083,
+    "lng": 24.129478
   },
   {
     "id": 15,
@@ -162,7 +190,9 @@
     "contact_person": "Lazăr Ana",
     "phone": "0265-525.419",
     "fax": "0265-512.468",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.7819417,
+    "lng": 24.7069479
   },
   {
     "id": 16,
@@ -173,7 +203,9 @@
     "contact_person": "Lazăr Ana",
     "phone": "0265-525.421",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.77307099999999,
+    "lng": 24.703952
   },
   {
     "id": 17,
@@ -184,7 +216,9 @@
     "contact_person": "Lazăr Ana",
     "phone": "0265-522.322",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.7824457,
+    "lng": 24.6990855
   },
   {
     "id": 18,
@@ -195,7 +229,9 @@
     "contact_person": "Lazăr Ana",
     "phone": "0265-525.431",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.778612,
+    "lng": 24.715474
   },
   {
     "id": 19,
@@ -206,7 +242,9 @@
     "contact_person": "Lazăr Ana",
     "phone": "0265-525.430",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.7829787,
+    "lng": 24.6991466
   },
   {
     "id": 20,
@@ -217,7 +255,9 @@
     "contact_person": "Lazăr Ana",
     "phone": "0265-525.422",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.77307099999999,
+    "lng": 24.703952
   },
   {
     "id": 21,
@@ -228,7 +268,9 @@
     "contact_person": "Lazăr Ana",
     "phone": "0265-525.419",
     "fax": "0265-512.468",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.7819417,
+    "lng": 24.7069479
   },
   {
     "id": 22,
@@ -239,7 +281,9 @@
     "contact_person": "Lazăr Ana",
     "phone": "0265-525.434",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.778612,
+    "lng": 24.715474
   },
   {
     "id": 23,
@@ -250,7 +294,9 @@
     "contact_person": "Lazăr Ana",
     "phone": "0265-511.737",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.7734799,
+    "lng": 24.7017209
   },
   {
     "id": 24,
@@ -261,7 +307,9 @@
     "contact_person": "Lazăr Ana",
     "phone": "0265-344.129",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.663215,
+    "lng": 24.6465055
   },
   {
     "id": 25,
@@ -272,7 +320,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-316.461",
     "fax": "0265-316.461",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5598661,
+    "lng": 24.5011974
   },
   {
     "id": 26,
@@ -283,7 +333,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-316.410",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5598661,
+    "lng": 24.5011974
   },
   {
     "id": 27,
@@ -294,7 +346,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-316.150",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5524929,
+    "lng": 24.5107281
   },
   {
     "id": 28,
@@ -305,7 +359,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-316.068",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5598661,
+    "lng": 24.5011974
   },
   {
     "id": 29,
@@ -316,7 +372,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-316.108",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5524929,
+    "lng": 24.5107281
   },
   {
     "id": 30,
@@ -327,7 +385,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-316.073",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5598661,
+    "lng": 24.5011974
   },
   {
     "id": 31,
@@ -338,7 +398,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-316.325",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5524929,
+    "lng": 24.5107281
   },
   {
     "id": 32,
@@ -349,7 +411,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-316.321",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5598661,
+    "lng": 24.5011974
   },
   {
     "id": 33,
@@ -360,7 +424,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-316.391",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5524929,
+    "lng": 24.5107281
   },
   {
     "id": 34,
@@ -371,7 +437,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-316.459",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5598661,
+    "lng": 24.5011974
   },
   {
     "id": 35,
@@ -382,7 +450,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-316.471",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5524929,
+    "lng": 24.5107281
   },
   {
     "id": 36,
@@ -393,7 +463,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-316.461",
     "fax": "0265-316.461",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5598661,
+    "lng": 24.5011974
   },
   {
     "id": 37,
@@ -404,7 +476,9 @@
     "contact_person": "Orăşan Carmen",
     "phone": "0265-323.418",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5859291,
+    "lng": 24.563605
   },
   {
     "id": 38,
@@ -415,7 +489,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-213.512, 0265-211.699",
     "fax": "0265-211.561",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5485908,
+    "lng": 24.5744464
   },
   {
     "id": 39,
@@ -426,7 +502,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-420.892",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.756917,
+    "lng": 24.1557958
   },
   {
     "id": 40,
@@ -437,7 +515,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-420.893",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.758074,
+    "lng": 24.166503
   },
   {
     "id": 41,
@@ -448,7 +528,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-324.300",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.6521883,
+    "lng": 24.4853219
   },
   {
     "id": 42,
@@ -459,7 +541,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-427.433",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.655366,
+    "lng": 24.392263
   },
   {
     "id": 43,
@@ -470,7 +554,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-576.440",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5376199,
+    "lng": 24.811013
   },
   {
     "id": 44,
@@ -481,7 +567,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-576.468",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5373469,
+    "lng": 24.812126
   },
   {
     "id": 45,
@@ -492,7 +580,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-576.930",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5376212,
+    "lng": 24.8146989
   },
   {
     "id": 46,
@@ -503,7 +593,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-763.929",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.3633733,
+    "lng": 24.6700104
   },
   {
     "id": 47,
@@ -514,7 +606,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-444.883",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.3429803,
+    "lng": 24.2850821
   },
   {
     "id": 48,
@@ -525,7 +619,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-445.091",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.3234102,
+    "lng": 24.2947907
   },
   {
     "id": 49,
@@ -536,7 +632,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-442.302",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.342858,
+    "lng": 24.283402
   },
   {
     "id": 50,
@@ -547,7 +645,9 @@
     "contact_person": "Dr. Negrescu Marin",
     "phone": "0265-486.375",
     "fax": "",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.6196521,
+    "lng": 24.1275946
   },
   {
     "id": 51,
@@ -558,7 +658,9 @@
     "contact_person": "Şuteu Christian Romeo",
     "phone": "0265-214.960 / 119",
     "fax": "0265-218.944",
-    "beneficiaries": "copii"
+    "beneficiaries": "copii",
+    "lat": 46.5505552,
+    "lng": 24.5648862
   },
   {
     "id": 52,
@@ -569,7 +671,9 @@
     "contact_person": "Şuteu Christian Romeo",
     "phone": "0265-214.960",
     "fax": "0265-218.944",
-    "beneficiaries": "copil abuzat, neglijat, exploatat, traficat"
+    "beneficiaries": "copil abuzat, neglijat, exploatat, traficat",
+    "lat": 46.5505552,
+    "lng": 24.5648862
   },
   {
     "id": 53,
@@ -580,7 +684,9 @@
     "contact_person": "Şuteu Christian Romeo",
     "phone": "0265-214.960",
     "fax": "",
-    "beneficiaries": "copii exploataţi prin muncă"
+    "beneficiaries": "copii exploataţi prin muncă",
+    "lat": 46.5505552,
+    "lng": 24.5648862
   },
   {
     "id": 54,
@@ -591,7 +697,9 @@
     "contact_person": "Chirteş Ana",
     "phone": "0265-265.098",
     "fax": "0265-265.098",
-    "beneficiaries": "mame cu copii"
+    "beneficiaries": "mame cu copii",
+    "lat": 46.5413865,
+    "lng": 24.5397383
   },
   {
     "id": 55,
@@ -602,7 +710,9 @@
     "contact_person": "Sorlea Mihaela",
     "phone": "0265-211.699 int. 111/113",
     "fax": "0265-211.561",
-    "beneficiaries": "copii"
+    "beneficiaries": "copii",
+    "lat": 46.5485908,
+    "lng": 24.5744464
   },
   {
     "id": 56,
@@ -613,7 +723,9 @@
     "contact_person": "Buculeu Emilia",
     "phone": "0265-211.699 int. 106",
     "fax": "0265-211.561",
-    "beneficiaries": "copii/tineri"
+    "beneficiaries": "copii/tineri",
+    "lat": 46.5485908,
+    "lng": 24.5744464
   },
   {
     "id": 57,
@@ -624,7 +736,9 @@
     "contact_person": "Vîlcu Claudia Marcela",
     "phone": "0265-211.699 int. 115",
     "fax": "0265-211.561",
-    "beneficiaries": "copii"
+    "beneficiaries": "copii",
+    "lat": 46.5485908,
+    "lng": 24.5744464
   },
   {
     "id": 58,
@@ -635,7 +749,9 @@
     "contact_person": "Buculeu Emilia",
     "phone": "0265-211.699 int. 108",
     "fax": "0265-211.561",
-    "beneficiaries": "copii"
+    "beneficiaries": "copii",
+    "lat": 46.5485908,
+    "lng": 24.5744464
   },
   {
     "id": 59,
@@ -646,7 +762,9 @@
     "contact_person": "Jakab Gabriela",
     "phone": "0265-214.179",
     "fax": "0265-211.561",
-    "beneficiaries": "copii"
+    "beneficiaries": "copii",
+    "lat": 46.5485908,
+    "lng": 24.5744464
   },
   {
     "id": 60,
@@ -657,7 +775,9 @@
     "contact_person": "Iurian Dana",
     "phone": "0265-259.192",
     "fax": "",
-    "beneficiaries": "tineri"
+    "beneficiaries": "tineri",
+    "lat": 46.5210762,
+    "lng": 24.5349765
   },
   {
     "id": 61,
@@ -668,7 +788,9 @@
     "contact_person": "Iurian Dana",
     "phone": "0265-259.357",
     "fax": "",
-    "beneficiaries": "tineri"
+    "beneficiaries": "tineri",
+    "lat": 46.5249946,
+    "lng": 24.5346969
   },
   {
     "id": 62,
@@ -679,7 +801,9 @@
     "contact_person": "Pokorny Laszlo",
     "phone": "0265-550011",
     "fax": "0265-555011",
-    "beneficiaries": "persoane cu handicap neuropsihic si fizic"
+    "beneficiaries": "persoane cu handicap neuropsihic si fizic",
+    "lat": 46.5201787,
+    "lng": 24.6145232
   },
   {
     "id": 63,
@@ -690,7 +814,9 @@
     "contact_person": "Pokorny Laszlo",
     "phone": "0265-550011",
     "fax": "0265-550011",
-    "beneficiaries": "persoane cu handicap neuropsihic si fizic"
+    "beneficiaries": "persoane cu handicap neuropsihic si fizic",
+    "lat": 46.5201787,
+    "lng": 24.6145232
   },
   {
     "id": 64,
@@ -701,7 +827,9 @@
     "contact_person": "Toducz Endre",
     "phone": "0265-347042",
     "fax": "0265-347042",
-    "beneficiaries": "persoane cu handicap neuropsihic si fizic"
+    "beneficiaries": "persoane cu handicap neuropsihic si fizic",
+    "lat": 46.628917,
+    "lng": 24.8773839
   },
   {
     "id": 65,
@@ -712,7 +840,9 @@
     "contact_person": "Toducz Endre",
     "phone": "0265-347042",
     "fax": "0265-347042",
-    "beneficiaries": "persoane cu handicap neuropsihic si fizic"
+    "beneficiaries": "persoane cu handicap neuropsihic si fizic",
+    "lat": 46.66098040000001,
+    "lng": 24.9273587
   },
   {
     "id": 66,
@@ -723,7 +853,9 @@
     "contact_person": "Petrut Dorin",
     "phone": "0265-513656",
     "fax": "0265-520987",
-    "beneficiaries": "persoane cu handicap neuropsihic si fizic"
+    "beneficiaries": "persoane cu handicap neuropsihic si fizic",
+    "lat": 46.5230144,
+    "lng": 24.6042417
   },
   {
     "id": 67,
@@ -734,7 +866,9 @@
     "contact_person": "Pop Liviu",
     "phone": "0265-553245",
     "fax": "0265-553245",
-    "beneficiaries": "persoane cu handicap"
+    "beneficiaries": "persoane cu handicap",
+    "lat": 46.8727639,
+    "lng": 24.7876026
   },
   {
     "id": 68,
@@ -745,7 +879,9 @@
     "contact_person": "Biris Rodica",
     "phone": "0265-511899",
     "fax": "0265-511899",
-    "beneficiaries": "persoane cu handicap"
+    "beneficiaries": "persoane cu handicap",
+    "lat": 46.7908665,
+    "lng": 24.7131449
   },
   {
     "id": 69,
@@ -756,7 +892,9 @@
     "contact_person": "Biris Rodica",
     "phone": "0265-511003",
     "fax": "",
-    "beneficiaries": "persoane cu handicap"
+    "beneficiaries": "persoane cu handicap",
+    "lat": 46.7892245,
+    "lng": 24.7155157
   },
   {
     "id": 70,
@@ -767,7 +905,9 @@
     "contact_person": "Berekmeri Maria",
     "phone": "0265-338257",
     "fax": "0265-338197",
-    "beneficiaries": "persoane cu handicap"
+    "beneficiaries": "persoane cu handicap",
+    "lat": 46.68020569999999,
+    "lng": 24.6522017
   },
   {
     "id": 71,
@@ -778,7 +918,9 @@
     "contact_person": "Berekmeri Maria",
     "phone": "0265-338257",
     "fax": "0265-338197",
-    "beneficiaries": "persoane cu handicap"
+    "beneficiaries": "persoane cu handicap",
+    "lat": 46.6726132,
+    "lng": 24.5700824
   },
   {
     "id": 72,
@@ -789,7 +931,9 @@
     "contact_person": "Ana Ioan",
     "phone": "0265-771901",
     "fax": "0265-771901",
-    "beneficiaries": "persoane cu handicap"
+    "beneficiaries": "persoane cu handicap",
+    "lat": 46.542486,
+    "lng": 24.5648683
   },
   {
     "id": 73,
@@ -800,7 +944,9 @@
     "contact_person": "Sand Viorica",
     "phone": "0265-715801",
     "fax": "0265-715943",
-    "beneficiaries": "persoane cu handicap"
+    "beneficiaries": "persoane cu handicap",
+    "lat": 46.5419016,
+    "lng": 24.3142997
   },
   {
     "id": 74,
@@ -811,7 +957,9 @@
     "contact_person": "Sand Viorica",
     "phone": "0265-715801",
     "fax": "0265-715943",
-    "beneficiaries": "persoane cu handicap"
+    "beneficiaries": "persoane cu handicap",
+    "lat": 46.4894568,
+    "lng": 24.4655338
   },
   {
     "id": 75,
@@ -822,6 +970,8 @@
     "contact_person": "Sand Viorica",
     "phone": "0265-715801",
     "fax": "0265-715943",
-    "beneficiaries": "persoane cu handicap"
+    "beneficiaries": "persoane cu handicap",
+    "lat": 46.4894568,
+    "lng": 24.4655338
   }
 ]

@@ -115,9 +115,9 @@ $is_hu = ($current_lang === 'hu');
                             ? 'Fedezze fel a mi csapatunkat, ahol az otthonos szolgáltatások, a napi közösségi szolgáltatások és az ellátási szolgáltatások elérhetők a megye egészén keresztül, hogy biztosítsuk a közeliséget a kedvezményezettek számára.' 
                             : 'Descoperiți rețeaua noastră de centre rezidențiale, centre de zi și servicii de sprijin distribuite la nivelul județului pentru a asigura proximitatea față de beneficiari.'; ?>
                     </p>
-                    <a href="#" class="btn text-white fw-medium px-4 py-2 rounded-pill shadow-sm" style="background-color: #0b2545;">
-                    <?php echo $is_hu ? 'Fedezd fel az interaktív térképet' : 'Explorează harta interactivă'; ?>
-                </a>
+                    <a href="<?php echo esc_url( home_url( $is_hu ? '/hu/interaktiv-terkep/' : '/harta-interactiva/' ) ); ?>" class="btn text-white fw-medium px-4 py-2 rounded-pill shadow-sm" style="background-color: #0b2545;">
+                        <?php echo $is_hu ? 'Fedezd fel az interaktív térképet' : 'Explorează harta interactivă'; ?>
+                    </a>
                 </div>
                 <!-- RIGHT COLUMN: MAP IMAGE -->
                 <div class="col-12 col-lg-6 text-center">

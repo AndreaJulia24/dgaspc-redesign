@@ -83,3 +83,40 @@ function dgaspc_enqueue_scripts() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'dgaspc_enqueue_scripts' );
+
+
+//FOR THE GOOGLE MAPS API SCRIPT
+function dgaspc_enqueue_google_maps_scripts() {
+   $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'ro';
+
+    // 2. Google Maps JS API 
+    wp_enqueue_script(
+        'google-maps-api',
+        'https://maps.googleapis.com/maps/api/js?key=' . getenv('API_KEY_GEOCODING') . '&callback=initMap&language=' . $current_lang,
+        array(),
+        null,
+        true
+    );
+
+    // 3. Custom JS for the map
+    wp_enqueue_script(
+        'dgaspc-map-script',
+        get_template_directory_uri() . '/map.js',
+        array('google-maps-api'),
+        '1.0.0',
+        true
+    );
+
+    // 4. data and labels passed to the JS
+    wp_localize_script('dgaspc-map-script', 'MapConfig', array(
+        'jsonUrl'     => get_template_directory_uri() . '/assets/data/map_locations.json',
+        'currentLang' => $current_lang,
+        'labels'      => array(
+            'phone'       => ($current_lang === 'hu') ? 'Telefon' : 'Telefon',
+            'fax'         => ($current_lang === 'hu') ? 'Fax' : 'Fax',
+            'contact'     => ($current_lang === 'hu') ? 'Kapcsolattartó' : 'Persoană de contact',
+            'beneficiary' => ($current_lang === 'hu') ? 'Kedvezményezettek' : 'Beneficiari',
+        )
+    ));
+}
+add_action( 'wp_enqueue_scripts', 'dgaspc_enqueue_google_maps_scripts' );
