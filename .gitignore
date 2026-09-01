@@ -31,4 +31,11 @@ Thumbs.db
 .idea/
 
 # 5. KEEP ONLY YOUR CUSTOM THEME
-!wp-content/themes/dgaspc-redesign/**
+!wp-content/themes/dgaspc-redesign/*
+
+# 6. ENV FILE 
+.env
+
+#7. Ignore node_modules and package-lock.json
+node_modules/
+package-lock.json
