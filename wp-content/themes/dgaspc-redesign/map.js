@@ -1,19 +1,34 @@
-window.initMap = function () {
+window.initMap = async function () {
+  const mapElement = document.getElementById("map");
+  if (!mapElement) {
+    return; // Exit if the map div doesn't exist on this page
+  }
+
   const mapCenter = { lat: 46.5480, lng: 24.5729 };
-  const map = new google.maps.Map(document.getElementById("map"), {
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+  const map = new Map(mapElement, {
     zoom: 9,
     center: mapCenter,
+    mapId: "DEMO_MAP_ID"
   });
 
   const infoWindow = new google.maps.InfoWindow();
-  const labels = MapConfig.labels; // Assuming MapConfig is defined in map-config.js
+  const labels = MapConfig ? MapConfig.labels : {};
+
+  if (!MapConfig || !MapConfig.jsonUrl) {
+    console.error("MapConfig or jsonUrl is missing.");
+    return;
+  }
 
   fetch(MapConfig.jsonUrl)
     .then((res) => res.json())
     .then((locations) => {
       locations.forEach((item) => {
         if (item.lat && item.lng) {
-          const marker = new google.maps.Marker({
+     
+          const marker = new AdvancedMarkerElement({
             position: { lat: Number(item.lat), lng: Number(item.lng) },
             map: map,
             title: item.name,
@@ -30,7 +45,10 @@ window.initMap = function () {
               </div>
             `;
             infoWindow.setContent(content);
-            infoWindow.open(map, marker);
+            infoWindow.open({
+              anchor: marker,
+              map,
+            });
           });
         }
       });
