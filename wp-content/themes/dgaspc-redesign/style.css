@@ -490,3 +490,36 @@ html.high-contrast img[alt="Stema Județului Mureș"] {
     mix-blend-mode: normal !important;
     filter: none !important;
 }
+
+/* EGYEDI GÖRDÍTŐSÁV (SCROLLBAR) */
+.custom-scroll-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.custom-scroll-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.custom-scroll-container::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 4px;
+}
+
+.custom-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* DARK MODE SCROLLBAR PROTECTIA COPILOR */
+html.high-contrast .custom-scroll-container::-webkit-scrollbar-track {
+    background: #161b22;
+}
+
+html.high-contrast .custom-scroll-container::-webkit-scrollbar-thumb {
+    background: #30363d;
+}
+
+html.high-contrast .custom-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #58a6ff;
+}

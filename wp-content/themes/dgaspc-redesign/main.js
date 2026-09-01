@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ------------------CONTRAST TOGGLE LOGIC-------------------
+
 document.addEventListener('DOMContentLoaded', () => {
     const contrastBtn = document.getElementById('toggleContrast');
     if (!contrastBtn) return;

@@ -75,19 +75,26 @@ $is_hu = ($current_lang === 'hu');
             </p>
         </div>
 
-        <!-- INSTITUTIONS TABLE - REAL, COMPLETE DATA (41 entries from ip_copilului.html) -->
+        <!-- INSTITUTIONS TABLE - SCROLLABLE CONTAINER (ALL 41 ENTRIES) -->
         <div class="card border rounded-4 bg-white shadow-sm overflow-hidden mb-5" id="instutii-tabel">
-            <div class="card-header bg-white border-bottom p-4">
-                <h4 class="fw-bold text-dark mb-1">
-                    <?php echo $is_hu ? 'Gyermekvédelmi Központok és Szolgáltató Egységek (Maros Megye)' : 'Servicii Sociale pentru Copii – DGASPC Mureș'; ?>
-                </h4>
-                <p class="text-secondary small mb-0">
-                    <?php echo $is_hu ? 'Hivatalos intézményi nyilvántartás, címek, telefonszámok és kapcsolattartók.' : 'Evidența completă a centrelor, adrese, date de contact și persoane responsabile.'; ?>
-                </p>
+            <div class="card-header bg-white border-bottom p-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                    <h4 class="fw-bold text-dark mb-1">
+                        <?php echo $is_hu ? 'Gyermekvédelmi Központok és Szolgáltató Egységek (Maros Megye)' : 'Servicii Sociale pentru Copii – DGASPC Mureș'; ?>
+                    </h4>
+                    <p class="text-secondary small mb-0">
+                        <?php echo $is_hu ? 'Hivatalos intézményi nyilvántartás, címek, telefonszámok és kapcsolattartók.' : 'Evidența completă a centrelor, adrese, date de contact și persoane responsabile.'; ?>
+                    </p>
+                </div>
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2">
+                    41 <?php echo $is_hu ? 'intézmény összesen' : 'unități în total'; ?>
+                </span>
             </div>
-            <div class="table-responsive">
+
+            <!-- SCROLLABLE CONTAINER -->
+            <div class="custom-scroll-container" style="max-height: 520px; overflow-y: auto;">
                 <table class="table table-hover align-middle mb-0">
-                    <thead class="table-light text-uppercase fs-xs">
+                    <thead class="table-light text-uppercase fs-xs sticky-top" style="top: 0; z-index: 2; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                         <tr>
                             <th class="ps-4">Nr.</th>
                             <th><?php echo $is_hu ? 'Intézmény Megnevezése' : 'Denumirea Unității'; ?></th>
@@ -143,18 +150,19 @@ $is_hu = ($current_lang === 'hu');
                             array(41,'Serviciul Îngrijire de tip familial','Tîrgu Mureș, str. Trebely, nr.7','0265-213.512 / 0265-211.699 int.47','familial@dgaspcmures.ro','Copii','Târnăvean Claudia Marcela'),
                         );
 
+                        // KÖZVETLENÜL AZ EGÉSZ $institutii TÖMBÖN MEGYÜNK VÉGIG (41 elem)
                         foreach ($institutii as $inst) :
                             list($nr, $denumire, $adresa, $telefon, $email, $tip, $contact) = $inst;
                         ?>
                         <tr>
-                            <td class="ps-4 fw-bold"><?php echo esc_html($nr); ?></td>
-                            <td class="fw-semibold"><?php echo esc_html($denumire); ?></td>
+                            <td class="ps-4 fw-bold text-muted"><?php echo esc_html($nr); ?></td>
+                            <td class="fw-semibold text-dark"><?php echo esc_html($denumire); ?></td>
                             <td><?php echo esc_html($adresa); ?></td>
                             <td>
                                 <?php if ($telefon !== '—') : ?>
-                                    <div><i class="bi bi-telephone text-primary me-1"></i><?php echo esc_html($telefon); ?></div>
+                                    <div><i class="bi bi-telephone text-primary me-1"></i><a href="tel:<?php echo esc_attr(str_replace(array(' ', '.', '/'), '', $telefon)); ?>" class="text-decoration-none text-dark"><?php echo esc_html($telefon); ?></a></div>
                                 <?php endif; ?>
-                                <div class="text-muted"><i class="bi bi-envelope text-primary me-1"></i><a href="mailto:<?php echo esc_attr($email); ?>" class="text-muted text-decoration-none"><?php echo esc_html($email); ?></a></div>
+                                <div><i class="bi bi-envelope text-primary me-1"></i><a href="mailto:<?php echo esc_attr($email); ?>" class="text-muted text-decoration-none"><?php echo esc_html($email); ?></a></div>
                             </td>
                             <td><span class="badge bg-primary-subtle text-primary fw-normal"><?php echo esc_html($tip); ?></span></td>
                             <td class="pe-4 fw-semibold text-secondary"><?php echo esc_html($contact); ?></td>
