@@ -190,37 +190,54 @@ License: GNU General Public License v2 or later
     border: 1px solid #cbd5e1;
 }
 
-/* FONT SIZE TOAST */
-.font-size-toast {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #0f172a;
-    color: #ffffff;
-    padding: 8px 18px;
-    border-radius: 30px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-    border: 1px solid #334155;
-    z-index: 9999;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+/* FONT SIZE TOAST  */
+#fontSizeIndicator.font-size-toast {
+    position: fixed !important;
+    top: 45px !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-15px) !important;
+    background-color: #0b2545 !important;
+    padding: 6px 18px !important;
+    border-radius: 50px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+    border: 2px solid #38bdf8 !important;
+    z-index: 99999 !important;
+    pointer-events: none !important;
+    transition: opacity 0.25s ease, transform 0.25s ease !important;
     opacity: 0;
 }
 
-.font-size-toast.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+/* BOOTSTRAP ALERTS */
+#fontSizeIndicator .alert,
+#fontSizeIndicator .alert-primary {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-.language-switcher a {
-    transition: color 0.2s ease;
+#fontSizeIndicator #fontSizeValue {
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
 }
 
-.language-switcher a:hover {
-    color: #0d6efd !important;
+/* When it appears */
+#fontSizeIndicator.show,
+#fontSizeIndicator.font-size-toast.show {
+    opacity: 1 !important;
+    transform: translateX(-50%) translateY(0) !important;
+}
+
+/* DARK MODE */
+html.high-contrast #fontSizeIndicator.font-size-toast {
+    background-color: #161b22 !important;
+    border-color: #58a6ff !important;
+}
+
+html.high-contrast #fontSizeIndicator #fontSizeValue {
+    color: #58a6ff !important;
 }
 
 /* --------------------------------------------------------------------------
