@@ -335,7 +335,6 @@ $map_url = $is_hu ? home_url('/hu/interaktiv-terkep/') : home_url('/harta-intera
         $campanii_query = new WP_Query(array(
             'post_type'      => 'campanie',
             'posts_per_page' => 2,
-            'lang'           => $current_lang,
         ));
         if ($campanii_query->have_posts()) :
             while ($campanii_query->have_posts()) : $campanii_query->the_post(); 

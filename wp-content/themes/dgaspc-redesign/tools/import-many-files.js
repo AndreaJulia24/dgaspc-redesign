@@ -82,3 +82,49 @@ link.click();
     link.download = "map_locations.json";
     link.click();
 })();
+
+// ---------------------------------------------------------------
+// DGASPC MURES -- TELJES DINAMIKUS KAPCSOLAT KINYERŐ (F12 Console)
+//---------------------------------------------------------------
+(function() {
+    const extractedData = {
+        extracted_at: new Date().toISOString(),
+        emails: [],
+        phones: [],
+        text_blocks: []
+    };
+
+    // 1. E-mail addresses
+    document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+        const email = a.href.replace('mailto:', '').trim();
+        if (!extractedData.emails.includes(email)) {
+            extractedData.emails.push(email);
+        }
+    });
+
+    // 2. Phone numbers
+    document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+        const phone = a.href.replace('tel:', '').trim();
+        if (!extractedData.phones.includes(phone)) {
+            extractedData.phones.push(phone);
+        }
+    });
+
+    // 3. Text blocks (p, td, font, b, strong, li)
+    document.querySelectorAll('p, td, font, b, strong, li').forEach(el => {
+        const text = el.textContent.trim().replace(/\s+/g, ' ');
+        // Csak a hasznos, nem üres vagy túl rövid blokkokat mentjük
+        if (text && text.length > 3 && !extractedData.text_blocks.includes(text)) {
+            extractedData.text_blocks.push(text);
+        }
+    });
+
+    console.log("Dinamikusan kinyert adatok a DOM-ból:", extractedData);
+
+    // JSON file download
+    const blob = new Blob([JSON.stringify(extractedData, null, 2)], { type: "application/json" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "dgaspc_contact_dynamic.json";
+    link.click();
+})();

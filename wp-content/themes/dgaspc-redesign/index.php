@@ -63,7 +63,6 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $news_query = new WP_Query(array(
             'post_type'      => 'post',
             'posts_per_page' => 12,
-            'lang'           => $current_lang,
             'paged'          => $paged,
         ));
 

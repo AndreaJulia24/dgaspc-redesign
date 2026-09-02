@@ -25,7 +25,7 @@ $is_hu = ($current_lang === 'hu');
                 <h6 class="fw-bold text-white mb-3"><?php echo $is_hu ? 'Információk' : 'Informații'; ?></h6>
                 <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
                     <li>
-                        <a href="<?php echo esc_url( home_url( $is_hu ? '/hu/kapcsolat/' : '/contact/' ) ); ?>" class="text-secondary text-decoration-none">
+                        <a href="<?php echo esc_url( home_url( $is_hu ? '/hu/munkaprogram/' : '/program-de-lucru/' ) ); ?>" class="text-secondary text-decoration-none">
                             <?php echo $is_hu ? 'Ügyfélfogadási rend' : 'Programul de lucru'; ?>
                         </a>
                     </li>
@@ -48,7 +48,7 @@ $is_hu = ($current_lang === 'hu');
                 <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
                     <li>
                         <a href="<?php echo esc_url( home_url( $is_hu ? '/hu/adatvedelem/' : '/gdpr/' ) ); ?>" class="text-secondary text-decoration-none">
-                            GDPR
+                            <?php echo $is_hu ? 'Adatvédelem és GDPR' : 'Protecția Datelor și GDPR'; ?>
                         </a>
                     </li>
                     <li>
@@ -68,10 +68,12 @@ $is_hu = ($current_lang === 'hu');
             <div class="col-12 col-md-6 col-lg-3">
                 <h6 class="fw-bold text-white mb-3"><?php echo $is_hu ? 'Gyors Kapcsolat' : 'Contact Rapid'; ?></h6>
                 <ul class="list-unstyled small mb-0 d-flex flex-column gap-2 text-secondary">
-                    <li class="d-flex align-items-start gap-2">
-                        <i class="bi bi-geo-alt-fill text-primary mt-1"></i>
-                        <span>Târgu Mureș, str. Trebely nr. 7, Jud. Mureș</span>
-                    </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <i class="bi bi-geo-alt-fill text-primary mt-1"></i>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Strada+Trébely+7,+Târgu+Mureș" target="_blank" rel="noopener noreferrer" class="text-secondary text-decoration-none">
+                                Târgu Mureș, str. Trebely nr. 7, Jud. Mureș
+                            </a>
+                        </li>
                     <li class="d-flex align-items-center gap-2">
                         <i class="bi bi-telephone-fill text-primary"></i>
                         <div>
