@@ -42,7 +42,7 @@ $is_hu = ($current_lang === 'hu');
                 </ul>
             </div>
 
-            <!-- 3. OSZLOP: LEGAL / JOGI INFORMÁCIÓK -->
+            <!-- 3. OSZLOP: LEGAL / JOGI INFORMACIOK -->
             <div class="col-12 col-md-6 col-lg-3">
                 <h6 class="fw-bold text-white mb-3"><?php echo $is_hu ? 'Jogi Információk' : 'Legal'; ?></h6>
                 <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
@@ -57,8 +57,8 @@ $is_hu = ($current_lang === 'hu');
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo esc_url( home_url( $is_hu ? '/hu/oldalterkep/' : '/harta-site/' ) ); ?>" class="text-secondary text-decoration-none">
-                            <?php echo $is_hu ? 'Oldaltérkép' : 'Hartă site'; ?>
+                        <a href="<?php echo esc_url( home_url( $is_hu ? '/hu/interaktiv-terkep/' : '/harta-interactiva/' ) ); ?>" class="text-secondary text-decoration-none">
+                            <?php echo $is_hu ? 'Interaktív térkép' : 'Hartă interactivă'; ?>
                         </a>
                     </li>
                 </ul>
@@ -74,11 +74,14 @@ $is_hu = ($current_lang === 'hu');
                     </li>
                     <li class="d-flex align-items-center gap-2">
                         <i class="bi bi-telephone-fill text-primary"></i>
-                        <a href="tel:0265211211" class="text-secondary text-decoration-none">0265-211.211</a>
+                        <div>
+                            <a href="tel:0265213512" class="text-secondary text-decoration-none d-block">0265-213.512</a>
+                            <a href="tel:0265211699" class="text-secondary text-decoration-none d-block">0265-211.699</a>
+                        </div>
                     </li>
                     <li class="d-flex align-items-center gap-2">
                         <i class="bi bi-envelope-fill text-primary"></i>
-                        <a href="mailto:dgaspcmures@yahoo.com" class="text-secondary text-decoration-none">dgaspcmures@yahoo.com</a>
+                        <a href="mailto:office@dgaspcmures.ro" class="text-secondary text-decoration-none">office@dgaspcmures.ro</a>
                     </li>
                 </ul>
             </div>
@@ -94,6 +97,9 @@ $is_hu = ($current_lang === 'hu');
 
 <!-- FLOATING WIDGET INCLUDE -->
 <?php get_template_part('assets/widgets/emergency_widget'); ?>
+
+<!-- Bootstrap 5 JS Bundle (important for Bootstrap components) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <?php wp_footer(); ?>
 </body>

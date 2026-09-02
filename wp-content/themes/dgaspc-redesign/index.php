@@ -110,8 +110,8 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 echo paginate_links(array(
                     'total'     => $news_query->max_num_pages,
                     'current'   => $paged,
-                    'prev_text' => '&larr; Înapoi',
-                    'next_text' => 'Înainte &rarr;',
+                    'prev_text' => $is_hu ? '&larr; Előző' : '&larr; Înapoi',
+                    'next_text' => $is_hu ? 'Következő &rarr;' : 'Înainte &rarr;',
                 )); 
                 ?>
             </div>
