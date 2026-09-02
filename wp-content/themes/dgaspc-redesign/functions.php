@@ -88,14 +88,56 @@
   function dgaspc_enqueue_google_maps_scripts() {
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'ro';
 
-        // 1. Google Maps JS API 
-        wp_enqueue_script(
-            'google-maps-api',
-            'https://maps.googleapis.com/maps/api/js?key=AIzaSyDil8kPfXQzEZAHD4DExD-EP-saARa5IUw&libraries=marker&callback=initMap&language=' . $current_lang,
-            array(),
-            null,
-            true
-        );
+            $api_key = '';
+
+            $env_file = ABSPATH . '.env'; // Path to the .env file in the root directory of the WordPress installation
+
+            if ( ! file_exists( $env_file ) ) {
+                $env_file = get_template_directory() . '/.env';
+            }
+
+            if ( file_exists( $env_file ) && is_readable( $env_file ) ) {
+                $lines = file( $env_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES );
+                if ( false !== $lines ) {
+                    foreach ( $lines as $line ) {
+                        $line = trim( $line );
+                        if ( '' === $line || str_starts_with( $line, '#' ) ) {
+                            continue;
+                        }
+                        if ( str_contains( $line, '=' ) ) {
+                            list( $key, $value ) = explode( '=', $line, 2 );
+                            if ( 'GOOGLE_MAPS_API_KEY' === trim( $key ) ) {
+                                $api_key = trim( $value, " \t\n\r\0\x0B\"'" );
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            if ( empty( $api_key ) ) {
+                $api_key = getenv('GOOGLE_MAPS_API_KEY');
+            }
+
+            if ( empty( $api_key ) && defined('GOOGLE_MAPS_API_KEY') ) {
+                $api_key = GOOGLE_MAPS_API_KEY;
+            }
+
+            if ( empty( $api_key ) ) {
+                wp_add_inline_script(
+                    'dgaspc-main-script',
+                    'console.error("DGASPC map error: A GOOGLE_MAPS_API_KEY not found in the .env file!");'
+                );
+                return;
+            }
+
+            // Google Maps JS API  
+            wp_enqueue_script(
+                'google-maps-api',
+                'https://maps.googleapis.com/maps/api/js?key=' . esc_attr( $api_key ) . '&libraries=marker&callback=initMap&language=' . $current_lang,
+                array(),
+                null,
+                true
+            );
 
         // 2. Custom JS for the map 
         wp_enqueue_script(
