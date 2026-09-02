@@ -6,6 +6,7 @@ window.initMap = async function () {
 
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+  const allMarkers = []; // Array to hold all markers for potential future use
 
   // Mures county bounds
   const muresBounds = {
@@ -109,7 +110,7 @@ window.initMap = async function () {
     <div><span style="color: #fbc02d;">■</span> ${t.adult4}</div>
 
     <div style="font-weight: bold; margin-top: 8px; color: #374151;">${t.childDayTitle}</div>
-    <div><span style="color: #d32f2f;">●</span> ${t.childDay1}</div>
+    <div><span style="color: #7e0707;">●</span> ${t.childDay1}</div>
     <div><span style="color: #0288d1;">●</span> ${t.childDay2}</div>
 
     <div style="font-weight: bold; margin-top: 8px; color: #374151;">${t.childResTitle}</div>
@@ -124,6 +125,18 @@ window.initMap = async function () {
     console.error("MapConfig or jsonUrl is missing.");
     return;
   }
+
+  //Filter panel 
+  const filterDiv = document.createElement("div");
+  filterDiv.style.cssText = "background: #ffffff; padding: 8px 12px; margin: 10px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-family: sans-serif; font-size: 12px; color: #111876; z-index: 5; display: flex; gap: 6px; align-items: center;";
+  filterDiv.innerHTML = `
+    <span style="font-weight: bold; margin-right: 4px; color: #0f145c !important;">Filter:</span>
+    <button data-shape="all" style="padding: 4px 8px; cursor: pointer; background: #4f46e5; color: #fff; border: none; border-radius: 4px;">All</button>
+    <button data-shape="triangle" style="padding: 4px 8px; cursor: pointer; background: #e5e7eb; border: none; border-radius: 4px;">▲</button>
+    <button data-shape="circle" style="padding: 4px 8px; cursor: pointer; background: #e5e7eb; border: none; border-radius: 4px;">●</button>
+    <button data-shape="square" style="padding: 4px 8px; cursor: pointer; background: #e5e7eb; border: none; border-radius: 4px;">■</button>
+  `;
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(filterDiv);
 
   fetch(MapConfig.jsonUrl)
     .then((res) => res.json())
@@ -176,6 +189,8 @@ window.initMap = async function () {
             content: markerEl,
           });
 
+          allMarkers.push({ marker: marker, shape: shape }); // Store marker with its shape for filtering
+
           marker.element.addEventListener("click", () => {
             const content = `
               <div style="max-width: 250px; font-family: sans-serif; font-size: 13px; line-height: 1.5; color: #111827 !important;">
@@ -194,6 +209,27 @@ window.initMap = async function () {
           });
         }
       });
+     // Filter buttons event listeners
+      const buttons = filterDiv.querySelectorAll("button");
+      buttons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          // button active state
+          buttons.forEach(b => { b.style.background = "#e5e7eb"; b.style.color = "#1f2937"; });
+          e.target.style.background = "#4f46e5";
+          e.target.style.color = "#ffffff";
+
+          const selectedShape = e.target.getAttribute("data-shape");
+
+          // Show/hide markers based on the selected shape
+          allMarkers.forEach(item => {
+            if (selectedShape === "all" || item.shape === selectedShape) {
+              item.marker.map = map; // Show 
+            } else {
+              item.marker.map = null; // hide marker
+            }
+          });
+        });
+      }); 
     })
     .catch((err) => console.error("Error at JSON fetch:", err));
 };
