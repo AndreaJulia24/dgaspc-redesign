@@ -273,3 +273,26 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+//LOCURI DE MUNCA DATA FETCHING WITH JSON FILE
+document.addEventListener("DOMContentLoaded", function() {
+    const locuriDeMuncaContainer = document.getElementById("locuri-de-munca-container");
+    if (!locuriDeMuncaContainer) return;
+
+    fetch("/wp-content/themes/dgaspc-redesign/assets/data/dgaspc_mures_locuri_munca.json")
+        .then(response => response.json())
+        .then(data => {
+            const announcements = data.announcements || [];
+            locuriDeMuncaContainer.innerHTML = announcements.map(item => `
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">${item.title}</h5>
+                        <p class="card-text">${item.publication_date}</p>
+                    </div>
+                </div>
+            `).join('');
+        })
+        .catch(error => {
+            console.error("Error fetching locuri de munca data:", error);
+        });
+});

@@ -1,0 +1,289 @@
+{
+  "source": "https://www.dgaspcmures.ro/cms/index.php?page=locuri-de-munca",
+  "last_checked": "2026-09-03",
+  "pdf_count": 16,
+  "announcements": [
+    {
+      "publication_date": "2026-09-03",
+      "title": "ANUNȚ CONCURS 24.09.2026 - PARTEA II",
+      "title_hu": "PÁLYÁZATI HIRDETMÉNY 2026.09.24. - II. RÉSZ",
+      "text":" BIBLIOGRAFIA, TEMATICA ȘI ATRIBUȚIILE POSTURILOR SE REGASESC IN PARTEA I A ANUNȚULUI",
+      "text_hu":" A BIBLIOGRÁFIA, TÉMATICA ÉS AZ ELLÁTÁSI FELADATOK A HIRDETMÉNY I. RÉSZÉBEN TALÁLHATÓK",
+      "documents": [
+        {
+          "name": "ANUNȚ.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id439/ANUN%C8%9A.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "FORMULAR DE ÎNSCRIERE.docx",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id439/FORMULAR%20DE%20%C3%8ENSCRIERE.docx",
+          "type": "docx"
+        }
+      ]
+    },
+    {
+      "publication_date": "2026-09-03",
+      "title": "ANUNȚ CONCURS 24.09.2026 - PARTEA I",
+      "title_hu": "PÁLYÁZATI HIRDETMÉNY 2026.09.24. - I. RÉSZ",
+      "positions": [
+        {
+          "position": "Inspector de specialitate I",
+          "position_hu": "Szakmai ellenőr I",
+          "posts": 1,
+          "location": "Serviciul de coordonare a centrelor pentru persoane adulte cu dizabilități LUDUȘ",
+          "location_hu": "A LUDUȘ-i Felnőtt Fogyatékosok Központjainak Koordinációs Szolgálata",
+          "text": "(durata normală a timpului de muncă este de 8 ore/zi, 40 ore/săptămână)",
+          "text_hu": "(a munkaidő normál hossza napi 8 óra, heti 40 óra)"
+        },
+        {
+          "position": "Inspector de specialitate II",
+          "position_hu": "Szakmai ellenőr II",
+          "posts": 1,
+          "location": "Serviciul Resurse Umane",
+          "location_hu": "Humán Erőforrás Szolgálat",
+          "text": "(durata normală a timpului de muncă este de 8 ore/zi, 40 ore/săptămână)",
+          "text_hu": "(a munkaidő normál hossza napi 8 óra, heti 40 óra)"
+        },
+        {
+          "position": "Inspector de specialitate II",
+          "position_hu": "Szakmai ellenőr II",
+          "posts": 1,
+          "location": "Serviciul Monitorizare, servicii sociale, strategii, proiecte, calitatea serviciilor sociale, control intern și relații cu publicul",
+          "location_hu": "A figyelés, társadalmi szolgáltatások, stratégia, projektek, a társadalmi szolgáltatások minősége, a belső ellenőrzés és a közvélemény kapcsolatok szolgálat",
+          "text": "(durata normală a timpului de muncă este de 8 ore/zi, 40 ore/săptămână)",
+          "text_hu": "(a munkaidő normál hossza napi 8 óra, heti 40 óra)"
+        },
+        {
+          "position": "Referent IA",
+          "position_hu": "Információs Asszisztens",
+          "posts": 1,
+          "location": "Serviciul Monitorizare, servicii sociale, strategii, proiecte, calitatea serviciilor sociale, control intern și relații cu publicul",
+          "location_hu": "A figyelés, társadalmi szolgáltatások, stratégia, projektek, a társadalmi szolgáltatások minősége, a belső ellenőrzés és a közvélemény kapcsolatok szolgálat",
+          "text": "(durata normală a timpului de muncă este de 8 ore/zi, 40 ore/săptămână)",
+          "text_hu": "(a munkaidő normál hossza napi 8 óra, heti 40 óra)"
+        },
+        {
+          "position": "Referent IA",
+          "position_hu": "Információs Asszisztens",
+          "posts": 1,
+          "location": "Serviciul de Evaluare a Persoanelor Adulte cu Handicap (SECPAH)",
+          "location_hu": "Az Felnőttak Értékelésének Szolgálat (SECPAH)",
+          "text": "(durata normală a timpului de muncă este de 8 ore/zi, 40 ore/săptămână)",
+          "text_hu": "(a munkaidő normál hossza napi 8 óra, heti 40 óra)"
+        },
+        {
+          "position": "Îngrijitor curățenie",
+          "position_hu": "Tisztító Személy",
+          "posts": 2,
+          "location": "Centrul de abilitare și reabilitare LUDUȘ",
+          "location_hu": "A LUDUȘ-i Képességfejlesztő és Rehabilitációs Központ",
+          "text":"durata normală a timpului de muncă este de 8 ore/zi, 40 ore/săptămână, în ture)",
+          "text_hu":"a munkaidő normál hossza napi 8 óra, heti 40 óra, műszakban)"
+        },
+        {
+          "position": "Îngrijitor curățenie",
+          "position_hu": "Tisztító Személy",
+          "posts": 1,
+          "location": "Centrul de Îngrijire și Asistență MARGARETA GLODENI",
+          "location_hu": "A MARGARETA GLODENI-i Oktatási és Támogatási Központ",
+          "text":"durata normală a timpului de muncă este de 8 ore/zi, 40 ore/săptămână, în ture)",
+          "text_hu":"a munkaidő normál hossza napi 8 óra, heti 40 óra, műszakban)"
+        },
+        {
+          "position": "Muncitor calificat III - bucătar",
+          "position_hu": "Minősített Munkás III - szakács", 
+          "posts": 1,
+          "location": "Centrul maternal PRO VITA",
+          "location_hu": "A PRO VITA-i Gyermekek Oktatási és Támogatási Központ",
+          "text":"durata normală a timpului de muncă este de 8 ore/zi, 40 ore/săptămână)",
+          "text_hu":"a munkaidő normál hossza napi 8 óra, heti 40 óra)"
+        }
+      ],
+      "documents": [
+        {
+          "name": "ANUNȚ.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id438/ANUN%C8%9A.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "BIBLIOGRAFIE, TEMATICA, ATRIBUȚII - INSPECTOR SPECIALITATE I - LUDUȘ.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id438/BIBLIOGRAFIE,%20TEMATICA,%20ATRIBU%C8%9AII%20-%20INSPECTOR%20SPECIALITATE%20I%20-%20LUDU%C8%98.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "BIBLIOGRAFIE, TEMATICA, ATRIBUȚII - INSPECTOR SPECIALITATE II - SRU.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id438/BIBLIOGRAFIE,%20TEMATICA,%20ATRIBUȚII%20-%20INSPECTOR%20SPECIALITATE%20II%20-%20SRU.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "BIBLIOGRAFIE, TEMATICA, ATRIBUȚII - INSPECTOR SPECIALITATE II MONIT..pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id438/BIBLIOGRAFIE,%20TEMATICA,%20ATRIBUȚII%20-%20INSPECTOR%20SPECIALITATE%20II%20MONIT..pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "BIBLIOGRAFIE, TEMATICA, ATRIBUȚII - REFERENT IA - MONITORIZARE.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id438/BIBLIOGRAFIE,%20TEMATICA,%20ATRIBUȚII%20-%20REFERENT%20IA%20-%20MONITORIZARE.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "BIBLIOGRAFIE, TEMATICA, ATRIBUȚII - REFERENT IA - SECPAH.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id438/BIBLIOGRAFIE,%20TEMATICA,%20ATRIBU%C8%9AII%20-%20REFERENT%20IA%20-%20SECPAH.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "BIBLIOGRAFIE, TEMATICA, ATRIBUȚII - ÎNGRIJITOR CURĂȚENIE.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id438/BIBLIOGRAFIE,%20TEMATICA,%20ATRIBU%C8%9AII%20-%20%C3%8ENGRIJITOR%20CUR%C4%82%C8%9AENIE.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "BIBLIOGRAFIE, TEMATICA, ATRIBUȚII - MUNCITOR CALIFICAT.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id438/BIBLIOGRAFIE,%20TEMATICA,%20ATRIBU%C8%9AII%20-%20MUNCITOR%20CALIFICAT.pdf",
+          "type": "pdf"
+        }
+      ]
+    },
+    {
+      "publication_date": "2026-09-02",
+      "title": "ANUNȚ",
+      "positions": [
+        {
+          "position": "Lucrător social",
+          "position_hu": "Közösségi Dolgozó",
+          "posts": 4,
+          "location": "Complexul de Case de Tip Familial SÂNCRAIU de MUREȘ",
+          "location_hu": "A SÂNCRAIU-i Családi Lakások Komplexuma",
+          "text":"(Programul de lucru este în două ture, în sistem de 12/24 - inclusiv în zilele de sâmbătă/duminică/sărbători legale)",
+          "text_hu":"(A munkaidő két műszakban, 12/24 rendszerben van - beleértve a szombati/vasárnapi/ünnepnapokat is)"
+        },
+        {
+          "position": "Lucrător social",
+          "position_hu": "Közösségi Dolgozó",
+          "posts": 2,
+          "location": "Complexul de Case de Tip Familial CÂMPIE (Casa de Tip Familial Sărmașu nr.58 - 1 post; Casa de Tip Familial Zau de Câmpie - 1 post)",
+          "location_hu": "A CÂMPIE-i Családi Lakások Komplexuma (Sărmașu utca 58. - 1 pozíció; Zau de Câmpie utca - 1 pozíció)",
+          "text":"(Programul de lucru este în două ture, în sistem de 12/24 - inclusiv în zilele de sâmbătă/duminică/sărbători legale)",
+          "text_hu":"(A munkaidő két műszakban, 12/24 rendszerben van - beleértve a szombati/vasárnapi/ünnepnapokat is)"
+        },
+        {
+          "position": "Lucrător social",
+          "position_hu": "Közösségi Dolgozó",
+          "posts": 1,
+          "location": "Centrul maternal PRO VITA",
+          "location_hu": "A PRO VITA-i Gyermekek Oktatási és Támogatási Központ",
+          "text":"(Programul de lucru este în trei ture, 8 ore/zi, 40 ore/săptămână - inclusiv în zilele de sâmbătă/duminică/sărbători legale)",
+          "text_hu":"(A munkaidő három műszakban, 8 óra/nap, 40 óra/hét - beleértve a szombati/vasárnapi/ünnepnapokat is)"
+        },
+        {
+          "position": "Educator (studii medii)",
+          "position_hu": "Nevelő (középiskolai végzettség)",
+          "posts": 1,
+          "location": "Complexul de Case de Tip Familial REGHIN (Casa de Tip Familial str. Rodnei nr.10/1)",
+          "location_hu": "A REGHIN-i Családi Lakások Komplexuma (Rodnei utca 10/1. - 1 pozíció)",
+          "text":"(Programul de lucru este în două ture, în sistem de 12/24 - inclusiv în zilele de sâmbătă/duminică/sărbători legale)",
+          "text_hu":"(A munkaidő két műszakban, 12/24 rendszerben van - beleértve a szombati/vasárnapi/ünnepnapokat is)"
+        },
+        {
+          "position": "Educator (studii medii)",
+          "position_hu": "Nevelő (középiskolai végzettség)",
+          "posts": 1,
+          "location": "Complexul de Case de Tip Familial VALEA NIRAJULUI (Casa de Tip Familial Bălăușeri)",
+          "location_hu": "A VALEA NIRAJULUI-i Családi Lakások Komplexuma (Bălăușeri-i Családi Lakás)",
+          "text":"(Programul de lucru este în două ture, în sistem de 12/24 - inclusiv în zilele de sâmbătă/duminică/sărbători legale)",
+          "text_hu":"(A munkaidő két műszakban, 12/24 rendszerben van - beleértve a szombati/vasárnapi/ünnepnapokat is)"
+        },
+        {
+          "position": "Educator (studii medii)",
+          "position_hu": "Nevelő (középiskolai végzettség)",
+          "posts": 1,
+          "location": "Complexul de Case de Tip Familial CÂMPIE (Casa de Tip Familial Sărmașu nr.128)",
+          "location_hu": "A CÂMPIE-i Családi Lakások Komplexuma (Sărmașu utca 128. - 1 pozíció)",
+          "text":"(Programul de lucru este în două ture, în sistem de 12/24 - inclusiv în zilele de sâmbătă/duminică/sărbători legale)",
+          "text_hu":"(A munkaidő két műszakban, 12/24 rendszerben van - beleértve a szombati/vasárnapi/ünnepnapokat is)"
+        },
+        {
+          "position": "Supraveghetor de noapte",
+          "position_hu": "Éjszakai Felügyelő",
+          "posts": 2,
+          "location": "Complexul de Case de Tip Familial SÂNCRAIU de MUREȘ",
+          "location_hu": "A SÂNCRAIU-i Családi Lakások Komplexuma",
+          "text":"(Programul de lucru este în două ture, în sistem de 12/24 - inclusiv în zilele de sâmbătă/duminică/sărbători legale)",
+          "text_hu":"(A munkaidő két műszakban, 12/24 rendszerben van - beleértve a szombati/vasárnapi/ünnepnapokat is)"
+        },
+        {
+          "position": "Îngrijitor",
+          "position_hu": "Gondozó",
+          "posts": 1,
+          "location": "Complexul de Case de Tip Familial CÂMPIE (Casa de tip familial Târnăveni)",
+          "location_hu": "A CÂMPIE-i Családi Lakások Komplexuma (Târnăveni-i Családi Lakás)",
+          "text":"(Programul de lucru este în două ture, în sistem de 12/24 - inclusiv în zilele de sâmbătă/duminică/sărbători legale)",
+          "text_hu":"(A munkaidő két műszakban, 12/24 rendszerben van - beleértve a szombati/vasárnapi/ünnepnapokat is)"
+        },
+        {
+          "position": "Asistent social practicant",
+          "position_hu": "Gyakorló Szociális Asszisztens",
+          "posts": 1,
+          "location": "Serviciul de evaluare inițială și pentru copiii din servicii rezidențiale",
+          "location_hu": "A kezdeti értékelés és a gyermekek rezidenciális szolgáltatásainak Szolgálata",
+          "text":"(durata normală a timpului de muncă este de 8 ore/zi, 40 ore/săptămână)",
+          "text_hu":"(a munkaidő normál hossza napi 8 óra, heti 40 óra)"
+        }
+      ],
+      "documents": [
+        {
+          "name": "ANUNȚ.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id436/ANUN%C8%9A.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "BIBLIOGRAFIE, TEMATICĂ, ATRIBUȚII - EDUCATOR, LUCRĂTOR SOCIAL.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id436/BIBLIOGRAFIE,%20TEMATIC%C4%82,%20ATRIBU%C8%9AII%20-%20EDUCATOR,%20LUCR%C4%82TOR%20SOCIAL.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "BIBLIOGRAFIE, TEMATICA, ATRIBUȚII - SUPRAV.NOAPTE, ÎNGRIJITOR.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id436/BIBLIOGRAFIE,%20TEMATICA,%20ATRIBUȚII%20-%20SUPRAV.NOAPTE,%20%C3%8ENGRIJITOR.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "BIBLIOGRAFIE, TEMATICĂ, ATRIBUȚII - ASISTENT SOCIAL.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id436/BIBLIOGRAFIE,%20TEMATIC%C4%82,%20ATRIBU%C8%9AII%20-%20ASISTENT%20SOCIAL.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "FORMULAR DE ÎNSCRIERE.docx",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id436/FORMULAR%20DE%20%C3%8ENSCRIERE.docx",
+          "type": "docx"
+        }
+      ]
+    },
+    {
+      "publication_date": "2025-10-21",
+      "title": "Angajare Asistent Maternal",
+      "title_hu": "Gyermekgondozó állás",
+      "text": "Pentru mai multe detalii cick pe documentele de mai jos :",
+      "text_hu": "További részletekért kattintson a lenti dokumentumokra :",
+      "documents": [
+        {
+          "name": "Asistenți maternali.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id409/Asisten%C8%9Bi%20maternali.pdf",
+          "type": "pdf"
+        }
+      ]
+    },
+    {
+      "publication_date": "2025-10-21",
+      "title": "Angajare Asistent Personal Profesionist",
+      "title_hu": "Szakemberi Személyi Asszisztens állás",
+      "text": "Pentru mai multe detalii cick pe documentele de mai jos :",
+      "text_hu": "További részletekért kattintson a lenti dokumentumokra :",
+      "documents": [
+        {
+          "name": "Asistent Personal Profesionist.pdf",
+          "url": "https://www.dgaspcmures.ro/cms/uploads/news/id408/Asistent%20Personal%20Profesionist.pdf",
+          "type": "pdf"
+        }
+      ]
+    }
+  ]
+}

@@ -6,10 +6,14 @@ get_header();
 
 $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'ro';
 $is_hu = ($current_lang === 'hu');
+
+$json_file_path = get_template_directory() . '/assets/data/dgaspc_mures_locuri_munca.json';
+$locuri_de_munca_data = file_exists($json_file_path) ? json_decode(file_get_contents($json_file_path), true) : ['announcements' => []];
+$announcements = isset($locuri_de_munca_data['announcements']) ? $locuri_de_munca_data['announcements'] : [];
 ?>
 
 <main class="py-5 bg-light min-vh-100">
-    <div class="container">
+    <div class="container" style="max-width: 1000px;">
         
         <!-- BACK TO FRONT PAGE -->
         <div class="mb-4">
@@ -41,27 +45,30 @@ $is_hu = ($current_lang === 'hu');
             <div class="card-body p-4 text-secondary lh-lg">
                 <?php if ($is_hu) : ?>
                     <p class="text-dark fw-semibold mb-2">A jelentkezési dossziénak a következő kötelező dokumentumokat kell tartalmaznia:</p>
+                    <p class="small text-muted mb-3">
+                        A dossziéban szereplő összes dokumentumot <strong>eredeti formátumban</strong> kell benyújtani.
+                    </p>
                     <ul class="mb-3 small">
                         <li>Jelentkezési lap (letölthető a lap alján);</li>
                         <li>Személyi igazolvány másolata;</li>
                         <li>Tanulmányi oklevelek és szakmai képesítést igazoló okiratok másolata;</li>
-                        <li>Munkakönyvi kivonat (Revisal / Vechime în muncă) a szakmai tapasztalat igazolására;</li>
+                        <li>Munkakönyvi kivonat (Revisal / Vechime în muncă);</li>
                         <li>Erkölcsi bizonyítvány (Cazier judiciar);</li>
-                        <li>Orvosi igazolás a munkakör betöltésére való alkalmasságról (háziorvostól vagy munkaegészségügytől);</li>
+                        <li>Orvosi igazolás a munkakör betöltésére való alkalmasságról;</li>
                         <li>Önéletrajz (Europass formátum).</li>
                     </ul>
                     <div class="alert alert-info border-0 rounded-3 small mb-0">
-                        <i class="bi bi-info-circle me-1"></i> A dossziékat a DGASPC Mureș székhelyén, a Humánerőforrás Osztályon (Resurse Umane) kell benyújtani a megadott határidőig: <strong>Târgu Mureș, str. Trebely nr. 7</strong>.
+                        <i class="bi bi-info-circle me-1"></i> A dossziékat a DGASPC Mureș székhelyén kell benyújtani: <strong>Târgu Mureș, str. Trebely nr. 7</strong>.
                     </div>
                 <?php else : ?>
                     <p class="text-dark fw-semibold mb-2">Dosarul de înscriere la concurs trebuie să conțină în mod obligatoriu următoarele documente:</p>
                     <ul class="mb-3 small">
                         <li>Formularul de înscriere la concurs (tipizat);</li>
-                        <li>Copia actului de identitate sau orice alt document care atestă identitatea;</li>
-                        <li>Copiile diplomelor de studii și ale altor acte care atestă efectuarea unor specializări;</li>
-                        <li>Copia carnetului de muncă sau adeverință care să ateste vechimea în muncă și în specialitatea studiilor;</li>
+                        <li>Copia actului de identitate;</li>
+                        <li>Copiile diplomelor de studii;</li>
+                        <li>Copia carnetului de muncă sau adeverință vechime;</li>
                         <li>Cazierul judiciar;</li>
-                        <li>Adeverință medicală care să ateste starea de sănătate corespunzătoare;</li>
+                        <li>Adeverință medicală;</li>
                         <li>Curriculum vitae, model comun european.</li>
                     </ul>
                     <div class="alert alert-info border-0 rounded-3 small mb-0">
@@ -71,56 +78,94 @@ $is_hu = ($current_lang === 'hu');
             </div>
         </div>
 
-        <!-- 2. AKTUÁLIS VERSENYVIZSGÁK ÉS KIÍRÁSOK -->
-        <div class="card border rounded-4 bg-white shadow-sm overflow-hidden mb-5">
-            <div class="card-header bg-dark-blue p-3 text-white" style="background-color: #0b2545;">
-                <h5 class="mb-0 fw-bold">
-                    <i class="bi bi-megaphone me-2"></i>
-                    <?php echo $is_hu ? 'Aktuális Versenyvizsga-kiírások' : 'Anunțuri Concursuri și Posturi Vacante'; ?>
-                </h5>
-            </div>
-            <div class="table-responsive">
-                <table class="table table-hover align-middle mb-0">
-                    <thead class="table-light">
-                        <tr class="small text-secondary">
-                            <th scope="col" style="width: 15%;"><?php echo $is_hu ? 'Dátum' : 'Data Publicării'; ?></th>
-                            <th scope="col" style="width: 45%;"><?php echo $is_hu ? 'Megnevezés és Álláshely' : 'Denumire Post / Anunț Concurs'; ?></th>
-                            <th scope="col" style="width: 25%;"><?php echo $is_hu ? 'Jelentkezési határidő' : 'Termen Depunere Dosare'; ?></th>
-                            <th scope="col" class="text-end" style="width: 15%;"><?php echo $is_hu ? 'Részletek' : 'Detalii'; ?></th>
-                        </tr>
-                    </thead>
-                    <tbody class="small">
-                        <tr>
-                            <td class="text-muted fw-semibold">2026</td>
-                            <td>
-                                <strong class="text-dark d-block">Concurs de recrutare pentru ocuparea funcției de Asistent Social</strong>
-                                <span class="text-secondary small">Serviciul Management de Caz pentru Copii</span>
-                            </td>
-                            <td><span class="badge bg-warning text-dark">Conform anunțului</span></td>
-                            <td class="text-end">
-                                <a href="<?php echo esc_url( get_template_directory_uri() . '/assets/docs/Asistenți maternali.pdf' ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm rounded-pill px-3">
-                                    <i class="bi bi-file-earmark-pdf me-1"></i> PDF
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-muted fw-semibold">2026</td>
-                            <td>
-                                <strong class="text-dark d-block">Concurs pentru ocuparea posturilor de Educator și Infirmier</strong>
-                                <span class="text-secondary small">Centre Rezidențiale Județul Mureș</span>
-                            </td>
-                            <td><span class="badge bg-warning text-dark">Conform anunțului</span></td>
-                            <td class="text-end">
-                                <a href="<?php echo esc_url( get_template_directory_uri() . '/assets/docs/Asistent Personal Profesionist.pdf' ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm rounded-pill px-3">
-                                    <i class="bi bi-file-earmark-pdf me-1"></i> PDF
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <!-- 2. ANUNȚURI -->
+        <div class="mb-4">
+            <h3 class="fw-bold text-dark mb-4">
+                <i class="bi bi-megaphone me-2 text-primary"></i>
+                <?php echo $is_hu ? 'Aktuális Versenyvizsga-kiírások' : 'Anunțuri Concursuri și Posturi Vacante'; ?>
+            </h3>
+
+            <?php if (!empty($announcements)) : ?>
+                <div class="d-flex flex-column gap-4">
+                    <?php foreach ($announcements as $item) : ?>
+                        <div class="card border rounded-4 bg-white shadow-sm p-4">
+                            <!-- Header: Date and Title -->
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3 border-bottom pb-3">
+                                <div>
+                                    <span class="badge bg-primary bg-opacity-10 text-primary mb-2 px-3 py-2 rounded-pill fw-semibold">
+                                        <i class="bi bi-calendar-event me-1"></i> <?php echo esc_html($item['publication_date']); ?>
+                                    </span>
+                                    <h4 class="fw-bold text-dark mb-1">
+                                        <?php echo esc_html($is_hu && !empty($item['title_hu']) ? $item['title_hu'] : $item['title']); ?>
+                                    </h4>
+                                </div>
+                                <div>
+                                    <span class="badge bg-warning bg-opacity-10 text-dark border border-warning px-3 py-2 rounded-pill">
+                                        <?php echo $is_hu ? 'Határidő: A kiírás szerint' : 'Termen: Conform anunțului'; ?>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Content: Positions or Summary -->
+                            <?php if (!empty($item['positions'])) : ?>
+                                <div class="mb-3">
+                                    <h6 class="text-uppercase text-muted fs-7 fw-bold mb-2"><?php echo $is_hu ? 'Meghirdetett állások:' : 'Posturi vacante:'; ?></h6>
+                                    <ul class="list-unstyled small text-secondary ps-2 mb-0 border-start border-3 border-primary">
+                                        <?php foreach ($item['positions'] as $pos) : ?>
+                                            <li class="mb-1">
+                                                <strong><?php echo esc_html($is_hu && !empty($pos['position_hu']) ? $pos['position_hu'] : $pos['position']); ?></strong> 
+                                                <span class="badge bg-light text-dark border ms-1"><?php echo esc_html($pos['posts']); ?> <?php echo $is_hu ? 'hely' : 'post(uri)'; ?></span>
+                                                <?php if (!empty($pos['location'])) : ?>
+                                                    <br><span class="fw-semibold text-muted"><i class="bi bi-geo-alt me-1"></i><?php echo esc_html($is_hu && !empty($pos['location_hu']) ? $pos['location_hu'] : $pos['location']); ?></span>
+                                                <?php endif; ?>
+                                                <?php if (!empty($pos['text'])) : ?>
+                                                    <br><span class="small text-muted"><?php echo esc_html($is_hu && !empty($pos['text_hu']) ? $pos['text_hu'] : $pos['text']); ?></span>
+                                                <?php endif; ?>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            <?php elseif (!empty($item['text'])) : ?>
+                                <div class="mb-6 text-secondary large fw-semibold">
+                                    <?php echo esc_html($is_hu && !empty($item['text_hu']) ? $item['text_hu'] : $item['text']); ?>
+                                </div>
+                            <?php elseif (!empty($item['summary'])) : ?>
+                                <div class="mb-3 text-secondary small">
+                                    <?php echo esc_html($is_hu && !empty($item['summary_hu']) ? $item['summary_hu'] : $item['summary']); ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <!-- Documents buttons -->
+                            <div class="mt-3 pt-3 border-top">
+                                <h6 class="text-uppercase text-muted fs-7 fw-bold mb-2"><?php echo $is_hu ? 'Csatolt dokumentumok / Részletek:' : 'Documente atașate:'; ?></h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <?php if (!empty($item['documents'])) : ?>
+                                        <?php foreach ($item['documents'] as $doc) : 
+                                            $is_docx = (isset($doc['type']) && $doc['type'] === 'docx') || str_ends_with(strtolower($doc['name']), '.docx');
+                                            $btn_class = $is_docx ? 'btn-outline-primary' : 'btn-outline-danger';
+                                            $icon_class = $is_docx ? 'bi-file-earmark-word' : 'bi-file-earmark-pdf';
+                                            $clean_name = pathinfo($doc['name'], PATHINFO_FILENAME);
+                                        ?>
+                                            <a href="<?php echo esc_url($doc['url']); ?>" target="_blank" rel="noopener noreferrer" class="btn <?php echo $btn_class; ?> btn-sm rounded-pill px-3 py-2 text-start d-inline-flex align-items-center">
+                                                <i class="bi <?php echo $icon_class; ?> fs-6 me-2"></i> 
+                                                <span><?php echo esc_html($clean_name); ?></span>
+                                            </a>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php else : ?>
+                <div class="card border rounded-4 bg-white shadow-sm p-4 text-center text-muted">
+                    <?php echo $is_hu ? 'Nincsenek aktuális hirdetések.' : 'Nu există anunțuri disponibile.'; ?>
+                </div>
+            <?php endif; ?>
         </div>
-        <div class="row g-4">
+
+        <!-- CONTACT -->
+        <div class="row g-4 mt-4">
             <div class="col-12 col-md-6">
                 <div class="card border rounded-4 bg-white shadow-sm p-4 h-100">
                     <h6 class="fw-bold text-dark mb-3">
@@ -133,8 +178,8 @@ $is_hu = ($current_lang === 'hu');
                             : 'Pentru informații suplimentare privind organizarea concursurilor și depunerea dosarelor:'; ?>
                     </p>
                     <div class="small d-flex flex-column gap-2">
-                        <div><i class="bi bi-telephone text-primary me-2"></i><strong>Telefon:</strong> 0265-211.211 (int. Resurse Umane)</div>
-                        <div><i class="bi bi-envelope text-primary me-2"></i><strong>Email:</strong> <a href="mailto:resurseumane@dgaspcmures.ro" class="text-decoration-none">resurseumane@dgaspcmures.ro</a></div>
+                        <div><i class="bi bi-telephone text-primary me-2"></i><strong>Telefon:</strong> 0265-213.512 / 0265-211.699 (int. 27)</div>
+                        <div><i class="bi bi-envelope text-primary me-2"></i><strong>Email:</strong> <a href="mailto:office@dgaspcmures.ro" class="text-decoration-none">office@dgaspcmures.ro</a></div>
                         <div><i class="bi bi-geo-alt text-primary me-2"></i><strong>Adresă:</strong> Târgu Mureș, str. Trebely nr. 7</div>
                     </div>
                 </div>
