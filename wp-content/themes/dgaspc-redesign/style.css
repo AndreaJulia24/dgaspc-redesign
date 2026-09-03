@@ -603,3 +603,7 @@ html.high-contrast .custom-scroll-container::-webkit-scrollbar-thumb:hover {
     color: #000000 !important;
     font-weight: 700 !important;
 }
+
+.gm-style-mtc {
+  display: none !important;
+}
