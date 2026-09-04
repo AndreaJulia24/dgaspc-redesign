@@ -277,7 +277,6 @@ html.high-contrast h4,
 html.high-contrast h5,
 html.high-contrast h6,
 html.high-contrast p,
-html.high-contrast span,
 html.high-contrast .text-dark,
 html.high-contrast .text-secondary,
 html.high-contrast .text-muted {
@@ -541,36 +540,32 @@ html.high-contrast .custom-scroll-container::-webkit-scrollbar-thumb:hover {
     background: #58a6ff;
 }
 
-/* 3. INTERACTIVE MAP PAGE STYLES */
+/* LIGHT MODE ALAPÉRTELMEZETT */
 .map-page-container {
-    background-color: #0b0f19;
-    color: #f3f4f6;
-    padding-bottom: 40px;
+    background-color: #ffffff !important;
+    color: #1e293b !important;
 }
 
-.map-page-container h1 {
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: #220707;
-    letter-spacing: -0.025em;
+.map-page-container .map-title {
+    color: #0f172a !important;
 }
 
-.map-page-container p {
-    color: #9ca3af;
-    font-size: 1rem;
-    line-height: 1.5;
+.map-page-container .map-desc {
+    color: #475569 !important;
 }
 
-.map-page-container .btn-outline-primary {
-    color: #60a5fa;
-    border-color: #3b82f6;
-    background-color: transparent;
-    transition: all 0.2s ease-in-out;
+/* DARK MODE / HIGH CONTRAST AUTOMATIKUS VÁLTÁS */
+html.high-contrast .map-page-container {
+    background-color: #0a0e14 !important;
+    color: #f0f6fc !important;
 }
 
-.map-page-container .btn-outline-primary:hover {
-    background-color: #3b82f6;
-    color: #ffffff;
+html.high-contrast .map-page-container .map-title {
+    color: #f0f6fc !important;
+}
+
+html.high-contrast .map-page-container .map-desc {
+    color: #8b949e !important;
 }
 
 /* Responsive Map Wrapper */
@@ -579,6 +574,27 @@ html.high-contrast .custom-scroll-container::-webkit-scrollbar-thumb:hover {
     height: 600px !important;
     min-height: 450px !important;
     display: block !important;
+}
+
+/* dark mode legenda icons */
+html.high-contrast .custom-map-legend span[style*="color"] {
+    color: inherit !important;
+    filter: brightness(1.2); 
+}
+
+/* dark mode legenda */
+html.high-contrast .custom-map-legend {
+    background-color: #161b22 !important;
+    color: #f0f6fc !important;
+    border: 1px solid #30363d !important;
+}
+
+html.high-contrast .custom-map-legend strong,
+html.high-contrast .custom-map-legend div {
+    color: #f0f6fc !important;
+}
+html.high-contrast .custom-map-legend span {
+    color: unset !important;
 }
 
 /* Mobile Adjustments */

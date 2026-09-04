@@ -24,7 +24,7 @@ window.initMap = async function () {
   const map = new Map(mapElement, {
     zoom: 10,
     center: mapCenter,
-    mapId: "DEMO_MAP_ID",
+    mapId: "3c444e3c58a3eab33dccb13c",
     restriction: {
       latLngBounds: muresBounds,
       strictBounds: false,
@@ -97,7 +97,7 @@ window.initMap = async function () {
 
   const t = legendTexts[currentLang] || legendTexts.ro;
 
-  // Legenda container dinamikus nyelvi szövegekkel
+  // Legenda container dinamikus nyelvi szovegekkel
   const legendDiv = document.createElement("div");
   legendDiv.style.cssText = "background: #ffffff; padding: 12px 16px; margin: 10px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-family: sans-serif; font-size: 11px; color: #1f2937; z-index: 5; max-height: 400px; overflow-y: auto;";
   legendDiv.innerHTML = `
@@ -128,15 +128,18 @@ window.initMap = async function () {
 
   //Filter panel 
   const filterDiv = document.createElement("div");
-  filterDiv.style.cssText = "background: #ffffff; padding: 8px 12px; margin: 10px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-family: sans-serif; font-size: 12px; color: #111876; z-index: 5; display: flex; gap: 6px; align-items: center;";
+  filterDiv.className = "custom-map-filter";
+  filterDiv.style.cssText = "background: #ffffff; padding: 10px 14px; margin: 10px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-family: sans-serif; font-size: 12px; color: #111876; z-index: 5; display: flex; flex-direction: column; gap: 6px;";
   filterDiv.innerHTML = `
-    <span style="font-weight: bold; margin-right: 4px; color: #0f145c !important;">Filter:</span>
-    <button data-shape="all" style="padding: 4px 8px; cursor: pointer; background: #4f46e5; color: #fff; border: none; border-radius: 4px;">All</button>
-    <button data-shape="triangle" style="padding: 4px 8px; cursor: pointer; background: #e5e7eb; border: none; border-radius: 4px;">▲</button>
-    <button data-shape="circle" style="padding: 4px 8px; cursor: pointer; background: #e5e7eb; border: none; border-radius: 4px;">●</button>
-    <button data-shape="square" style="padding: 4px 8px; cursor: pointer; background: #e5e7eb; border: none; border-radius: 4px;">■</button>
+    <div style="font-weight: bold; color: #0f145c !important; margin-bottom: 2px;">${currentLang === 'hu' ? 'Szűrés:' : 'Filtru:'}</div>
+    <div style="display: flex; flex-direction: row; gap: 6px; flex-wrap: wrap; align-items: center;">
+      <button data-shape="all" style="padding: 6px 10px; cursor: pointer; background: #4f46e5; color: #fff; border: none; border-radius: 4px; font-weight: 600;">${currentLang === 'hu' ? 'Összes' : 'Toate'}</button>
+      <button data-shape="triangle" style="padding: 6px 10px; cursor: pointer; background: #e5e7eb; color: #1f2937; border: none; border-radius: 4px; font-weight: 600;">▲ ${currentLang === 'hu' ? 'Gyermek lakóhelyi szolgáltatások' : 'Servicii rezidențiale pentru copii'}</button>
+      <button data-shape="circle" style="padding: 6px 10px; cursor: pointer; background: #e5e7eb; color: #1f2937; border: none; border-radius: 4px; font-weight: 600;">● ${currentLang === 'hu' ? 'Napközbeni gyermekellátások' : 'Servicii de îngrijire zilnică pentru copii'}</button>
+      <button data-shape="square" style="padding: 6px 10px; cursor: pointer; background: #e5e7eb; color: #1f2937; border: none; border-radius: 4px; font-weight: 600;">■ ${currentLang === 'hu' ? 'Felnőtt lakóhelyi szolgáltatások' : 'Servicii rezidențiale pentru adulți'}</button>
+    </div>
   `;
-  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(filterDiv);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(filterDiv);
 
   fetch(MapConfig.jsonUrl)
     .then((res) => res.json())
