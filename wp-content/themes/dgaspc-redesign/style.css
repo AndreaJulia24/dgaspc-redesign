@@ -540,7 +540,7 @@ html.high-contrast .custom-scroll-container::-webkit-scrollbar-thumb:hover {
     background: #58a6ff;
 }
 
-/* LIGHT MODE ALAPÉRTELMEZETT */
+/* LIGHT MODE base interactive map */
 .map-page-container {
     background-color: #ffffff !important;
     color: #1e293b !important;
@@ -572,7 +572,6 @@ html.high-contrast .map-page-container .map-desc {
 #map {
     width: 100% !important;
     height: 600px !important;
-    min-height: 450px !important;
     display: block !important;
 }
 
@@ -607,19 +606,50 @@ html.high-contrast .custom-map-legend span {
     }
 }
 
-/* FORCE DARK TEXT INSIDE GOOGLE MAPS POPUPS */
-.gm-style .gm-style-iw,
-.gm-style .gm-style-iw-c,
-.gm-style .gm-style-iw-d,
-.gm-style .gm-style-iw-d * {
-    color: #111827 !important;
+/* map container styles */
+.map-page-container {
+    background-color: #ffffff;
+    color: #1e293b;
 }
 
-.gm-style .gm-style-iw h4 {
-    color: #000000 !important;
-    font-weight: 700 !important;
+.map-page-container .map-title {
+    color: #0f172a;
 }
 
-.gm-style-mtc {
-  display: none !important;
+.map-page-container .map-desc {
+    color: #475569;
+}
+
+/* dark mode / high contrast support */
+html.high-contrast .map-page-container {
+    background-color: #0a0e14 !important;
+    color: #f0f6fc !important;
+}
+
+html.high-contrast .map-page-container .map-title {
+    color: #f0f6fc !important;
+}
+
+html.high-contrast .map-page-container .map-desc {
+    color: #8b949e !important;
+}
+
+html.high-contrast .custom-map-legend {
+    background-color: #161b22 !important;
+    color: #f0f6fc !important;
+    border: 1px solid #30363d !important;
+}
+
+html.high-contrast .custom-map-legend strong,
+html.high-contrast .custom-map-legend div {
+    color: #f0f6fc !important;
+}
+
+@media (max-width: 768px) {
+    .map-page-container h1 {
+        font-size: 1.75rem;
+    }
+    #map {
+        height: 450px !important;
+    }
 }

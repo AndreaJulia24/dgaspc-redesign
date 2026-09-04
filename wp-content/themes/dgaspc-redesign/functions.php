@@ -84,7 +84,7 @@
     }
     add_action( 'wp_enqueue_scripts', 'dgaspc_enqueue_scripts' );
 
-
+/*
   function dgaspc_enqueue_google_maps_scripts() {
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'ro';
 
@@ -170,3 +170,27 @@
         return $tag;
     }
     add_filter( 'script_loader_tag', 'dgaspc_add_async_defer_to_maps', 10, 3 );
+*/
+// LEAFLET MAP
+
+function dgaspc_theme_map_scripts() {
+    if (is_page_template('interactive-map-page.php') || is_page('harta-interactiva')) {
+        wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', array(), '1.9.4');
+        wp_enqueue_style('style-css', get_template_directory_uri() . '/style.css', array(), '1.0');
+
+        wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', array(), '1.9.4', true);
+        wp_enqueue_script('leaflet-js', get_template_directory_uri() . '/leaflet.js', array('leaflet-js'), '1.0', true);
+
+        $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'ro';
+        wp_localize_script('leaflet-js', 'MapConfig', array(
+            'jsonUrl' => get_template_directory_uri() . '/assets/data/map_locations.json',
+            'currentLang' => $current_lang,
+            'labels' => array(
+                'phone' => $current_lang === 'hu' ? 'Telefon' : 'Telefon',
+                'contact' => $current_lang === 'hu' ? 'Kapcsolattartó' : 'Persoană de contact',
+                'beneficiary' => $current_lang === 'hu' ? 'Kedvezményezettek' : 'Beneficiari'
+            )
+        ));
+    }
+}
+add_action('wp_enqueue_scripts', 'dgaspc_theme_map_scripts');
