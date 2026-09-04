@@ -540,100 +540,20 @@ html.high-contrast .custom-scroll-container::-webkit-scrollbar-thumb:hover {
     background: #58a6ff;
 }
 
-/* LIGHT MODE base interactive map */
-.map-page-container {
-    background-color: #ffffff !important;
-    color: #1e293b !important;
-}
+/* LIGHT MODE LEGENDA (Alapértelmezett fehér doboz) */
 
-.map-page-container .map-title {
-    color: #0f172a !important;
-}
-
-.map-page-container .map-desc {
-    color: #475569 !important;
-}
-
-/* DARK MODE / HIGH CONTRAST AUTOMATIKUS VÁLTÁS */
-html.high-contrast .map-page-container {
-    background-color: #0a0e14 !important;
-    color: #f0f6fc !important;
-}
-
-html.high-contrast .map-page-container .map-title {
-    color: #f0f6fc !important;
-}
-
-html.high-contrast .map-page-container .map-desc {
-    color: #8b949e !important;
-}
-
-/* Responsive Map Wrapper */
 #map {
     width: 100% !important;
-    height: 600px !important;
+    height: 1490px !important; 
     display: block !important;
 }
-
-/* dark mode legenda icons */
-html.high-contrast .custom-map-legend span[style*="color"] {
-    color: inherit !important;
-    filter: brightness(1.2); 
+.custom-map-legend {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border: none !important;
 }
 
-/* dark mode legenda */
-html.high-contrast .custom-map-legend {
-    background-color: #161b22 !important;
-    color: #f0f6fc !important;
-    border: 1px solid #30363d !important;
-}
-
-html.high-contrast .custom-map-legend strong,
-html.high-contrast .custom-map-legend div {
-    color: #f0f6fc !important;
-}
-html.high-contrast .custom-map-legend span {
-    color: unset !important;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .map-page-container h1 {
-        font-size: 1.75rem;
-    }
-    #map {
-        height: 450px;
-    }
-}
-
-/* map container styles */
-.map-page-container {
-    background-color: #ffffff;
-    color: #1e293b;
-}
-
-.map-page-container .map-title {
-    color: #0f172a;
-}
-
-.map-page-container .map-desc {
-    color: #475569;
-}
-
-/* dark mode / high contrast support */
-html.high-contrast .map-page-container {
-    background-color: #0a0e14 !important;
-    color: #f0f6fc !important;
-}
-
-html.high-contrast .map-page-container .map-title {
-    color: #f0f6fc !important;
-}
-
-html.high-contrast .map-page-container .map-desc {
-    color: #8b949e !important;
-}
-
+/* DARK MODE LEGENDA DOBOZ ÉS SZÖVEG */
 html.high-contrast .custom-map-legend {
     background-color: #161b22 !important;
     color: #f0f6fc !important;
@@ -645,11 +565,39 @@ html.high-contrast .custom-map-legend div {
     color: #f0f6fc !important;
 }
 
-@media (max-width: 768px) {
-    .map-page-container h1 {
-        font-size: 1.75rem;
-    }
-    #map {
-        height: 450px !important;
-    }
+/* in dark mode, the legend icons should maintain their colors */
+html.high-contrast .custom-map-legend .legend-icon {
+    color: revert !important;
+    filter: brightness(1.2);
+}
+
+
+html.high-contrast .custom-map-filter {
+    background-color: #161b22 !important;
+    color: #f0f6fc !important;
+    border: 1px solid #30363d !important;
+}
+
+html.high-contrast .custom-map-filter div {
+    color: #f0f6fc !important;
+}
+
+html.high-contrast .custom-map-filter button {
+    background-color: #21262d !important;
+    color: #c9d1d9 !important;
+    border: 1px solid #30363d !important;
+}
+
+html.high-contrast .custom-map-filter button[style*="background: rgb(79, 70, 229)"],
+html.high-contrast .custom-map-filter button[style*="background: #4f46e5"],
+html.high-contrast .custom-map-filter button[style*="background-color: rgb(79, 70, 229)"] {
+    background-color: #58a6ff !important;
+    color: #0a0e14 !important;
+    font-weight: 700 !important;
+}
+
+/*filtru text in dark mode*/
+
+html.high-contrast .custom-map-filter div {
+    color: #f0f6fc !important;
 }

@@ -1,32 +1,63 @@
 setTimeout(() => {
 const mapElement = document.getElementById("map");
+
+const muresBounds = {
+    north: 47.20,
+    south: 46.05,
+    west: 23.80,
+    east: 25.30,
+  };
+
+  const mapCenter = {
+    lat: 46.72,
+    lng: (muresBounds.west + muresBounds.east) / 2
+  };
+
+
 if (mapElement) {
   const map = L.map('map', {
-    center: [46.55, 24.56],
+    center: [mapCenter.lat, mapCenter.lng],
     zoom: 10,
-    minZoom: 9,
-    maxZoom: 15,
+    zoomControl: false, 
+     restriction: {
+      latLngBounds: muresBounds,
+      strictBounds: true,
+    },
     maxBounds: [
-      [46.05, 23.80],
-      [47.18, 25.30]
-    ]
+      [muresBounds.north, muresBounds.west],
+      [muresBounds.south, muresBounds.east]
+    ],
+    minZoom: 10,
+    maxZoom: 15,
   });
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
 
-  const muresCoords = [
+  // Set the map's max bounds to the world bounds
+  const worldBounds = [
+    [-90, -180], [-90, 180], [90, 180], [90, -180]
+  ];
+
+  const muresHole = [
     [47.12, 24.15], [47.15, 24.85], [46.85, 25.22],
     [46.35, 25.12], [46.08, 24.65], [46.12, 24.12],
     [46.45, 23.85], [46.85, 23.95]
   ];
 
-  L.polygon(muresCoords, {
+  L.polygon([worldBounds, muresHole], {
     color: "#4f46e5",
     weight: 2,
-    fillColor: "#6366f1",
-    fillOpacity: 0.1
+    fillColor: "#0a0e14", 
+    fillOpacity: 0.65, 
+    fillRule: 'evenodd'
+  }).addTo(map);
+
+  L.polygon(muresHole, {
+    color: "#4f46e5",
+    weight: 3,
+    fill: false
   }).addTo(map);
 
   const allMarkers = [];
@@ -101,10 +132,10 @@ if (mapElement) {
       options: { position: 'topleft' },
       onAdd: function () {
         const div = L.DomUtil.create('div', 'custom-map-filter');
-        div.style.cssText = "background: #ffffff; padding: 10px 14px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-family: sans-serif; font-size: 12px; color: #111876; display: flex; flex-direction: column; gap: 6px;";
+        div.style.cssText = "background: #ffffff; padding: 12px 16px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-family: sans-serif; font-size: 11px; color: #1f2937; max-height: 400px; overflow-y: auto;";
         div.innerHTML = `
-          <div style="font-weight: bold; color: #0f145c !important; margin-bottom: 2px;">${currentLang === 'hu' ? 'Szűrés:' : 'Filtru:'}</div>
-          <div style="display: flex; flex-direction: row; gap: 6px;">
+          <div style="font-weight: bold; margin-bottom: 2px;">${currentLang === 'hu' ? 'Szűrés:' : 'Filtru:'}</div>
+          <div style="display: flex; flex-direction: column; gap: 5px;">
             <button data-shape="all" style="padding: 6px 10px; cursor: pointer; background: #4f46e5; color: #fff; border: none; border-radius: 4px; font-weight: 600; text-align: left;">${currentLang === 'hu' ? 'Összes' : 'Toate'}</button>
             <button data-shape="triangle" style="padding: 6px 10px; cursor: pointer; background: #e5e7eb; color: #1f2937; border: none; border-radius: 4px; font-weight: 600; text-align: left;">▲ ${currentLang === 'hu' ? 'Gyermek lakóhelyi szolgáltatások' : 'Servicii rezidențiale pentru copii'}</button>
             <button data-shape="circle" style="padding: 6px 10px; cursor: pointer; background: #e5e7eb; color: #1f2937; border: none; border-radius: 4px; font-weight: 600; text-align: left;">● ${currentLang === 'hu' ? 'Napközbeni gyermekellátások' : 'Servicii de îngrijire zilnică pentru copii'}</button>
